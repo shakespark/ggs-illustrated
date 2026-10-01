@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章 · 历史的自然实验</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ggs.js"></script>
+<style>
+  .belts { min-width: 680px; }
+  .belts text { font-size: 13px; }
+  .belts .ttl { font-size: 13.5px; font-weight: 700; }
+  .belts .small-t { font-size: 11.5px; fill: var(--muted); }
+  .belts .tag-t { font-size: 11.5px; font-weight: 700; fill: var(--c4); }
+  .belts .rule { stroke: var(--border); stroke-width: 1; }
+  .controls select { font: 14px var(--font); }
+  .controls label { flex-wrap: wrap; }
+  .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .presets button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+  .controls output { font-family: var(--mono); color: var(--fg); }
+  .tier { font-size: 15px; font-weight: 700; }
+  .tier small { display: block; font-weight: 400; font-size: 13.5px; color: var(--muted); }
+  .ladder { display: flex; gap: 4px; margin: 10px 0 2px; }
+  .ladder span { flex: 1; text-align: center; font-size: 12px; padding: 3px 2px; border-radius: 5px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); line-height: 1.3; }
+  .ladder span.on { background: var(--accent-soft); border-color: var(--accent); color: var(--fg); font-weight: 700; }
+  .ctl-box { margin-top: 12px; border: 1px dashed var(--border); border-radius: 8px; padding: 10px 14px; background: var(--surface); font-size: 14.5px; }
+  .ctl-box .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .ctl-box .lab { font-size: 12px; font-weight: 700; color: var(--c4); letter-spacing: .05em; }
+  .textfig { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+  @media (max-width: 560px) { .ladder span { font-size: 11px; } }
+</style>
+</head>
+<body data-chapter="2">
+<main>
+
+<h2>读之前：先下注</h2>
+
+<div class="crux">同一批祖先，散到不同的岛上，几百年后为什么变成了截然不同的社会？</div>
+
+<p>开场白把亚力的问题改写成"各大陆为什么发展得有快有慢"，并给出了一个候选答案：<strong>环境</strong>。第 1 章确认了起跑线上没有谁明显领先。可是在花一整本书去论证"环境塑造了各大陆的命运"之前，一个讲究的读者会先问：<strong>环境真的有这么大的力量吗？能不能先在一个小一点的范围里看一眼？</strong></p>
+
+<p>这一章就是那一眼。镜头里有两样东西：1835 年查塔姆群岛上的一场碰撞——碰撞双方的祖先<strong>原本是同一群人</strong>；以及整个波利尼西亚——同一个祖先社会，散到上千个环境各异的岛上。</p>
+
+<p>这一章在全书里的角色是"<strong>方法</strong>"：顶部因果链下方那条虚线框——"拿这条链去检验各地区"——第一次出场就是这里。它教你作者整本书用的论证方式：<strong>自然实验（natural experiment）</strong>。作者先打了个比方：如果你研究老鼠，可以把同一窝老鼠分进环境不同的笼子，过很多代再回来看。然后作者说：</p>
+
+<blockquote class="quote">Of course, such purposeful experiments cannot be carried out on human societies.<cite>— 第 2 章，讲完老鼠笼子的比方之后。本站译：当然，这种有意安排的实验，不可能拿人类社会来做。</cite></blockquote>
+
+<p>于是只能去历史里找"恰好像实验一样"发生过的事。这个想法简单，用好却很难。读懂这一章，全书的说服力会变强，你也会多一样到处都用得上的工具。</p>
+
+<div class="bet" data-key="ch02">
+  <div class="q">你想检验一句话："环境能把同一群人塑造成截然不同的社会。"没法把人关进笼子做实验。下面哪一种证据，你觉得最有说服力？</div>
+  <div class="opts">
+    <button>同一块土地先后住过两拨人（比如澳大利亚的原住民和后来的英国移民），比较两拨人的成就</button>
+    <button>同一个祖先社会散到环境不同的许多岛上，几百年后比较它们的样子</button>
+    <button>把今天世界上所有国家放在一起，统计哪些地理特征和贫富、强弱相关</button>
+    <button>挑一个最典型的文明（比如古埃及），把它的环境怎样影响历史追溯得清清楚楚</button>
+    <button>都不够：只有能重复、能控制变量的实验才算证据，历史证明不了这种事</button>
+  </div>
+  <textarea class="note" data-key="ch02-bet" placeholder="为什么押它？再想一步：你押的这种证据，最大的漏洞会在哪里？"></textarea>
+</div>
+
+<h2>读这一章</h2>
+
+<p>中译本十几页，<strong>20 分钟左右，一口气读完</strong>。开头的故事很短、很残酷；中间一大段逐个介绍波利尼西亚各岛，名字多，读的时候每遇到一个岛只问三件事：<strong>这里的人吃什么？人住得有多密？一个首领管得了多少人？</strong></p>
+
+<div class="reading">
+  <ul>
+    <li><strong>开头的"本可以轻易预测"：</strong>作者说这场碰撞的结局很容易预测。凭什么预测？把作者给两边列的特征各写一行（人口、生计、技术、战争经验、组织），再想想：这些特征里，哪些是一千年前分家时就有的，哪些是分家后才有的？</li>
+    <li><strong>老鼠笼子那段：</strong>作者说的理想实验有几个要素（同一窝老鼠、不同的笼子、过很多代）。波利尼西亚提供了其中哪几个？缺了哪一个？</li>
+    <li><strong>"相关的面积不是岛的面积"：</strong>讲人口规模时，作者特意纠正了一个直觉。找到这句话——它是本章最容易被读漏、也最有用的一句，下面的玩具模型就是围着它搭的。</li>
+    <li><strong>章末作者给自己划的界限：</strong>波利尼西亚证明了什么、没证明什么？作者在最后一段把话说得很克制，留意那个"只"字。</li>
+  </ul>
+</div>
+
+<div class="key"><strong>这一章要带走两样东西。</strong>一是一条传动链：环境怎样经过<strong>生计</strong>、<strong>人口密度</strong>和<strong>一个政治单位的人数</strong>，一步步影响社会的复杂程度（下面的骨架图）——第 4、13、14 章会把这条链在大陆尺度上展开。
+二是一个方法：<strong>把"人"控制住，只让"环境"变化，再看结果</strong>。后面第 15 章（澳大利亚与新几内亚）、第 18 章（欧亚与美洲）、收场白、后记里的成对比较，都是这个方法的放大版。快读会错过的，是作者在章末给方法划的那条界限。</div>
+
+<h2>论证骨架：一个实验设计，两条传动带</h2>
+
+<p>读完回头看，可以把这一章画成上下两层：上层是<strong>实验设计</strong>（控制了什么、变化了什么、观察什么），下层是<strong>传动机制</strong>。六组变量分成两条传动带，是本站的归纳，书里没有这样分组。</p>
+
+<figure class="fig">
+<svg class="belts" viewBox="0 0 780 450" width="780" role="img" aria-label="上层：同一个祖先社会散到不同环境的岛上；下层：气候、地质、海洋资源决定人口密度，面积、地形、隔离决定政治单位规模，两者相乘决定社会复杂程度">
+  <defs><marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+  <!-- 上层：实验设计 -->
+  <text x="8" y="16" class="tag-t">实验设计</text>
+  <rect class="accent-soft" x="8" y="26" width="236" height="78" rx="10"/>
+  <text x="20" y="48" class="ttl">控制住的：人</text>
+  <text x="20" y="70">同一个祖先社会：语言、技术、</text>
+  <text x="20" y="90">作物，还有猪、鸡、狗</text>
+  <path class="arrow" d="M246,65 L276,65" marker-end="url(#ar2)"/>
+  <rect class="warn-soft" x="278" y="26" width="226" height="78" rx="10"/>
+  <text x="290" y="48" class="ttl">变化的：环境</text>
+  <text x="290" y="70">散到上千个岛：冷热、大小、</text>
+  <text x="290" y="90">土壤、远近各不相同</text>
+  <path class="arrow" d="M506,65 L536,65" marker-end="url(#ar2)"/>
+  <rect class="ok-soft" x="538" y="26" width="234" height="78" rx="10"/>
+  <text x="550" y="48" class="ttl">观察的：社会</text>
+  <text x="550" y="70">几百到两三千年后：从狩猎</text>
+  <text x="550" y="90">采集小群到跨群岛的原始帝国</text>
+  <line class="rule" x1="8" y1="124" x2="772" y2="124"/>
+
+  <!-- 下层：两条传动带 -->
+  <text x="8" y="146" class="tag-t">传动机制</text>
+  <rect class="box" x="8" y="158" width="150" height="28" rx="6"/><text x="20" y="177">气候</text>
+  <rect class="box" x="8" y="194" width="150" height="28" rx="6"/><text x="20" y="213">地质：土壤与淡水</text>
+  <rect class="box" x="8" y="230" width="150" height="28" rx="6"/><text x="20" y="249">海洋资源</text>
+  <rect class="box" x="8" y="300" width="150" height="28" rx="6"/><text x="20" y="319">面积</text>
+  <rect class="box" x="8" y="336" width="150" height="28" rx="6"/><text x="20" y="355">地形是否破碎</text>
+  <rect class="box" x="8" y="372" width="150" height="28" rx="6"/><text x="20" y="391">隔离程度</text>
+  <text x="8" y="424" class="small-t">（地质还直接决定有什么石料可做工具）</text>
+
+  <path class="arrow" d="M158,172 C180,172 180,196 198,200" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M158,208 L198,208" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M158,244 C180,244 180,220 198,216" marker-end="url(#ar2)"/>
+  <rect class="box" x="200" y="176" width="200" height="66" rx="8"/>
+  <text x="214" y="200" class="ttl" style="fill:var(--c1)">① 吃什么、能种多集约</text>
+  <text x="214" y="224">→ 人口密度</text>
+
+  <path class="arrow" d="M158,314 C180,314 180,338 198,342" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M158,350 L198,350" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M158,386 C180,386 180,362 198,358" marker-end="url(#ar2)"/>
+  <rect class="box" x="200" y="318" width="200" height="66" rx="8"/>
+  <text x="214" y="342" class="ttl" style="fill:var(--c2)">② 一个首领能管多大地方</text>
+  <text x="214" y="366">→ 一个政治单位的人数</text>
+
+  <path class="arrow" d="M400,209 C430,209 430,262 450,272" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M400,351 C430,351 430,298 450,288" marker-end="url(#ar2)"/>
+  <rect class="accent-soft" x="452" y="248" width="118" height="64" rx="10"/>
+  <text x="511" y="275" text-anchor="middle" class="ttl">密度 × 规模</text>
+  <text x="511" y="296" text-anchor="middle" class="small-t">缺一个会怎样？</text>
+
+  <path class="arrow" d="M570,262 C590,262 590,186 606,182" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M570,272 C590,272 590,232 606,230" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M570,288 C590,288 590,328 606,330" marker-end="url(#ar2)"/>
+  <path class="arrow" d="M570,298 C590,298 590,374 606,378" marker-end="url(#ar2)"/>
+  <rect class="ok-soft" x="608" y="164" width="164" height="36" rx="7"/><text x="620" y="187">经济：专业分工</text>
+  <rect class="ok-soft" x="608" y="212" width="164" height="36" rx="7"/><text x="620" y="235">社会：等级与通婚</text>
+  <rect class="ok-soft" x="608" y="312" width="164" height="36" rx="7"/><text x="620" y="335">政治：集权与征服</text>
+  <rect class="ok-soft" x="608" y="360" width="164" height="36" rx="7"/><text x="620" y="383">物质：纪念性建筑</text>
+  <text x="690" y="276" text-anchor="middle" class="small-t">一端：查塔姆</text>
+  <text x="690" y="294" text-anchor="middle" class="small-t">另一端：汤加、夏威夷</text>
+</svg>
+<figcaption>本站的归纳。上层是"实验"的设计；下层是作者描述的机制。注意中间那个乘号：读的时候想想，阿努塔和新西兰各缺了乘号两边的哪一个？读完后的玩具模型会回到这里。</figcaption>
+</figure>
+
+<h3>边读边填：作者用了哪些数字和例子？</h3>
+<p>这一章数字不多但很关键，后面的玩具模型会用到。<strong>边读边找</strong>，写个关键词就行（会自动保存在你的浏览器里）。行的顺序跟着上面的骨架图走（控制住的 → 变化的 → 两条传动带 → 观察到的两端），不是原书的顺序。</p>
+
+<div class="table-wrap">
+<table class="findit">
+  <thead><tr><th>环节</th><th>你找到的数字 / 例子</th><th>提示</th></tr></thead>
+  <tbody>
+    <tr><td>控制住的：祖先</td><td><input type="text" class="note" data-key="ch02-f4"></td><td class="hint">祖先从哪个群岛、哪一年出发？带了哪三种家畜？</td></tr>
+    <tr><td>控制住的：分家</td><td><input type="text" class="note" data-key="ch02-f2"></td><td class="hint">毛利人的祖先大约哪一年到新西兰？两群人可能有多少年互不往来？</td></tr>
+    <tr><td>变化的：环境</td><td><input type="text" class="note" data-key="ch02-f5"></td><td class="hint">作者列了哪六组环境差异？</td></tr>
+    <tr><td>① 人口密度</td><td><input type="text" class="note" data-key="ch02-f6"></td><td class="hint">各地每平方英里可耕地住多少人？最密的那个岛一共几个人？</td></tr>
+    <tr><td>② 政治单位</td><td><input type="text" class="note" data-key="ch02-f7"></td><td class="hint">最大的政治单位在哪里、有多少人？最小的有多少人？</td></tr>
+    <tr><td>一端：查塔姆</td><td><input type="text" class="note" data-key="ch02-f3"></td><td class="hint">那里是什么气候？最多养得活多少人？</td></tr>
+    <tr><td>另一端：夏威夷等</td><td><input type="text" class="note" data-key="ch02-f8"></td><td class="hint">夏威夷的酋长世系分几级？芋头田每英亩产多少吨？复活节岛的石像多重？最老的波利尼西亚社会有多少年？</td></tr>
+    <tr><td>1835 年的碰撞</td><td><input type="text" class="note" data-key="ch02-f1"></td><td class="hint">登岛的毛利人有多少？</td></tr>
+  </tbody>
+</table>
+</div>
+
+<details class="reveal"><summary>读完了？对照我找到的</summary><div>
+<ul>
+  <li>祖先：<strong>俾斯麦群岛</strong>，约<strong>公元前 1200 年</strong>；猪、鸡、狗</li>
+  <li>分家：约<strong>公元 1000 年</strong>（作者 1997 年采用的年代，见"体检"）；至多约 <strong>500 年</strong></li>
+  <li>环境：气候、地质类型、海洋资源、面积、地形破碎程度、隔离程度</li>
+  <li>密度：查塔姆 <strong>5</strong>、新西兰其余地区 <strong>28</strong>、汤加/萨摩亚/社会群岛 <strong>210–250</strong>、夏威夷 <strong>300</strong>、阿努塔 <strong>1100</strong>；<strong>160</strong> 人</li>
+  <li>政治单位：汤加，约 <strong>4 万</strong>人；几十人</li>
+  <li>查塔姆：寒冷；约 <strong>2000</strong> 人</li>
+  <li>另一端：<strong>8</strong> 级；<strong>24 吨</strong>/英亩；<strong>30 吨</strong>；<strong>3200 年</strong></li>
+  <li>碰撞：<strong>1835 年</strong>；约 <strong>900</strong> 人</li>
+</ul>
+</div></details>
+
+<div class="pause"><strong>到这里先停下，去读原书第 2 章</strong>（约 20 分钟），边读边填上面的表。<br>读完回来，从下面接着往下看——后半页是读完才有意思的部分。</div>
+
+<h2>玩具模型：你来当那个养老鼠的科学家</h2>
+
+<p>作者说，人类社会不能像老鼠一样分进不同的笼子做实验。但在一个<strong>玩具模型</strong>里可以：下面五个旋钮是本章的环境变量，模型按本章的传动链（密度 × 政治单位规模）给出一个社会形态。
+它有两个用处：一是让你亲手感受那个乘号；二是一个历史学家没有的特权——<strong>一次只改一个变量</strong>。用"记为对照组"按钮试试看。</p>
+
+<div class="exercise"><div class="q">先猜再玩：① 阿努塔的人口密度是全波利尼西亚最高的，比夏威夷高三倍多。按作者的逻辑，它会是最复杂的社会吗？② 查塔姆与新西兰北部是本章的"招牌对照"。在下面五个旋钮里，它们差了几个？</div>
+<details class="reveal"><summary>看答案</summary><div>
+<p>① 不会。阿努塔一共只有 <strong>160 人</strong>——密度再高，一个政治单位也就这么多人，养不起一个脱离生产的阶层。复杂程度要<strong>密度和规模都够</strong>。反过来，新西兰面积巨大、总人口超过 10 万，却因为人住得稀、始终没统一，也没到顶端。</p>
+<p>② 至少差两个：<strong>气候</strong>和<strong>面积</strong>（现实里还有隔离程度等更细的差别）。也就是说，连作者的招牌对照也不是"只差一个变量"的干净实验。作者凭什么把莫里奥里人回到狩猎采集主要归因于气候？"想一想"第 1 题会回到这里。</p>
+</div></details>
+</div>
+
+<section class="sim" id="sim-islands">
+  <div class="sim-head"><span class="tag">玩具模型</span><h3>同一批祖先，不同的岛</h3>
+    <div class="desc">选一个真实的岛作起点，或者自己拧旋钮。数字只为给你量级感，假设见下方提示。</div></div>
+  <div class="sim-body">
+    <div class="presets" id="presets"></div>
+    <div class="controls">
+      <label>气候 <select id="k-cl"><option value="trop">热带 / 亚热带</option><option value="temp">温带</option><option value="cold">寒冷（亚南极）</option></select></label>
+      <label>土壤与淡水 <select id="k-soil"><option value="atoll">环礁或抬升珊瑚岛：土薄、缺淡水</option><option value="low">土壤肥沃，但没有大河</option><option value="high">高岛，有常年河流可灌溉</option></select></label>
+      <label>可耕地面积 <input type="range" id="k-area" min="0" max="100" step="1" value="60"> <output id="k-area-o"></output></label>
+      <label>地形 <select id="k-ter"><option value="flat">平缓，往来方便</option><option value="frag">被陡峭山谷切碎</option></select></label>
+      <label>与邻近群岛 <select id="k-link"><option value="iso">孤立</option><option value="link">常来常往</option></select></label>
+    </div>
+    <div class="stage">
+      <div class="tier" id="tier"></div>
+      <div class="ladder" id="ladder"></div>
+      <div class="textfig" id="textfig"></div>
+    </div>
+    <div class="narrate" id="isl-narrate"></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="st-dens"></div><div class="l">人口密度（每平方英里可耕地）</div></div>
+      <div class="stat"><div class="v" id="st-total"></div><div class="l">全岛总人口</div></div>
+      <div class="stat"><div class="v" id="st-unit"></div><div class="l">一个政治单位的人数</div></div>
+    </div>
+    <div class="ctl-box">
+      <div class="row"><span class="lab">对照组</span><button id="ctl-set">把当前设置记为对照组</button><button id="ctl-clear">清除对照组</button></div>
+      <div id="ctl-narrate"></div>
+    </div>
+  </div>
+</section>
+
+<div class="tip">这是玩具模型，规则和简化如下。
+<strong>密度：</strong>寒冷 5、温带 28、热带"土肥无大河" 230（取原文 210–250 的中间）、热带"高岛可灌溉" 300，都来自原文；热带环礁的 60 是<strong>本站假设</strong>（原文只说那里密度最低）。
+<strong>政治单位：</strong>地形破碎时，一个单位最多管一个山谷（假设 10 平方英里）；人住得稀（每平方英里不到 100 人）时，一个首领最多管 50 平方英里（假设）；狩猎采集者按几十人一群算。地形平缓、密度高、单岛已过万人、又和邻近群岛常来往时，可以扩成跨群岛的单位（假设人数 ×4，对应原文汤加从"每岛一万多"到"帝国四万"）。
+<strong>社会形态：</strong>按政治单位人数分档（1000 人、10000 人两条线是本站划的），描述取自原文对各岛的刻画。
+<strong>预设：</strong>预设的面积是用原文人口数<strong>反推</strong>的示意值（比如查塔姆 2000 人 ÷ 5 = 400 平方英里），不是实测面积。阿努塔的真实密度（1100）远高于模型的 230，模型因此算出几十人而不是 160 人——极小的岛上那种把每一寸土地都改造成农田的集约，模型没有表达；但结论相同：单位太小，复杂不起来。
+模型也没有表达地质对石料的直接影响、海洋资源、家畜在长途航行中的损失，以及时间的长短。</div>
+
+<h2>二十多年后：体检与反方</h2>
+
+<p>这一章的骨架是一个方法，它本身没有过时；被新证据动过的，主要是<strong>年代</strong>和<strong>查塔姆故事里的细节</strong>。下面是本站的粗略体检（供你参考和反驳）：</p>
+
+<div class="cards">
+  <div class="card"><h4>莫里奥里人是毛利人的一支<span class="ev ev-strong">依然稳</span></h4><p>语言和器物都显示最后一批移民来自新西兰。19 世纪那种"莫里奥里人是毛利人之前的另一个种族"的说法，早已被学界否定。</p></div>
+  <div class="card"><h4>东波利尼西亚的定居年代<span class="ev ev-revised">被新证据改写</span></h4><p>2011 年《美国国家科学院院刊》的研究把社会群岛、新西兰等地的定居推迟了好几百年，见新证据 2。</p></div>
+  <div class="card"><h4>两群人"可能分开 500 年"<span class="ev ev-mixed">可能更短</span></h4><p>查塔姆有人定居，目前能测年的最早遗存约在 1500 年前后，有研究推测约 1450 年；到 1835 年两群人重逢，大约三四百年。</p></div>
+  <div class="card"><h4>环境 → 密度与规模 → 复杂程度<span class="ev ev-strong">依然稳</span></h4><p>本站的判断：这条机制仍是太平洋考古讨论社会复杂化的常用框架；作者后来还专门编了一本书推广这种比较，见下面第一条。</p></div>
+  <div class="card"><h4>1835 年的结局"很容易预测"<span class="ev ev-mixed">需要加注</span></h4><p>登岛的毛利人手里的枪、乘的船都来自和欧洲人的接触；莫里奥里人那时也已被外来疾病削弱，见反方 3。</p></div>
+  <div class="card"><h4>复活节岛文字可能晚于欧洲接触<span class="ev ev-mixed">有了反方向的证据</span></h4><p>2024 年《科学报告》测得一块朗格朗格木板的木材约为 15 世纪中叶，但测的是木头，不是刻字的时间。</p></div>
+</div>
+
+<div class="counter" data-title="作者自己 · 后来把这个方法编成了一本书">
+<p>2010 年，戴蒙德和政治学家罗宾逊（James A. Robinson，就是后记页里《国家为什么会失败》的作者之一）合编了《历史的自然实验》（Natural Experiments of History，哈佛大学出版社）。书里收了七项比较研究，第一篇就是考古学家基尔希（Patrick V. Kirch）写的波利尼西亚，题目叫《受控比较与波利尼西亚文化演化》（Controlled Comparison and Polynesian Cultural Evolution）——本章的方法，在专业研究里被继续用了下去；同一本书里还有阿西莫格鲁等人写的一章《从旧制度到资本主义》（From Ancien Régime to Capitalism）。</p>
+<p>更值得一读的是本书自己的<strong>收场白</strong>。作者在那里把自然实验的毛病直接列了出来：除了你关心的那个变量，<strong>别的变量也在跟着变</strong>（混杂）；从变量之间的相关推到因果链，也有风险。作者建议历史学向流行病学、生态学借方法——这两个学科也不能随便做实验，早就发展出一套处理这类问题的规矩。所以，下面"想一想"里对自然实验的追问，并不是在拆作者的台，而是在接着作者自己的话往下说。</p>
+</div>
+
+<div class="counter" data-title="新证据 2 · 定居时间表被压缩了（Wilmshurst 等，2011）">
+<p>作者写书时采用的时间表是：约公元前 1200 年从俾斯麦群岛出发，约公元 500 年大体完成，新西兰约公元 1000 年。2011 年，维尔姆斯赫斯特（Janet Wilmshurst）等人在《美国国家科学院院刊》（PNAS）发表了一项综合分析：他们筛查了东波利尼西亚 1434 个放射性碳年代，只保留最可靠的短寿命样本，结论是东波利尼西亚的定居分两步——先是社会群岛，约<strong>公元 1025–1120 年</strong>，比此前以为的晚了约四百年；然后在约<strong>公元 1190–1290 年</strong>一口气扩散到其余各群岛，包括夏威夷、复活节岛和新西兰。</p>
+<p>查塔姆群岛就更晚了：目前能测年的最早文化遗存约在 1500 年前后，有研究推测约 1450 年（新西兰 2021 年的莫里奥里人和解立法采用了更早的年代范围，可见这个年代至今没有定论）。</p>
+<p>这对本章是坏消息吗？恰恰相反：如果莫里奥里人和毛利人只分开了<strong>三四百年</strong>，就分化出狩猎采集的和平小社会与好战的农耕社会，那么"环境能在很短时间里塑造社会"这句话反而<strong>更有力</strong>了。注意这项研究只涉及东波利尼西亚；汤加、萨摩亚所在的西波利尼西亚不在它的范围内。</p>
+</div>
+
+<div class="counter" data-title="反方 3 · 1835 年的那场碰撞，已经不是「干净」的实验">
+<p>作者把 1835 年的结局当作两条分化路线的结果。但到了 1835 年，两边都已经被欧洲人改变过：</p>
+<ul>
+  <li><strong>毛利人这边：</strong>登岛的是新西兰北岛塔拉纳基一带的两个部族，那时已在惠灵顿一带生活了约十年。他们乘的是一艘被劫持的欧洲船，手里的枪来自和欧洲商人的交易。新西兰正处在"火枪战争"（Musket Wars）中：约 1806–1845 年间，毛利各部族之间打了成百上千场仗，死亡人数常见估计约两万，也有高达四万的估计。</li>
+  <li><strong>莫里奥里人这边：</strong>1791 年英国船"查塔姆号"到来后，海豹猎人和捕鲸人接踵而至，莫里奥里人赖以为生、又有宗教意义的海豹几乎被猎光；莫里奥里人口高峰时约两千人，此后海豹猎人、捕鲸人带来的疾病造成了不少死亡。</li>
+</ul>
+<p>所以，<strong>"分化"和"碰撞"要分开看</strong>：狩猎采集与农耕、和平传统（莫里奥里人把它归于先祖努努库的训诫）与好战传统，这些在欧洲人来之前就已形成，是本章自然实验真正要解释的；而 1835 年那几天的屠杀有多快、多彻底，还要算上火枪和船这些"外来变量"。作者本人也写到了枪和那艘带消息的海豹船，只是没有把它们当作需要单独剥离的因素。</p>
+</div>
+
+<h2>想一想</h2>
+
+<p>这几道题没有标准答案。先自己写几句，再展开"一种看法"——它只是一种看法，你完全可以不同意。</p>
+
+<div class="ponder">
+  <div class="q">1. 查塔姆和新西兰至少在气候、面积、隔离程度上都不一样。作者却主要把莫里奥里人回到狩猎采集归因于"气候"。在变量没法一个个分开的情况下，作者凭什么这样归因？</div>
+  <textarea class="note" data-key="ch02-p1" placeholder="提示：作者的理由是统计上的，还是别的什么？"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>作者用的不是"比较"，而是<strong>机制</strong>：波利尼西亚人所有的庄稼都是热带作物，在亚南极的气候里<strong>物理上就种不活</strong>。这一条单独就足以让农业消失，用不着面积和隔离来帮忙——就像查明了断电，就不必再统计"停电那天服务器温度高不高"。
+    作者还有第二条旁证：新西兰<strong>南岛南部</strong>同样寒冷，那里的人也回到了狩猎采集；而那里和北岛同属一个群岛、并不孤立。这相当于找到了一组"只有气候相同"的对照。</p>
+    <p>这给了一个很实用的思路：<strong>当对照组不干净时，可以用两样东西补救：一条清楚的机制，和第二组混杂方式不同的对照。</strong>两组比较各有各的混杂，但如果它们都指向同一个原因，这个原因就可信多了。</p>
+    <p>反过来也要警惕：机制故事讲得越顺，越容易让人忘了检查别的变量。面积和隔离对查塔姆社会的<strong>其他</strong>方面（人口上限、放弃战争）显然也起了作用——作者自己也是这么写的。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">2. 实验室里，老鼠被<strong>随机</strong>分进不同的笼子。波利尼西亚人却不是随机分到各岛的：谁去了哪个岛、去了多少人，本身可能就和后来的结果有关。这会不会动摇这个"实验"？</div>
+  <textarea class="note" data-key="ch02-p2" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>会，至少要打个折扣。随机分组的全部价值在于<strong>切断"谁进了哪组"和"结果"之间的联系</strong>。在波利尼西亚，偏远的小岛可能只有一两船人到达（有研究者推测查塔姆只有过一次登陆），带的家畜在路上死掉、带的人太少、某些手艺没有跟过来——这些都不是岛的环境造成的，却会被算到环境头上。作者其实注意到了这一点：书里提到偏远的岛上缺了某种家畜，部分原因就是长途航行时没能活下来。</p>
+    <p>但这个"实验"也有一个随机实验都难得的长处：<strong>出发时的差异非常小</strong>。整个东波利尼西亚是在很短时间里、由同一种文化的人定居的，语言、技术、作物几乎一样。分配不随机，但被分配的东西几乎一样，这就限制了"选择"能造成的差异有多大。</p>
+    <p>带走一个问法：<strong>看到任何"A 组比 B 组好"的比较，先问分组是怎么来的——是随机的、被安排的，还是自己选的？</strong>"用了新框架的团队交付更快"，可能只是因为愿意尝鲜的团队本来就更快。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">3. 作者在章末承认：波利尼西亚只证明了这种分化"能发生"。要让你相信它也在各大陆上发生过、而且是各大陆差距的主因，你还需要看到什么？</div>
+  <textarea class="note" data-key="ch02-p3" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>这是<strong>外部效度</strong>的问题：一个在小尺度上成立的结论，能不能搬到大尺度上？至少要检查三件事：<strong>机制是不是同一个</strong>（各大陆上也是"生计 → 密度与规模 → 复杂程度"吗？）；<strong>有没有新的变量在大尺度上才出现</strong>（比如大陆之间的传播、大陆轴线的方向——第 10 章）；<strong>尺度会不会改变强弱</strong>（岛上的"隔离"和大陆上的"隔离"不是一回事）。</p>
+    <p>作者的策略是<strong>多做几次不同的自然实验</strong>：全书后面会拿澳大利亚与新几内亚、欧亚与美洲、非洲内部、东亚与太平洋来回比较；收场白里还列了格陵兰的维京人、婆罗洲和爪哇等"回溯性检验"。单个比较各有漏洞，但如果漏洞的位置不同、结论却一致，整体就比任何一个更可信。</p>
+    <p>带走一个习惯：<strong>小规模验证通过之后，先问"放大以后机制还是同一个吗？"再上生产。</strong>在笔记本上跑得飞快的基准测试、在一个团队里很好用的流程，都是"波利尼西亚"。</p>
+  </div></details>
+</div>
+
+<h2>换个镜头看你熟悉的世界</h2>
+
+<p>这一章的方法，在工程世界里有非常贴切的对应物。试着把它们用到你自己的领域。</p>
+
+<div class="lens" data-title="工具一 · fork 是一场自然实验">
+<p>同一个代码库被 fork 成两个项目，几年后一个繁荣、一个停滞——这几乎就是波利尼西亚：<strong>同一个祖先</strong>（同样的代码、同样的架构、同样的历史包袱），散进<strong>不同的环境</strong>（不同的维护者、资金、用户群、许可证），然后看结果。</p>
+<p>但它也带着波利尼西亚的全部毛病：哪些开发者跟着走了，不是随机的（分组问题）；两个项目往往同时在许可证、治理方式、商业支持上都不一样（混杂）；而且通常只有这一对（样本太少）。下次有人用"某某 fork 赢了"来证明某种治理模式更好时，用本章的三个问题过一遍。</p>
+<textarea class="note" data-key="ch02-l1" placeholder="你知道哪一对「同源分家」的项目、产品或团队？两边除了你关心的那个差别，还差了什么？"></textarea>
+</div>
+
+<div class="lens" data-title="工具二 · 算规模，要算能被协调起来的那一块">
+<p>作者特意纠正了一个直觉：决定社会复杂程度的不是<strong>岛</strong>有多大，而是<strong>一个政治单位</strong>能凝聚多少人。马克萨斯的岛不小、人也不少，可是陡峭的山谷把它切成了一块块，每块只有几千人；汤加的岛不大，但地形平缓、彼此相近，最后拼出了一个四万人的帝国。</p>
+<p>公司也一样："我们有五千个工程师"不等于能做五千人规模的事。如果组织被部门墙、互不兼容的技术栈、各自为政的代码仓库切成了一个个"山谷"，真正能协调起来的单位可能只有几十人。反过来，一个不大但共享平台、沟通顺畅的组织，可能像汤加一样，凝聚出远超人数的力量。</p>
+<textarea class="note" data-key="ch02-l2" placeholder="你所在的组织里，真正能被协调起来做一件事的「政治单位」有多大？是什么在充当「陡峭的山谷」？"></textarea>
+</div>
+
+<h2>读完：回到你的赌注</h2>
+
+<details class="reveal"><summary>打开对照（建议读完原书这一章再打开）</summary><div class="payoff" data-bet="ch02">
+  <div class="mine"></div>
+  <p>作者选的是第二种：<strong>同一个祖先社会，散到环境不同的许多岛上</strong>。它的好处是把最容易混进来的那个变量——"人"——控制住了：祖先共享同一种语言、技术、作物和家畜，后来的差别就更有理由归到环境上。但作者自己也很清楚它的上限：</p>
+  <blockquote class="quote">But we thereby learn only that it can happen, because it happened in Polynesia.<cite>— 第 2 章，最后一段。本站译：但我们由此只知道它"能"发生，因为它在波利尼西亚发生过。</cite></blockquote>
+  <ul>
+    <li><strong>"同一块土地，先后两拨人"：</strong>这正是开场白里那个"看似有力"的种族论证用的设计。它的漏洞是：第二拨人不是空手来的，他们带来了在别的大陆积累的庄稼、牲畜、金属和国家组织——变的不只是"人"。第 15 章会正面处理。</li>
+    <li><strong>"所有国家的统计相关"：</strong>能发现规律，但混杂太多：殖民史、语言、宗教、制度都和地理纠缠在一起，还可能因果倒置。后记页里地理派和制度派的争论，很大一部分就卡在这里。</li>
+    <li><strong>"一个典型文明讲透"：</strong>细节再丰富，也缺一个对照：你不知道换个环境会怎样。一个案例只能告诉你"发生了什么"，很难告诉你"因为什么"。</li>
+    <li><strong>"只有实验才算数"：</strong>这一项的直觉是健康的——自然实验确实比随机实验弱。但如果坚持到底，天文学、地质学、流行病学的大部分结论也都不算数了。作者在收场白里的回答是：历史科学不能做实验，但可以用比较和自然实验，并像流行病学那样认真对付混杂。</li>
+  </ul>
+  <p>如果你押了第二项，再追问自己一步：上面"想一想"里的三个问题——混杂、分组、外推——它躲过了哪个，没躲过哪个？</p>
+</div></details>
+
+<p>最后，用你自己的话，一句话说出这一章：</p>
+<textarea class="note" data-key="ch02-oneline" placeholder="例如：同一群人，被岛的大小和冷暖推成了不同的社会……（写你自己的版本）"></textarea>
+
+<div class="hook">
+<p>第 2 章看的是同一个祖先社会分家几百年后的一场碰撞。下一章把尺度放大：两块分开了一万多年的大陆，在秘鲁高原上的一座小城里第一次正面相撞。</p>
+<p><strong>168 个西班牙人，怎么俘虏了一个手握八万大军的皇帝？</strong>先猜一猜：你会列出哪几个原因？哪一个最关键？带着你的清单去读第 3 章，看看作者列的和你差多少。</p>
+</div>
+
+</main>
+<script>
+(function () {
+  const { h } = GGS;
+  const $ = (id) => document.getElementById(id);
+  const DENS = { cold: 5, temp: 28 };
+  const SOIL_DENS = { atoll: 60, low: 230, high: 300 };
+  const TIERS = [
+    { zh: "游动的小群（狩猎采集）", d: "几十人一群；首领和大家一样打猎，靠商量做决定；没有余粮养专职的人。" },
+    { zh: "平等的小社会", d: "每家自给自足，几乎没有分工；首领住普通的房子，自己种地打鱼。" },
+    { zh: "有实权的酋长", d: "余粮养得起首领、祭司和兼职的战士；能征发劳力修礼仪场所和堡垒；和邻近的单位常年打仗。" },
+    { zh: "近乎国王的世袭酋长", d: "土地归酋长；平民要向高级酋长俯伏；有世袭的兼职工匠和官员；征发劳力修灌溉、鱼塘、神庙。" },
+    { zh: "跨群岛的原始帝国", d: "一个政治单位跨越几个群岛，用能载一百多人的大独木舟船队去征服、管理外岛。" },
+  ];
+  const SHORT = ["小群", "平等小社会", "酋长", "近乎国王", "原始帝国"];
+  const KNOBS = [
+    { k: "cl", zh: "气候", sel: "k-cl" }, { k: "soil", zh: "土壤与淡水", sel: "k-soil" },
+    { k: "area", zh: "可耕地面积" }, { k: "ter", zh: "地形", sel: "k-ter" }, { k: "link", zh: "与邻近群岛的往来", sel: "k-link" },
+  ];
+  const PRESETS = [
+    { key: "chatham", zh: "查塔姆", s: { cl: "cold", soil: "low", A: 400, ter: "flat", link: "iso" }, txt: "原文：每平方英里约 5 人；全群岛最多约 2000 人；几十人一群的狩猎采集者。" },
+    { key: "nz", zh: "新西兰北部", s: { cl: "temp", soil: "low", A: 3600, ter: "flat", link: "iso" }, txt: "原文：每平方英里约 28 人；超过 10 万人；农民分散，始终没有统一；有酋长、兼职战士和大量堡垒。" },
+    { key: "atoll", zh: "环礁", s: { cl: "trop", soil: "atoll", A: 3, ter: "flat", link: "iso" }, txt: "原文没给具体数字：土薄、缺淡水，密度最低，社会最平等。" },
+    { key: "anuta", zh: "阿努塔", s: { cl: "trop", soil: "low", A: 0.156, ter: "flat", link: "iso" }, txt: "原文：每平方英里约 1100 人（模型只给 230）；100 英亩上住 160 人，全岛就是一个政治单位。" },
+    { key: "easter", zh: "复活节岛", s: { cl: "trop", soil: "low", A: 30, ter: "flat", link: "iso" }, txt: "原文：约 7000 人；集约旱作、养鸡；由酋长征发劳力修神庙、立起 30 吨的石像。" },
+    { key: "marq", zh: "马克萨斯的一个大岛", s: { cl: "trop", soil: "high", A: 130, ter: "frag", link: "iso" }, txt: "原文：每个陡峭山谷是一个独立单位，几千人；山谷之间主要靠海路往来。" },
+    { key: "hawaii", zh: "夏威夷大岛", s: { cl: "trop", soil: "high", A: 110, ter: "flat", link: "iso" }, txt: "原文：每平方英里约 300 人；大岛各 3 万人以上；全群岛的统一要等到欧洲人到来之后。" },
+    { key: "tonga", zh: "汤加", s: { cl: "trop", soil: "low", A: 45, ter: "flat", link: "link" }, txt: "原文：每平方英里 210–250 人；每岛 1 万人以上；跨群岛的帝国约 4 万人，征服到 500 英里外。" },
+  ];
+
+  const toV = (A) => Math.round(20 * (Math.log10(A) + 1));
+  const toA = (v) => Math.pow(10, -1 + v / 20);
+  const st = { cl: "trop", soil: "high", A: 110, ter: "flat", link: "iso" };
+  let preset = null, control = null;
+
+  const pbtns = PRESETS.map((p) => {
+    const b = h("button", { "aria-pressed": "false", onclick: () => { Object.assign(st, p.s); preset = p; sync(); render(); } }, p.zh);
+    $("presets").append(b); return b;
+  });
+  KNOBS.filter((k) => k.sel).forEach((k) => $(k.sel).addEventListener("change", (e) => { st[k.k] = e.target.value; preset = null; render(); }));
+  $("k-area").addEventListener("input", (e) => { st.A = toA(+e.target.value); preset = null; render(); });
+  $("ctl-set").onclick = () => { control = { s: { ...st }, name: preset ? preset.zh : "你设的那一组", out: model(st) }; render(); };
+  $("ctl-clear").onclick = () => { control = null; render(); };
+
+  function sync() {
+    KNOBS.filter((k) => k.sel).forEach((k) => { $(k.sel).value = st[k.k]; });
+    $("k-area").value = toV(st.A);
+  }
+  const fmt = (n) => Math.round(n).toLocaleString("en");
+  function areaText(A) {
+    if (A < 1) return `约 ${fmt(A * 640)} 英亩`;
+    const r = A < 10 ? Math.round(A * 10) / 10 : A < 100 ? Math.round(A) : Math.round(A / 10) * 10;
+    return `约 ${r.toLocaleString("en")} 平方英里`;
+  }
+  function model(s) {
+    let dens, mode;
+    if (s.cl === "cold") { dens = DENS.cold; mode = "hg"; }
+    else if (s.cl === "temp") { dens = DENS.temp; mode = "farm"; }
+    else { dens = SOIL_DENS[s.soil]; mode = "farm"; }
+    const total = dens * s.A;
+    let unit, multi = false, limit;
+    if (mode === "hg") { unit = Math.min(total, 40); limit = "hg"; }
+    else {
+      let R = Infinity;
+      if (s.ter === "frag") { R = 10; limit = "frag"; }
+      else if (dens < 100) { R = 50; limit = "sparse"; }
+      const ua = Math.min(s.A, R);
+      if (ua === s.A) limit = "island";
+      unit = dens * ua;
+      if (s.link === "link" && s.ter === "flat" && dens >= 100 && unit >= 10000) { unit *= 4; multi = true; }
+    }
+    const tier = mode === "hg" ? 0 : multi ? 4 : unit < 1000 ? 1 : unit < 10000 ? 2 : 3;
+    return { dens, total, unit, tier, limit, multi, mode };
+  }
+  function diffs(a, b) {
+    const out = [];
+    if (a.cl !== b.cl) out.push("气候");
+    if ((a.cl === "trop" || b.cl === "trop") && a.soil !== b.soil) out.push("土壤与淡水");
+    if (Math.abs(Math.log10(a.A / b.A)) > 0.05) out.push("可耕地面积");
+    if (a.ter !== b.ter) out.push("地形");
+    if (a.link !== b.link) out.push("与邻近群岛的往来");
+    return out;
+  }
+  function render() {
+    pbtns.forEach((b, i) => b.setAttribute("aria-pressed", preset === PRESETS[i] ? "true" : "false"));
+    $("k-soil").disabled = st.cl !== "trop";
+    $("k-area-o").textContent = areaText(st.A);
+    const m = model(st);
+    const T = TIERS[m.tier];
+    $("tier").replaceChildren(h("span", {}, "社会形态：" + T.zh), h("small", {}, T.d));
+    $("ladder").replaceChildren(...SHORT.map((z, i) => h("span", { class: i === m.tier ? "on" : "" }, z)));
+    $("textfig").textContent = preset ? preset.txt : "（你在自己拧旋钮，没有对应的原文数字。）";
+    $("st-dens").textContent = fmt(m.dens);
+    $("st-total").textContent = fmt(m.total);
+    $("st-unit").textContent = m.mode === "hg" ? "几十人" : fmt(m.unit);
+    let msg;
+    if (m.mode === "hg") msg = "气候是一道闸门：波利尼西亚人带来的全是热带作物，在这里种不活，人们只能回到狩猎采集。不管你把面积、地形、往来怎么调，结果都一样——试试看。";
+    else {
+      msg = `人口密度每平方英里 ${fmt(m.dens)} 人，一个政治单位约 ${fmt(m.unit)} 人。`;
+      if (m.limit === "frag") msg += "陡峭的山谷把岛切成一块块，一个首领最多管得住一个山谷——岛再大、人再密也没用。";
+      else if (m.limit === "sparse") msg += "人住得稀，一个首领管不了太远，大岛也拼不成一个整体（新西兰就是这样）。";
+      else if (m.tier <= 1) msg += "岛太小：密度再高，全岛就这么些人，养不起一个脱离生产的阶层。";
+      else msg += "整个岛统一成了一个单位。";
+      if (m.multi) msg += "地形平缓、密度高、又和邻近群岛常来常往，统一的岛还能往外扩，拼成跨群岛的帝国。";
+      else if (m.tier === 3 && st.link === "iso") msg += "但群岛太孤立，只能在自家群岛里合并，扩不出去。";
+    }
+    $("isl-narrate").textContent = msg;
+
+    let c;
+    if (!control) c = "还没有对照组。先选一个预设（比如查塔姆），点「把当前设置记为对照组」，再去拧旋钮或换一个预设：这里会告诉你两边差了几个条件。";
+    else {
+      const d = diffs(control.s, st);
+      const a = TIERS[control.out.tier].zh, b = TIERS[m.tier].zh;
+      const res = a === b ? `结果没变，都是「${b}」。` : `结果从「${a}」变成了「${b}」。`;
+      if (d.length === 0) c = `对照组是「${control.name}」。现在的条件和它完全一样。改一个旋钮试试。`;
+      else if (d.length === 1) c = `和对照组「${control.name}」只差一个条件：${d[0]}。${res}这是一组干净的对照：结果的差别（或者没有差别）只能归到这一个条件上。实验室里天天这么做，历史上几乎找不到。`;
+      else c = `和对照组「${control.name}」差了 ${d.length} 个条件：${d.join("、")}。${res}单看这一组比较，你分不清是哪个条件起的作用——它们混在一起了（混杂，confounding）。在模型里，你可以把它们一个个改回去试；历史学家不能。`;
+    }
+    $("ctl-narrate").textContent = c;
+  }
+  sync();
+  render();
+})();
+</script>
+</body></html>

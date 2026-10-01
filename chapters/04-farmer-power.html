@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 章 · 农民的力量</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ggs.js"></script>
+<style>
+  .lanes { min-width: 660px; }
+  .lanes text { font-size: 13px; }
+  .lanes .lane-title { font-size: 13.5px; font-weight: 700; }
+  .lanes .small-t { font-size: 11.5px; fill: var(--muted); }
+  .land-pair { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .land { flex: 1 1 240px; max-width: 300px; text-align: center; font-size: 13.5px; color: var(--muted); }
+  .land svg { width: 100%; height: auto; display: block; }
+  .land .plot { fill: var(--surface); stroke: var(--border); }
+  .land .p { fill: var(--c8); }
+  .land .sp { fill: var(--c2); }
+  .land .hg { fill: var(--c3); }
+  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: -1px; margin: 0 4px 0 10px; }
+  .controls output { font-family: var(--mono); min-width: 3.5em; display: inline-block; color: var(--fg); }
+</style>
+</head>
+<body data-chapter="4">
+<main>
+
+<h2>读之前：先下注</h2>
+
+<div class="crux">种地的人凭什么打赢了打猎的人——而且在世界各地，几乎每一次都赢？</div>
+
+<p>第 3 章在卡哈马卡清点了西班牙人手里的牌：枪、钢刀、马、天花、文字、一个能组织远征的国家、能跨洋的船。
+那一章回答的是"<strong>怎么赢的</strong>"。从这一章开始，作者要回答"<strong>为什么是他们手里有这些牌</strong>"。</p>
+
+<p>这一章是全书的枢纽，也是全书最短的章之一。它只做一件事：宣布上面那些牌<strong>都能追溯到同一个源头——食物生产</strong>（food production，即驯化植物和动物）。
+如果你是程序员，可以把它看成整本书的<strong>接口声明</strong>：这里只写了"食物生产 → 一长串优势"的签名，具体实现分散在后面十章里——
+第 5–10 章解释"为什么各地食物生产有早有晚"，第 11–14 章分别展开病菌、文字、技术、国家。</p>
+
+<div class="bet" data-key="ch04">
+  <div class="q">如果只能押一个：农业给征服者带来的<em>最根本</em>的优势是什么？</div>
+  <div class="opts">
+    <button>人多：同样一块地能养活多得多的人</button>
+    <button>余粮：养得起不种地的全职士兵、官员、工匠</button>
+    <button>牲畜：马用来打仗和运输</button>
+    <button>病菌：从牲畜那里来的传染病</button>
+    <button>人本身：种地让人变得更勤劳、更有组织纪律</button>
+  </div>
+  <textarea class="note" data-key="ch04-bet" placeholder="为什么押它？一两句话就够。读完这一章再回来对照。"></textarea>
+</div>
+
+<h2>读这一章</h2>
+
+<p>中译本大约十几页，<strong>10 分钟左右，适合一口气读完</strong>。它几乎没有铺垫，就是一条一条地列"粮食 → 优势"的路径，所以读的时候最好手里有个清单。下面的填空表就是这个清单。</p>
+
+<div class="reading">
+  <ul>
+    <li><strong>开头的故事：</strong>作者用一个农场帮工醉后的一句咒骂开场。留意它把"拓荒英雄"的故事换到了另一边来看——一本解释"为什么赢家赢了"的书，为什么要从输家的视角起笔？（本页"想一想"会回到这个问题。）</li>
+    <li><strong>直接 vs 间接：</strong>作者列的路径分两种：一种是"更多卡路里"这样的直接效应，一种是"定居 → 能储存 → 养得起不种地的人"这样的间接效应。读的时候给每一条标上"直接"或"间接"。</li>
+    <li><strong>留意作者的措辞强度：</strong>大部分环节作者说得很肯定，但讲到马与印欧语扩张时用了"可能"这样留有余地的词（原文 may have been）。这恰好是二十多年后被新证据改写得最多的一环，见本页"证据"一节。</li>
+    <li><strong>图 4.1</strong> 是全书唯一一张"总地图"，值得多看一会儿。本站每章顶部的因果链是按同一思路重新画的简化版。</li>
+  </ul>
+</div>
+
+<div class="key"><strong>这一章是承重墙。</strong>如果"食物生产是枪炮、病菌、钢铁的前提"不成立，那么后面整整六章（第 5–10 章，全书近三分之一）讨论"食物生产为什么各地早晚不同"就失去了意义。所以这一章值得带着挑剔的眼光读：每一环都问一句"真的吗？有没有反例？"</div>
+
+<h2>论证骨架：三条通道</h2>
+
+<p>作者是一条一条列出来的。读完回头看，这些路径其实可以归成<strong>三条通道</strong>：人数、组织、动物。这是本站的归纳，不是书里的分法——你读完也可以有自己的分法。</p>
+
+<figure class="fig">
+<svg class="lanes" viewBox="0 0 780 330" width="780" role="img" aria-label="食物生产通过人数、组织、动物三条通道带来征服优势">
+  <defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+  <rect class="accent-soft" x="8" y="120" width="128" height="86" rx="10"/>
+  <text x="72" y="152" text-anchor="middle" class="lane-title">食物生产</text>
+  <text x="72" y="172" text-anchor="middle" class="small-t">驯化的植物</text>
+  <text x="72" y="188" text-anchor="middle" class="small-t">+ 驯化的动物</text>
+
+  <!-- 通道 1：人数 -->
+  <path class="arrow" d="M136,140 C160,60 170,52 190,52" marker-end="url(#ar)"/>
+  <rect class="box" x="192" y="22" width="410" height="62" rx="8"/>
+  <text x="206" y="44" class="lane-title" style="fill:var(--c1)">① 人数</text>
+  <text x="206" y="66">每亩可吃的热量多 → 密度高 10–100 倍；定居 → 生育间隔变短</text>
+  <!-- 通道 2：组织 -->
+  <path class="arrow" d="M136,163 L190,163" marker-end="url(#ar)"/>
+  <rect class="box" x="192" y="118" width="410" height="90" rx="8"/>
+  <text x="206" y="140" class="lane-title" style="fill:var(--c2)">② 组织</text>
+  <text x="206" y="162">定居 → 能储存 → 余粮 → 养活不种地的人：</text>
+  <text x="206" y="184">首领与官僚 · 职业士兵 · 祭司 · 工匠 · 书吏</text>
+  <text x="206" y="200" class="small-t">→ 第 14 章（国家）· 第 13 章（技术）· 第 12 章（文字）</text>
+  <!-- 通道 3：动物 -->
+  <path class="arrow" d="M136,186 C160,270 170,274 190,274" marker-end="url(#ar)"/>
+  <rect class="box" x="192" y="242" width="410" height="66" rx="8"/>
+  <text x="206" y="264" class="lane-title" style="fill:var(--c3)">③ 动物</text>
+  <text x="206" y="286">奶、粪肥、拉犁、纤维、驮运、战马；以及牲畜传来的病菌</text>
+  <text x="206" y="302" class="small-t">→ 第 9 章（为什么只有这几种动物）· 第 11 章（病菌）</text>
+
+  <path class="arrow" d="M602,53 C640,53 640,150 668,158" marker-end="url(#ar)"/>
+  <path class="arrow" d="M602,163 L668,163" marker-end="url(#ar)"/>
+  <path class="arrow" d="M602,275 C640,275 640,176 668,168" marker-end="url(#ar)"/>
+  <rect class="ok-soft" x="670" y="128" width="102" height="70" rx="10"/>
+  <text x="721" y="158" text-anchor="middle" class="lane-title">征服</text>
+  <text x="721" y="178" text-anchor="middle" class="small-t">的优势</text>
+</svg>
+<figcaption>本站的归纳：食物生产通过三条通道变成征服的优势。② 是后面三章的起点，③ 牵出第 9、11 章。</figcaption>
+</figure>
+
+<h3>边读边填：作者给每一环举了什么例子？</h3>
+<p>下面每一环，作者都给了一个具体的例子或数字。<strong>边读边把它找出来</strong>，写个关键词就行（会自动保存在你的浏览器里）。行的顺序按上图的三条通道排，不是原书的顺序。找例子会逼你放慢一点，而且你会发现：真正让一个论证有说服力的，往往就是这些例子。</p>
+
+<div class="table-wrap">
+<table class="findit">
+  <thead><tr><th>环节</th><th>你找到的例子 / 数字</th><th>提示</th></tr></thead>
+  <tbody>
+    <tr><td>① 更多热量 → 更多人</td><td><input type="text" class="note" data-key="ch04-f1"></td><td class="hint">同一块地，农牧民的人口密度是狩猎采集者的几倍？</td></tr>
+    <tr><td>① 定居 → 生得更密</td><td><input type="text" class="note" data-key="ch04-f2"></td><td class="hint">游动的狩猎采集者，生育间隔大约几年？许多农业人群呢？</td></tr>
+    <tr><td>② 储存 → 首领</td><td><input type="text" class="note" data-key="ch04-f4"></td><td class="hint">哪两处不种地、却也定居储粮、出了首领的人群？</td></tr>
+    <tr><td>② 余粮 → 职业军队</td><td><input type="text" class="note" data-key="ch04-f5"></td><td class="hint">哪一场殖民战争：原住民赢了战斗，却输了战争？对手有多少全职士兵？</td></tr>
+    <tr><td>③ 牲畜拉犁</td><td><input type="text" class="note" data-key="ch04-f3"></td><td class="hint">哪一支欧洲最早的农民文化，起初只能种松软的土？北美哪一片土地要等到 19 世纪？</td></tr>
+    <tr><td>③ 非食用的用途</td><td><input type="text" class="note" data-key="ch04-f6"></td><td class="hint">美洲最早栽培的植物之一，不是拿来吃的：是哪一种？</td></tr>
+    <tr><td>③ 战马</td><td><input type="text" class="note" data-key="ch04-f7"></td><td class="hint">骑马的人征服没有马的人，书里举了哪几群人？</td></tr>
+    <tr><td>③ 病菌</td><td><input type="text" class="note" data-key="ch04-f8"></td><td class="hint">哪几种病？在没接触过的人群里，死亡率最高到百分之几？</td></tr>
+  </tbody>
+</table>
+</div>
+
+<details class="reveal"><summary>读完了？对照我找到的</summary><div>
+<ul>
+  <li>① 热量：<strong>10–100 倍</strong></li>
+  <li>① 生育：约 <strong>4 年</strong> / 约 <strong>2 年</strong></li>
+  <li>② 首领：<strong>北美西北海岸</strong>、<strong>厄瓜多尔海岸</strong>（"想一想"第 3 题会用到）</li>
+  <li>② 军队：<strong>新西兰毛利战争</strong>；<strong>18000</strong> 名英军</li>
+  <li>③ 拉犁：<strong>线纹陶文化（Linearbandkeramik）</strong>；北美大平原的高地</li>
+  <li>③ 非食用：<strong>葫芦（bottle gourd）</strong></li>
+  <li>③ 战马：印欧语使用者、希克索斯人、匈人、蒙古人；皮萨罗、科尔特斯</li>
+  <li>③ 病菌：天花、麻疹、流感；<strong>99%</strong></li>
+</ul>
+</div></details>
+
+<div class="pause"><strong>到这里先停下，去读原书第 4 章</strong>（约 10 分钟），边读边填上面的表。<br>读完回来，从下面接着往下看——后半页是读完才有意思的部分。</div>
+
+<h2>玩具模型：对手不是农民，是农民"多出来的人"</h2>
+
+<p>"人多"和"有余粮"听起来是两条平平无奇的理由。把它们<strong>乘在一起</strong>，才看得出分量。下面是一个故意简化的模型：同样 1000 平方公里的土地，一边住着狩猎采集者，一边住着农民。</p>
+
+<div class="exercise"><div class="q">先猜再玩：如果农民的人口密度是狩猎采集者的 30 倍，而每个种地的人除了养活自己，只能<strong>多养活 10%</strong> 个人（余粮很薄），那么这块地上"完全不用种地的人"有多少？比整个狩猎采集群体多还是少？</div>
+<details class="reveal"><summary>看答案</summary><div>
+<p>约 <strong>545 人</strong>，是整个狩猎采集群体（200 人，含老人和孩子）的 2.7 倍。算法：总人口 200 × 30 = 6000；每个生产者养活 1.1 人，所以生产者约 5455 人，其余 545 人可以全职做别的事。</p>
+<p>这就是本节标题的意思：<strong>狩猎采集者面对的不是一村农民，而是农民"多出来的人"——这些人不必打猎，可以全年在外打仗。</strong>毛利战争的结局就是这个逻辑。</p>
+</div></details>
+</div>
+
+<section class="sim" id="sim-surplus">
+  <div class="sim-head"><span class="tag">玩具模型</span><h3>同一块地，两种活法</h3>
+    <div class="desc">拖动两个滑块。每个点代表 50 人；橙色点是"不用种地的人"，它们会聚在中间，像一座城镇。</div></div>
+  <div class="sim-body">
+    <div class="controls">
+      <label>农民的人口密度是狩猎采集者的 <input type="range" id="dens" min="5" max="100" step="5" value="30"> <output id="dens-o"></output></label>
+      <label>余粮率（每个生产者多养活几成人） <input type="range" id="surp" min="0" max="50" step="1" value="10"> <output id="surp-o"></output></label>
+    </div>
+    <div class="stage"><div class="land-pair">
+      <div class="land"><svg id="land-hg" viewBox="0 0 260 260"></svg>狩猎采集者</div>
+      <div class="land"><svg id="land-fa" viewBox="0 0 260 260"></svg>农民
+        <div class="small"><span class="legend-dot" style="background:var(--c8)"></span>种地的人<span class="legend-dot" style="background:var(--c2)"></span>不用种地的人</div></div>
+    </div></div>
+    <div class="narrate" id="sim-narrate"></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="st-hg">200</div><div class="l">狩猎采集群体总人口</div></div>
+      <div class="stat"><div class="v" id="st-pop"></div><div class="l">农耕社会总人口</div></div>
+      <div class="stat"><div class="v" id="st-sp"></div><div class="l">全职不种地的人</div></div>
+      <div class="stat"><div class="v" id="st-ratio"></div><div class="l">是整个狩猎群体的几倍</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="tip">这是玩具模型，数字只为给你一个量级感：狩猎采集密度按每平方公里 0.2 人假设，余粮假设平均分摊、年年稳定。
+真实的早期农业社会余粮很薄、年景波动大，而且余粮<strong>先被谁拿走</strong>是个大问题——那是第 14 章"盗贼统治"的主题。</div>
+
+<h2>二十多年过去，这条链还结实吗？</h2>
+
+<p>原书出版于 1997 年。之后考古学、古 DNA、人类学都有大量新发现。读一本社科书的乐趣之一，就是把它当作一个<strong>可以被检验的假说</strong>，而不是一份标准答案。下面按环节给一个粗略的"体检报告"（本站的判断，供你参考和反驳）：</p>
+
+<div class="cards">
+  <div class="card"><h4>农耕养活的人多得多<span class="ev ev-strong">依然稳</span></h4><p>人口密度高一到两个数量级，几乎没有争议。</p></div>
+  <div class="card"><h4>定居缩短生育间隔<span class="ev ev-mixed">方向对，数字因群体而异</span></h4><p>"4 年 vs 2 年"主要来自少数被深入研究的群体；狩猎采集人群之间差别不小。</p></div>
+  <div class="card"><h4>余粮 → 专职人员<span class="ev ev-strong">依然稳</span></h4><p>大规模的专职阶层离不开可储存的余粮。</p></div>
+  <div class="card"><h4>余粮 → 必然出现首领<span class="ev ev-mixed">受到挑战</span></h4><p>有些大型定居点看不出明显的统治者，"有余粮就会有国王"不是自动的。</p></div>
+  <div class="card"><h4>马在古代战争中的作用<span class="ev ev-strong">依然稳</span></h4><p>战车、骑兵时代的例子都站得住。</p></div>
+  <div class="card"><h4>骑马推动早期印欧语扩张<span class="ev ev-revised">被新证据改写</span></h4><p>古 DNA 显示时间对不上，见下面第四条。</p></div>
+</div>
+
+<div class="counter" data-title="反方 1 · 来自作者自己：农业是「人类历史上最大的错误」">
+<p>早在 1987 年，戴蒙德就在《发现》（Discover）杂志上发表过一篇著名短文《人类历史上最大的错误》（The Worst Mistake in the History of the Human Race）。
+文中引用古病理学的证据：早期农民比他们的狩猎采集祖先<strong>更矮、蛀牙更多、营养不良的痕迹更多</strong>，还带来了阶级和性别上的不平等。</p>
+<p>这和第 4 章并不矛盾，但它提醒你注意这一章悄悄换掉的一个词：本章讲的是<strong>力量</strong>（谁能打赢谁），不是<strong>福祉</strong>（谁过得好）。"想一想"第 1 题会追问这一点。</p>
+</div>
+
+<div class="counter" data-title="反方 2 · 詹姆斯·斯科特《反谷》（Against the Grain, 2017）">
+<p>斯科特同意"储存 → 税收 → 国家"这条机制，甚至把它说得更具体：谷物特别适合被收税——<strong>长在地面上看得见、同一时间成熟、能量、能存</strong>。
+但斯科特把它从一个"进步"的故事改写成一个"被捕获"的故事：早期国家很脆弱，经常崩溃，很多人想方设法逃离国家；而且在美索不达米亚，人们定居下来要比形成国家早上好几千年。</p>
+<p>对你读本书的意义：作者描述的机制可能是对的，但<strong>对这个机制的评价</strong>可以完全相反。</p>
+</div>
+
+<div class="counter" data-title="反方 3 · 格雷伯与温格罗《人类新史》（The Dawn of Everything, 2021）">
+<p>这本书挑战的是"余粮 → 首领 → 国家"的必然性：土耳其的哥贝克力石阵（Göbekli Tepe）是<strong>狩猎采集者</strong>在约公元前 9500 年建起来的；
+乌克兰的特里波利（Trypillia）超大型聚落据估计可能住过上万人，却看不出明显的宫殿或统治者。两位作者认为人类在政治形式上一直有选择，而不是被经济阶段推着走。</p>
+<p>注意：这本书本身也有不少争议，很多考古学家认为它挑了对自己有利的案例。把它当作"另一种读法"，而不是"新的标准答案"。</p>
+</div>
+
+<div class="counter" data-title="新证据 4 · 古 DNA 与马">
+<p>作者推测，约公元前 4000 年骑马可能是印欧语使用者从乌克兰向西扩张的关键。2021 年和 2024 年发表在《自然》（Nature）上的两项大型古马 DNA 研究认为：
+现代家马的祖先谱系大约在<strong>公元前 2200 年前后</strong>才在黑海–里海草原西部出现，随后迅速扩散；而草原人群（颜那亚，Yamnaya）大规模西迁发生在约<strong>公元前 3000 年</strong>，早于这次扩散。
+颜那亚人到底骑不骑马，学界仍在争论；他们的迁徙可能更多靠牛车。</p>
+<p>值得欣赏的是作者当年用了"可能"——<strong>好的作者会标出自己最没把握的地方</strong>。这也是读社科书时最该留意的信号。</p>
+</div>
+
+<h2>想一想</h2>
+
+<p>这几道题没有标准答案。先自己写几句，再展开"一种看法"——它只是一种看法，你完全可以不同意。</p>
+
+<div class="ponder">
+  <div class="q">1. "赢"是什么意思？作者 1987 年说农业是人类最大的错误，1997 年又说农业给了征服者力量。这两个说法能同时成立吗？如果能，说明了什么？</div>
+  <textarea class="note" data-key="ch04-p1" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>能同时成立，因为它们回答的是两个不同层面的问题：一个是<strong>个人过得好不好</strong>，一个是<strong>群体之间谁能压倒谁</strong>。
+    一种让每个人都过得更辛苦的生活方式，只要它能养活更多的人、养得起职业军队，在群体竞争里照样会胜出、会扩散。一旦邻居们都种地了，你想退回去打猎也退不回去了——土地已经被占满了。</p>
+    <p>带走一句话：<strong>在竞争中胜出的东西，不一定是让人过得好的东西。</strong>这个结构在很多地方都能看到：军备竞赛、内卷、某些"赢家通吃"的技术标准。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">2. 这是一本解释"为什么欧亚人赢了"的书，作者却从一个失去土地的原住民的咒骂开始。这样开头，想达到什么效果？</div>
+  <textarea class="note" data-key="ch04-p2" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>它先把读者从"拓荒英雄"的叙事里拽出来，提醒你：同一件事，一边是骄傲的家族史，一边是被夺走的土地。全书的立场是<strong>解释胜负，但不为胜负辩护</strong>——
+    赢家赢，不是因为他们这群人更好，而是因为他们的祖先碰巧站在一块更好的地方（开场白已经亮明了这个立场）。</p>
+    <p>也有批评者认为：即便如此，全书的问题仍然是从赢家的角度提出的——"为什么是我们赢了"。读到后面的地区章节时，可以留意作者有没有真正从被征服者的角度看问题。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">3. 北美西北海岸的狩猎采集者定居、储粮、出现了酋长，却没有走到王国。这个例外是削弱了作者的论证，还是反而加强了它？</div>
+  <textarea class="note" data-key="ch04-p3" placeholder="提示：作者说的是'食物生产是必要条件'，还是'食物生产必然导致……'？"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>关键是分清<strong>必要条件</strong>和<strong>充分条件</strong>。作者的主张更接近"大规模的余粮是走向王国的必要条件"。西北海岸的人群靠极其丰富的鲑鱼和储存做到了一部分（定居、等级、酋邦），
+    但规模到了一定程度就停住了——这和"必要条件"的说法是相容的，甚至帮作者把变量说得更准：<strong>关键不是"种地"本身，而是"能大量储存的余粮"</strong>，农业只是获得它的最常见途径。</p>
+    <p>反过来，格雷伯和温格罗会拿同一个例子说明：有了余粮，人们也可以<strong>选择</strong>不走向王国。同一个反例，两种读法——这正是社科争论的常态。</p>
+    <p>以后遇到"反例"时，先问一句：<strong>它打的是必要性，还是充分性？</strong>这一个问题就能帮你过滤掉很多无效的争论。</p>
+  </div></details>
+</div>
+
+<h2>换个镜头看你熟悉的世界</h2>
+
+<p>这一章最值得带走的不是某个史实，而是两个思维工具。试着把它们用到你自己的领域。</p>
+
+<div class="lens" data-title="工具一 · 终极原因 vs 直接原因（ultimate vs proximate causes）">
+<p>枪和马是卡哈马卡的<strong>直接原因</strong>；食物生产以及更底层的地理是<strong>终极原因</strong>。全书本质上就是一次跨越一万三千年的"五个为什么"（5 Whys）。</p>
+<p>你一定写过或读过线上事故的复盘：直接原因往往是"某人推了一个错误配置"，终极原因却可能是"没有灰度发布""评审流程只看代码不看配置"。
+只修直接原因，同样的事会换个样子再发生。</p>
+<textarea class="note" data-key="ch04-l1" placeholder="想一个你经历过的失败（项目、团队、产品都行），分别写下它的直接原因和终极原因。"></textarea>
+</div>
+
+<div class="lens" data-title="工具二 · 余粮养活专职">
+<p>只有有"余粮"的组织才养得起不直接产出的人：编译器团队、基础设施团队、研究院、专职的安全团队。
+三个人的创业公司里，每个人都得"打猎"——写功能、拉客户；大公司能养一支常年"在野外作战"的队伍，这往往才是它真正的优势，而不是某个人更聪明。</p>
+<textarea class="note" data-key="ch04-l2" placeholder="你待过的组织里，'余粮'养了哪些专职的人？他们后来成了战斗力，还是成了负担？（第 14 章会讲余粮的另一面：被谁拿走。）"></textarea>
+</div>
+
+<h2>读完：回到你的赌注</h2>
+
+<details class="reveal"><summary>打开对照（建议读完原书这一章再打开）</summary><div class="payoff" data-bet="ch04">
+  <div class="mine"></div>
+  <p>作者没有给出单一答案——这一章的论点恰恰是<strong>这些优势是一串连锁反应</strong>，而不是某一张王牌。但如果细读措辞：作者把马称为对征服<em>最直接</em>的贡献，把病菌说成<em>同样重要</em>；
+  而最底层、带动其他一切的，是"更多的人 + 可储存的余粮"——后面讲文字、技术、国家的三章，全都从这里出发。</p>
+  <blockquote class="quote">…whose military role made them the jeeps and Sherman tanks of ancient warfare on that continent.<cite>— 第 4 章，谈欧亚大陆的马。本站译：马在战争中的作用，使它们成了那块大陆上古代战争的吉普车和谢尔曼坦克。</cite></blockquote>
+  <p>如果你押的是最后一项"人本身"：请记住，全书从开场白开始就在<strong>反对</strong>用"某些人群天生或文化上更优秀"来解释历史。到第 8 章，作者会正面处理"是不是那里的人不行"这个问题，看看你会不会被说服。</p>
+</div></details>
+
+<p>最后，用你自己的话，一句话说出这一章：</p>
+<textarea class="note" data-key="ch04-oneline" placeholder="例如：农业让人过得更苦，却让群体更强……（写你自己的版本）"></textarea>
+
+<div class="hook">
+<p>如果食物生产这么厉害，为什么它没有在世界各地同时出现？<strong>全世界只有寥寥几个地方独立发明了农业</strong>，其余地方都是学来的，或者根本没有。</p>
+<p>先猜一猜：你觉得有几个地方？大概在哪里？第 5 章会给出答案——带着你的猜测去读。</p>
+</div>
+
+</main>
+<script>
+(function () {
+  const { s } = GGS;
+  const AREA = 1000, HG_DENS = 0.2, PER_DOT = 50;
+  const HG = AREA * HG_DENS; // 200 人
+  const G = 20, STEP = 12.4, OFF = 12.2; // 20×20 的格子，每格一个点（最多 400 点 = 20000 人）
+  // 格子顺序：不种地的人从中心往外排（像一座城镇）；种地的人按固定的伪随机顺序散开
+  const cells = [];
+  for (let r = 0; r < G; r++) for (let c = 0; c < G; c++) cells.push({ r, c });
+  let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const town = cells.map((p) => ({ p, d: Math.hypot(p.r - 9.5, p.c - 9.5) + rnd() * 1.6 })).sort((a, b) => a.d - b.d).map((x) => x.p);
+  const scatter = cells.map((p) => ({ p, k: rnd() })).sort((a, b) => a.k - b.k).map((x) => x.p);
+
+  const hgSvg = document.getElementById("land-hg"), faSvg = document.getElementById("land-fa");
+  hgSvg.append(s("rect", { class: "plot", x: 2, y: 2, width: 256, height: 256, rx: 8 }));
+  [[60, 70], [190, 52], [96, 196], [205, 180]].forEach(([x, y]) => hgSvg.append(s("circle", { class: "hg", cx: x, cy: y, r: 5 })));
+  hgSvg.append(s("text", { x: 130, y: 132, "text-anchor": "middle", class: "t-muted", "font-size": 12, text: "4 个点 = 200 人" }));
+
+  const dens = document.getElementById("dens"), surp = document.getElementById("surp");
+  const fmt = (n) => Math.round(n).toLocaleString("en");
+  function render() {
+    const m = +dens.value, sr = +surp.value / 100;
+    document.getElementById("dens-o").textContent = m + " 倍";
+    document.getElementById("surp-o").textContent = Math.round(sr * 100) + "%";
+    const pop = HG * m;
+    const spec = pop * sr / (1 + sr);
+    const nDots = Math.round(pop / PER_DOT), nSp = Math.round(spec / PER_DOT);
+    faSvg.replaceChildren(s("rect", { class: "plot", x: 2, y: 2, width: 256, height: 256, rx: 8 }));
+    const used = new Set();
+    const dot = (p, cls) => { used.add(p.r * G + p.c); faSvg.append(s("circle", { class: cls, cx: OFF + p.c * STEP, cy: OFF + p.r * STEP, r: 4.2 })); };
+    town.slice(0, nSp).forEach((p) => dot(p, "sp"));
+    let left = nDots - nSp;
+    for (const p of scatter) { if (left <= 0) break; if (used.has(p.r * G + p.c)) continue; dot(p, "p"); left--; }
+    document.getElementById("st-pop").textContent = fmt(pop);
+    document.getElementById("st-sp").textContent = fmt(spec);
+    const ratio = spec / HG;
+    document.getElementById("st-ratio").textContent = ratio < 0.05 ? "0" : ratio.toFixed(ratio < 10 ? 1 : 0);
+    let msg;
+    if (sr === 0) msg = `没有余粮时，${fmt(pop)} 个农民全都得下地。人虽然多，却没有一个人能全年专职打仗——这时农民的优势只剩"人多"这一条。`;
+    else if (ratio < 1) msg = `余粮还很薄：全职不种地的只有 ${fmt(spec)} 人，比整个狩猎采集群体还少。不过别忘了，狩猎采集群体的 200 人里，能打仗的成年男子大概只有四分之一，而且他们也得停下来打猎。`;
+    else msg = `全职不种地的人有 ${fmt(spec)} 个，是整个狩猎采集群体（连老人孩子在内）的 ${ratio.toFixed(1)} 倍。他们不必打猎，可以全年在外作战、打造武器、记录账目——狩猎采集者面对的，其实是农民"多出来的人"。`;
+    document.getElementById("sim-narrate").textContent = msg;
+  }
+  dens.addEventListener("input", render);
+  surp.addEventListener("input", render);
+  render();
+})();
+</script>
+</body></html>

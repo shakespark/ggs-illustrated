@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 9 章 · 斑马、不幸福的婚姻与安娜·卡列尼娜原则</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ggs.js"></script>
+<style>
+  .suspects { min-width: 680px; }
+  .suspects text { font-size: 13px; }
+  .suspects .ttl { font-size: 13.5px; font-weight: 700; }
+  .suspects .small-t { font-size: 11.5px; fill: var(--muted); }
+  .suspects .x { font-size: 22px; font-weight: 700; fill: var(--bad); }
+  /* 驯化的筛子 */
+  .rbtns { display: flex; flex-wrap: wrap; gap: 6px; }
+  .rbtn[aria-pressed="true"] { border-color: var(--bad); background: var(--bad-soft); color: var(--fg); font-weight: 600; }
+  .rbtn[aria-pressed="true"]::before { content: "✓ "; color: var(--bad); }
+  .sieve { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+  .cont { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+  .cont h4 { margin: 0 0 6px; font-size: 14.5px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .cont h4 small { color: var(--muted); font-weight: 400; font-size: 12.5px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .chip { font-size: 12.5px; padding: 2px 7px; border-radius: 999px; line-height: 1.4; }
+  span.chip { border: 1px solid var(--border); display: inline-block; }
+  .chip.pass { border-color: var(--ok); background: var(--ok-soft); }
+  .chip.wait { border-style: dashed; }
+  .chip.unk::after { content: " ?"; color: var(--muted); }
+  .chip.out { border-color: transparent; background: var(--bad-soft); color: var(--bad); text-decoration: line-through; }
+  .chip.sel { box-shadow: 0 0 0 2px var(--accent); }
+  .dots { display: flex; flex-wrap: wrap; gap: 3px; min-height: 10px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--faint); transition: opacity .25s; }
+  .dot.out { opacity: .15; }
+  .cont .foot { font-size: 12.5px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .legend { font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
+  .legend .chip { pointer-events: none; }
+  .ak-card { margin-top: 12px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; background: var(--surface); font-size: 14px; }
+  .ak-card h4 { margin: 0 0 4px; font-size: 15px; }
+  .ak-card .rows { display: grid; grid-template-columns: max-content max-content 1fr; gap: 2px 12px; margin: 6px 0; }
+  .ak-card .ok { color: var(--ok); font-weight: 700; }
+  .ak-card .bad { color: var(--bad); font-weight: 700; }
+  .ak-card .na { color: var(--muted); }
+  .ak-card p { margin: 6px 0 0; color: var(--muted); }
+  @media (max-width: 560px) { .sim .sep { display: none; } }
+</style>
+</head>
+<body data-chapter="9">
+<main>
+
+<h2>读之前：先下注</h2>
+
+<div class="crux">世界上那么多大型哺乳动物，为什么被驯化的只有区区十几种——而且几乎全在欧亚大陆？</div>
+
+<p>第 7、8 章讲的是植物：为什么有的野生植物变成了庄稼，有的地方却凑不齐一套好庄稼。这一章把同一个问题换到动物身上。
+第 8 章的问题是"<strong>是苹果的问题，还是印第安人的问题</strong>"，到这里变成了"<strong>是斑马的问题，还是非洲人的问题</strong>"。</p>
+
+<p>这一环在全书因果链里分量很重。第 4 章说过，大型家畜提供肉、奶、粪肥、拉犁、驮运、战马，还有后来杀死美洲原住民的病菌。
+如果欧亚大陆手里有马、牛、羊、猪，而撒哈拉以南非洲、美洲、澳大利亚几乎什么都没有，那么卡哈马卡的马和天花，都要追溯到这一章。
+第 11 章（牲畜的病菌）、第 18 章（两个半球逐项对比）、第 19 章（非洲）都会直接引用这里的结论。</p>
+
+<p>这一章还贡献了全书最有名的一个思维工具：<strong>安娜·卡列尼娜原则（Anna Karenina principle）</strong>。作者把托尔斯泰小说的开头改了几个词，当作本章的第一句：</p>
+
+<blockquote class="quote">Domesticable animals are all alike; every undomesticable animal is undomesticable in its own way.<cite>— 第 9 章，开篇第一句。本站译：可驯化的动物都是相似的，不可驯化的动物各有各的不可驯化之处。</cite></blockquote>
+
+<div class="bet" data-key="ch09">
+  <div class="q">撒哈拉以南非洲有几十种大型野生食草动物，却没有一种在当地被驯化成家畜。如果只能押一个原因，你押哪个？</div>
+  <div class="opts">
+    <button>野生动物太多了，打猎就够吃，没必要费力去养</button>
+    <button>当地社会缺少驯养动物的传统，没怎么尝试过</button>
+    <button>非洲的大型动物种类本来就不多，可挑的太少</button>
+    <button>采采蝇之类的疾病让任何畜牧都很难进行</button>
+    <button>非洲的大型动物各有各的毛病：有的太凶，有的太容易受惊，有的互相划地盘</button>
+  </div>
+  <textarea class="note" data-key="ch09-bet" placeholder="为什么押它？一两句话就够。读完这一章再回来对照。"></textarea>
+</div>
+
+<h2>读这一章</h2>
+
+<p>中译本二十多页，<strong>约 25 分钟</strong>。动物故事扎堆的地方最好读，可以读快一点；讨论"是不是那些地方的人的问题"的那一大段没有故事撑着，最容易读散，值得放慢。</p>
+
+<div class="reading">
+  <ul>
+    <li><strong>开头的托尔斯泰：</strong>在作者把这句话用到动物身上之前，先停一下，想一个你自己领域里"成功都相似，失败各不同"的例子。读完全章再看你的例子还站不站得住。</li>
+    <li><strong>讲汉尼拔的大象那段：</strong>作者区分了"驯服"（tamed）和"驯化"（domesticated）。留意作者的定义里包含哪两件事——为什么"在人的控制下繁殖"这一条这么关键？</li>
+    <li><strong>"是不是那些地方的人的问题"那一大段：</strong>作者列了五类证据。读的时候给每一条标注：它排除的是"不想养""没试过"，还是"没能力"？有没有哪种"人的解释"五条都没排除掉？</li>
+    <li><strong>六组失败原因那一节：</strong>几乎每组都配了一个"其他方面都很合适，只差一条"的动物。留意作者反复使用的句式：<em>如果不是因为……它本来会是很好的家畜</em>。这个句式就是安娜·卡列尼娜原则本身。</li>
+  </ul>
+</div>
+
+<div class="key"><strong>如果这一章错了，全书哪里会塌？</strong>如果非洲、美洲没有本地大型家畜的原因在"人"而不在"动物"，那么全书"地理而非人种"的解释就在最关键的一环断开了：
+第 4 章的"动物通道"、第 11 章的牲畜病菌、第 18 章的两个半球对比，都失去了地理上的根。这也是为什么作者在这一章花了那么多篇幅先去排除"人的问题"。</div>
+
+<h2>论证骨架：两个嫌疑人，一个漏斗</h2>
+
+<p>这一章可以当成一场侦探推理来读：大型家畜几乎都来自欧亚，嫌疑人有两个——<strong>人</strong>和<strong>动物</strong>。作者怎样审这两个嫌疑人？本站把"动物"这条线画成一个三层漏斗，每一层都是一个要去原文找答案的问题。这是本站的归纳，你也可以有自己的画法。</p>
+
+<figure class="fig">
+<svg class="suspects" viewBox="0 0 780 350" width="780" role="img" aria-label="两个嫌疑人：人和动物；动物这条线画成候选数量、灭绝、六道筛子三层漏斗，每层是一个问题">
+  <defs><marker id="ar9" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+  <rect class="accent-soft" x="8" y="128" width="150" height="86" rx="10"/>
+  <text x="83" y="158" text-anchor="middle" class="ttl">大型家畜</text>
+  <text x="83" y="178" text-anchor="middle" class="ttl">几乎都来自欧亚</text>
+  <text x="83" y="200" text-anchor="middle" class="small-t">为什么？</text>
+
+  <!-- 嫌疑人一：人 -->
+  <path class="arrow" d="M158,150 C180,70 190,62 206,62" marker-end="url(#ar9)"/>
+  <rect class="bad-soft" x="208" y="16" width="560" height="106" rx="8"/>
+  <text x="222" y="38" class="ttl">嫌疑人 ① 人：不想养？没试过？做不到？</text>
+  <text x="222" y="60">作者拿出了哪五类证据？</text>
+  <text x="222" y="80">每一类排除的是「不想养」「没试过」，还是「做不到」？</text>
+  <text x="222" y="104" class="small-t">读完再判：这个嫌疑人洗清了吗？</text>
+  <text x="742" y="44" text-anchor="middle" class="x">？</text>
+
+  <!-- 嫌疑人二：动物 -->
+  <path class="arrow" d="M158,192 C180,262 190,262 206,262" marker-end="url(#ar9)"/>
+  <rect class="box" x="208" y="150" width="560" height="190" rx="8"/>
+  <text x="222" y="172" class="ttl">嫌疑人 ② 动物：一个三层漏斗</text>
+  <polygon class="accent-soft" points="232,186 552,186 520,224 264,224"/>
+  <text x="392" y="210" text-anchor="middle">第一层：各大陆有多少候选？</text>
+  <polygon class="warn-soft" points="262,232 522,232 496,268 288,268"/>
+  <text x="392" y="255" text-anchor="middle">第二层：灭绝拿走了多少？</text>
+  <polygon class="bad-soft" points="288,276 496,276 470,312 314,312"/>
+  <text x="392" y="299" text-anchor="middle">第三层：六道筛子各筛掉谁？</text>
+  <rect class="ok-soft" x="566" y="270" width="190" height="56" rx="8"/>
+  <text x="661" y="293" text-anchor="middle" class="ttl">148 个候选，剩几种？</text>
+  <text x="661" y="313" text-anchor="middle" class="small-t">其中几种的祖先在欧亚？</text>
+  <path class="arrow" d="M494,294 L562,294" marker-end="url(#ar9)"/>
+  <text x="580" y="200" class="small-t">第三层就是</text>
+  <text x="580" y="218" class="small-t">安娜·卡列尼娜原则</text>
+</svg>
+<figcaption>本站的归纳：先审"人"，再把"动物"拆成三层。每一格都是问题，答案去原文找；读完后可以在下面的玩具模型里亲手过一遍筛子。</figcaption>
+</figure>
+
+<h3>边读边填：作者用了哪些数字和例子？</h3>
+<p>下面每一环，原书都给了具体的数字、动物或人群。<strong>边读边找</strong>，写个关键词就行（会自动保存在你的浏览器里）。这一章的数字后面的玩具模型会用到，先自己找一遍印象更深。</p>
+
+<div class="table-wrap">
+<table class="findit">
+  <thead><tr><th>环节</th><th>你找到的数字 / 例子</th><th>提示</th></tr></thead>
+  <tbody>
+    <tr><td>题面：古代的大型家畜</td><td><input type="text" class="note" data-key="ch09-f3"></td><td class="hint">一共几种？其中哪几种遍布全球？</td></tr>
+    <tr><td>题面：驯服 ≠ 驯化</td><td><input type="text" class="note" data-key="ch09-f1"></td><td class="hint">作者拿哪种动物说明"驯服了"不等于"驯化了"？谁带着它翻过了阿尔卑斯山？</td></tr>
+    <tr><td>嫌疑人①：外来牲畜</td><td><input type="text" class="note" data-key="ch09-f5"></td><td class="hint">美洲、澳洲、非洲各点了哪个人群的名字？</td></tr>
+    <tr><td>嫌疑人①：时间窗</td><td><input type="text" class="note" data-key="ch09-f6"></td><td class="hint">大型哺乳动物的驯化集中在哪两个年份之间？</td></tr>
+    <tr><td>嫌疑人①：不止一次被驯化</td><td><input type="text" class="note" data-key="ch09-f7"></td><td class="hint">基因证据里，哪种家畜的两大类来自不同的野生种群？还点了哪两种？</td></tr>
+    <tr><td>嫌疑人②·第一层：候选</td><td><input type="text" class="note" data-key="ch09-f2"></td><td class="hint">多重才算"大型"？全世界一共多少种？</td></tr>
+    <tr><td>嫌疑人②·第一层：家底</td><td><input type="text" class="note" data-key="ch09-f4"></td><td class="hint">欧亚和撒哈拉以南非洲各有多少候选、驯化了几种？南美驯化的是哪一种？</td></tr>
+    <tr><td>嫌疑人②·第三层：六道筛子</td><td><input type="text" class="note" data-key="ch09-f8"></td><td class="hint">每一组各配了哪个动物的名字？</td></tr>
+  </tbody>
+</table>
+</div>
+
+<details class="reveal"><summary>读完了？对照我找到的</summary><div>
+<ul>
+  <li>古代家畜：<strong>14 种</strong>；遍布全球 <strong>5 种</strong>（绵羊、山羊、牛、猪、马）</li>
+  <li>驯服 ≠ 驯化：<strong>大象</strong>；汉尼拔</li>
+  <li>外来牲畜：<strong>大平原印第安人</strong>、<strong>纳瓦霍人</strong>；<strong>塔斯马尼亚人</strong>；<strong>班图人</strong>、<strong>科伊桑人</strong></li>
+  <li>时间窗：<strong>前 8000 年至前 2500 年</strong></li>
+  <li>多次驯化：<strong>瘤牛 / 无峰牛</strong>；狗、猪</li>
+  <li>候选：<strong>100 磅（约 45 公斤）</strong>；<strong>148 种</strong></li>
+  <li>家底：欧亚 <strong>72 / 13</strong>；撒哈拉以南非洲 <strong>51 / 0</strong>；南美 <strong>1</strong>（大羊驼/羊驼）</li>
+  <li>六道筛子：食性（考拉）；生长速度（大猩猩）；圈养繁殖（猎豹）；脾气（斑马）；易惊（瞪羚）；社会结构（大角羊）</li>
+</ul>
+</div></details>
+
+<div class="pause"><strong>到这里先停下，去读原书第 9 章</strong>（约 25 分钟），边读边填上面的表。<br>读完回来，从下面接着往下看——后半页是读完才有意思的部分。</div>
+
+<h2>玩具模型：驯化的筛子</h2>
+
+<p>这个模型只有一条规则：<strong>入选者必须六条全过，落选者只要栽在一条上就出局。</strong>
+下面把全世界 148 个候选按大陆摆出来，你来逐条打开作者的六组"失败原因"。有名字的格子是原书讨论过的动物；灰色小圆点是原书没有逐一点名的候选。</p>
+
+<div class="exercise"><div class="q">先猜再玩：如果只能打开<strong>一条</strong>筛子，哪一条能筛掉最多"原书点名、并说明了原因"的落选者？打开它以后，还剩下几个点名的落选者解释不了？</div>
+<details class="reveal"><summary>看答案</summary><div>
+<p>是<strong>脾气</strong>：它一条就能筛掉 18 个点名落选者里的 11 个（斑马算 4 种）。可还剩 7 个它解释不了：两种大象、大猩猩（长得太慢），瞪羚、成群的羚羊（易惊、有领地），大角羊（没有等级），小羊驼（圈养不肯繁殖）。</p>
+<p>这就是"不幸福各有各的不幸"：最有名的那条原因也只解释了一部分。<strong>任何单一因素的解释，都会留下一串"例外"。</strong></p>
+</div></details>
+</div>
+
+<section class="sim" id="sim-sieve">
+  <div class="sim-head"><span class="tag">玩具模型</span><h3>148 个候选，六道筛子</h3>
+    <div class="desc">点按钮逐条打开失败原因，看谁被筛掉；点任何一个带名字的格子，看它的"婚姻体检单"。</div></div>
+  <div class="sim-body">
+    <div class="controls">
+      <div class="rbtns" id="rbtns"></div>
+      <span class="sep"></span>
+      <button id="all-on">六条全开</button>
+      <button id="all-off">全部关掉</button>
+    </div>
+    <div class="stage">
+      <div class="sieve" id="sieve"></div>
+      <div class="legend">
+        <span><span class="chip pass">绿色</span> 后来被驯化了</span>
+        <span><span class="chip wait">虚线</span> 原书点名，还没被筛掉</span>
+        <span><span class="chip out">划掉</span> 被你打开的筛子筛掉了</span>
+        <span>名字后面带 ? 的：原书点名了，但没说卡在哪一条</span>
+      </div>
+    </div>
+    <div class="narrate" id="sieve-narrate"></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="st-left"></div><div class="l">还留在筛子上</div></div>
+      <div class="stat"><div class="v">14</div><div class="l">后来被驯化的</div></div>
+      <div class="stat"><div class="v" id="st-named"></div><div class="l">点名的落选者，还没被解释</div></div>
+      <div class="stat"><div class="v" id="st-silent"></div><div class="l">原书没逐一说明卡在哪的</div></div>
+    </div>
+    <div class="ak-card" id="ak-card"><p>点一个带名字的格子（比如"斑马"或"马"），这里会显示它的体检单。</p></div>
+  </div>
+</section>
+
+<div class="tip">这是玩具模型，规则和简化如下。
+<strong>数字：</strong>148、欧亚 72（驯化 13）、撒哈拉以南非洲 51（驯化 0）都是原文数字；<strong>美洲 24、澳大利亚 1 是推出来的</strong>——原文说澳大利亚只剩红袋鼠一种，再用 148 减去其他三块得到美洲。作者的"欧亚"包含北非，所以驴（祖先是北非野驴）算在欧亚。
+<strong>谁算哪条：</strong>有名字的格子只在原文明说的那条原因打开时才被划掉；原文点名却没说原因的（带 ?）和没点名的小圆点，只在六条全开时才一起消失——这对应作者的断言"其余每一种都至少栽在一条上"，而不是原文逐一核对过。作者说的是"<strong>至少</strong>六组"原因。
+<strong>位置：</strong>原书没有给出 148 种的名单，格子放在哪块大陆是示意（比如犀牛非洲、亚洲都有，图里放在非洲）。猎豹（肉食）和考拉（远不到 45 公斤）是作者举的例子，但本来就不在候选里，所以没放进来——这也说明"食性"这道筛子在定义候选时就已经用过了。</div>
+
+<h2>二十多年后：体检与反方</h2>
+
+<p>这一章有两类论断：一类是"哪些动物在何时何地被驯化"的<strong>事实清单</strong>，另一类是"为什么只有这些"的<strong>解释</strong>。二十多年来，古 DNA 研究大幅改写了前一类；后一类的争论则主要集中在"脾气"这样的特征是不是天生的。下面是本站的粗略判断，供你参考和反驳：</p>
+
+<div class="cards">
+  <div class="card"><h4>大型家畜几乎都来自欧亚<span class="ev ev-strong">依然稳</span></h4><p>作为事实描述几乎没有争议；只是要记得作者的"欧亚"包含北非。</p></div>
+  <div class="card"><h4>同一物种被多次独立驯化<span class="ev ev-strong">依然稳</span></h4><p>瘤牛和无峰牛分别驯化，已被大量基因组研究证实。</p></div>
+  <div class="card"><h4>马：前 4000 年乌克兰；普氏野马是野马<span class="ev ev-revised">被新证据改写</span></h4><p>古 DNA 显示现代家马谱系约前 2200 年才出现；普氏野马是早期家马重新野化的后代。</p></div>
+  <div class="card"><h4>美洲的狼被独立驯化成狗<span class="ev ev-revised">被新证据改写</span></h4><p>美洲古代的狗很可能起源于西伯利亚，是跟着人一起进入美洲的。</p></div>
+  <div class="card"><h4>大型动物驯化到前 2500 年就基本结束<span class="ev ev-mixed">大体成立；驯鹿可能是例外</span></h4><p>驯鹿的驯化证据目前较早的一批（2020 年公布的西伯利亚乌斯季-波卢伊遗址挽具）约在两千年前——比此前认为的早，但仍远晚于前 2500 年。</p></div>
+  <div class="card"><h4>非洲没有本地驯化，问题在动物不在人<span class="ev ev-mixed">有争议</span></h4><p>驴的驯化可能比埃及更早、也更靠南，"欧亚含北非"的分类变得微妙；"脾气坏"是原因还是结果，也有不同看法。</p></div>
+</div>
+
+<div class="counter" data-title="新证据 1 · 古 DNA 重写了驯化年表">
+<p>作者在年代表下面自己写了一句提醒：这些只是<strong>目前最早的证据</strong>，驯化可能更早、地点也可能不同。二十多年后，好几行确实被改了：</p>
+<ul>
+  <li><strong>马。</strong>2018 年《科学》（Science）上高尼茨（Gaunitz）等人的古基因组研究发现，哈萨克斯坦博泰（Botai）遗址约 5500 年前被人管理的马，几乎没有给现代家马留下血统（约 4000 年来的家马里只占 3% 左右），却是<strong>普氏野马</strong>的祖先——也就是说，原书表里"幸存到现代的野马亚种"其实是早期家马重新野化的后代。2021 年《自然》（Nature）上利布拉多（Librado）等人分析了 273 个古马基因组，认为现代家马的谱系大约在<strong>公元前 2200 年前后</strong>出现于欧亚草原西部（顿河—伏尔加河下游一带），随后迅速取代了各地的其他马群。</li>
+  <li><strong>狗。</strong>2018 年《科学》上倪·莱斯洛拜尔（Ní Leathlobhair）等人的研究认为，美洲接触欧洲人之前的狗<strong>不是由北美的狼驯化来的</strong>，而是一个起源于西伯利亚、随人类迁入美洲的谱系。原文"狼在美洲被独立驯化成狗"这一句因此需要改写。</li>
+  <li><strong>驴。</strong>2022 年《科学》上托德（Todd）等人分析了两百多头现代和古代驴的基因组，支持<strong>约公元前 5000 年在非洲的单一驯化</strong>，比原书表中"前 4000 年·埃及"更早。新闻稿把地点说成"非洲东部"，但确切地点还有待考古发掘确认。作者本来就知道驴源自非洲（北非野驴），新的是时间更早、地点可能更靠南。</li>
+</ul>
+<p>值得注意的是：这些修正几乎都发生在"<strong>何时何地</strong>"，而不是"<strong>是哪几种</strong>"。家畜的名单本身没有变——这对本章的核心论证反而是一种支持。</p>
+</div>
+
+<div class="counter" data-title="反方 2 · 脾气是驯化的原因，还是驯化的结果？">
+<p>一个常见的质疑是：作者用"脾气坏"解释斑马为什么没被驯化，可我们今天看到的是<strong>从未被驯化过</strong>的斑马；马的野生祖先当年也许同样难缠，是几千年的选择才把它变温顺的。如果是这样，"脾气"就有一部分是结果而不是原因，论证有循环的危险。</p>
+<p>支持这一质疑的最有名的证据，是苏联遗传学家别利亚耶夫（Dmitry Belyaev）和特鲁特（Lyudmila Trut）1959 年在新西伯利亚开始的<strong>银狐驯化实验</strong>：每一代只挑最温顺的约一成狐狸繁殖，大约六代以后，就出现了会舔人手、会摇尾巴的狐狸，后来还出现了耷拉的耳朵、卷尾巴等家畜常见的特征。考古学家泽德（Melinda Zeder）2012 年提出的"驯化路径"框架也强调，驯化是人与动物长期互动的过程（比如狗可能是狼自己先靠近人群的"共生路径"），而不是拿野生动物一次性"考试"。</p>
+<p>但这一质疑也有反驳：银狐实验是现代科学家<strong>有意识、高强度</strong>的选择，古代牧人没有这样的计划；而作者最有力的证据恰恰是<strong>近亲对照</strong>——同一地区、同一批人，驯化了驴却没驯化亚洲野驴，驯化了盘羊的后代却没驯化大角羊。外加现代育种者对大羚羊、驼鹿等的有组织尝试也收效甚微。所以更准确的说法也许是：脾气<strong>可以被改变</strong>，但改变的起点和代价因物种而异，作者的"六道筛子"描述的是古代人在没有遗传学的条件下能跨过的门槛。</p>
+</div>
+
+<div class="counter" data-title="反方 3 · 「非洲」的边界划在哪里？">
+<p>作者在书里说明过，书中所说的"欧亚"在好几处包括北非。这样一来，驴（祖先是北非野驴）就算进了欧亚的 13 种，撒哈拉以南非洲的成绩是 0。作者当然知道驴源自非洲，只是按北非归进了"欧亚"。可如果像托德等人 2022 年的研究所暗示的那样，驴的驯化发生在非洲东部（确切地点未定），问题就变成：那里算不算"撒哈拉以南"？"撒哈拉以南 51 个候选、驯化 0 种"这个数字，要看边界怎么划。</p>
+<p>本站的看法：这一点<strong>削弱了措辞，但不推翻主干</strong>。遍布全球的五种主要家畜都不来自撒哈拉以南非洲，这一点不受影响；而作者自己也提到非洲人驯化了珍珠鸡等小型动物。读这一章时可以记住一个习惯：<strong>当一个结论是"0"的时候，先看看分母的边界是怎么划的。</strong></p>
+</div>
+
+<h2>想一想</h2>
+
+<p>这几道题没有标准答案。先自己写几句，再展开"一种看法"——它只是一种看法，你完全可以不同意。</p>
+
+<div class="ponder">
+  <div class="q">1. 托尔斯泰说幸福的家庭都相似。你能想到一个"失败各不相同、成功彼此相似"的领域吗？反过来，有没有"成功各有各的样子、失败却都差不多"的领域？两者的区别在哪里？</div>
+  <textarea class="note" data-key="ch09-p1" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>区别在于成功的<strong>逻辑结构</strong>。如果成功要求若干条件<strong>同时</strong>满足（"与"结构），那么成功者必须在每一条上都过关，所以彼此相似；失败者只要缺一条就出局，缺哪条都行，所以各不相同。驯化、婚姻、一次火箭发射都是这样。
+    如果成功有<strong>多条路径</strong>，走通任何一条都行（"或"结构），情况就反过来：成功者五花八门，失败者倒是相似——它们都在每条路上都没走通。</p>
+    <p>"与"结构还有一个反直觉的算术：六个条件、每个各有八成把握，全部满足的概率只有约 26%（0.8 的 6 次方）。所以"与"结构的领域里，<strong>多数尝试都会失败，而且每次失败的原因都不一样</strong>——这本身不说明尝试的人不行。（真实世界里条件之间常有关联，这个乘法只是个量级。）</p>
+    <p>带走一个问法：<strong>遇到"成功的秘诀是什么"时，先问这个领域是"与"结构还是"或"结构。</strong>在"与"结构里，找"赢家共有的那一个特质"几乎没有用——它们共有的是全部特质；更有信息量的是去看失败者各自栽在了哪里。</p>
+    <p>附带一提：生物学家后来借用了这个名字。2017 年赞内维尔德（Zaneveld）等人在《自然·微生物学》上提出动物微生物组的"安娜·卡列尼娜原则"：健康个体的微生物组彼此相似，受压力的个体则各乱各的。注意那里强调的是"失败状态的差异更大"，和本章"多条件同时满足"是同一句话的两个侧面。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">2. "斑马脾气太坏，所以没被驯化。"可我们观察到的是从未被驯化过的斑马。如果你想检验"脾气"到底是原因还是结果，你会找什么样的证据？</div>
+  <textarea class="note" data-key="ch09-p2" placeholder="提示：作者在书里其实已经用了一种很好的办法，留意作者拿哪些动物做比较。"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>作者最有力的办法是<strong>近亲对照</strong>：找两种几乎一样、生活在同一地区、面对同一批人的动物，一种成了、一种没成，然后看它们差在哪。驴和亚洲野驴（亲缘极近，亚洲野驴的家乡就包括新月沃地）、盘羊和大角羊（同一个属）就是这样的对子。近亲对照把"人的差别""地理的差别"都控制住了，剩下的差别才更可能是动物本身。</p>
+    <p>但近亲对照也有盲区：它说明了两种动物<strong>起点</strong>不同，却说明不了起点的差别是不是大到"人类永远跨不过去"。银狐实验说明温顺是可以被选择出来的；问题在于选择要多少代、多大强度、早期有没有足够的回报让人坚持下去。</p>
+    <p>带走一个问法：<strong>当有人说"X 失败是因为特征 T"时，先问两件事：T 是在过程开始之前测的，还是之后测的？有没有一个几乎一样、却成功了的对照？</strong>这两个问题在复盘项目、评估候选人、读 A/B 测试报告时同样好用。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">3. 作者说：148 个候选"一定已经被试过无数次"；如果斑马能驯化，非洲那么多人群里总会有一个做到。这个论证什么时候成立，什么时候不成立？</div>
+  <textarea class="note" data-key="ch09-p3" placeholder="提示：程序员常听到一句类似的话——'这个点子要是好，早就有人做了。'"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>这是一种"<strong>地上不会有百元大钞</strong>"式的论证：如果有好处，早就被人捡走了。它成立需要三个条件：<strong>尝试的人足够多且彼此独立</strong>；<strong>好处足够明显</strong>；<strong>尝试的门槛不高、回报来得不太晚</strong>。</p>
+    <p>可以拿这三个条件去逐一对照作者的五类证据：每一类加固的是哪一条？有没有哪一条没人加固？本站的看法是，最薄弱的地方在第三条的后半句：驯化要很多代持续的选择，<strong>回报来得很晚</strong>，这正是"百元大钞"论证最容易失效的情形。</p>
+    <p>带走一个问法：<strong>听到"要是能成，早就有人做成了"，就去检查：试的人多不多、是否独立？好处是不是一眼可见？回报是不是要等很久？</strong>"这个点子要是好，早就有人做了"在新技术降低了门槛、或回报周期很长的领域里，常常是错的。</p>
+  </div></details>
+</div>
+
+<h2>换个镜头看你熟悉的世界</h2>
+
+<p>这一章最值得带走的是安娜·卡列尼娜原则本身，以及一个容易被忽略的区分：驯服和驯化。试着把它们用到你自己的领域。</p>
+
+<div class="lens" data-title="工具一 · 安娜·卡列尼娜原则：「与」结构的系统">
+<p>一个线上请求要成功，网关、鉴权、服务本身、数据库、缓存、DNS、证书都得正常——这是典型的"与"结构。五个各有 99% 可用性的依赖串起来，整体只剩约 95%。所以<strong>每一次故障都"各有各的不幸"</strong>：上周是证书过期，这周是连接池耗尽，下周是某个配置漏了一个字段。复盘时如果总想找"那一个根本原因"，往往会失望。</p>
+<p>产品和创业也是如此：需求真实、产品做得出来、能触达用户、单位经济模型成立、团队撑得住、时机对——缺一条就失败。失败公司的复盘五花八门，成功公司的故事反而相似。</p>
+<p>"与"结构的三种工程应对：<strong>把所有必要条件显式列出来</strong>（上线检查单、预检脚本）；<strong>把"与"改成"或"</strong>（冗余、降级、多活）；<strong>别只学赢家的某一个特质</strong>，去研究失败者各自栽在哪。</p>
+<textarea class="note" data-key="ch09-l1" placeholder="你最近参与的一个项目，成功需要哪几个条件同时满足？哪一条最可能是那匹'斑马'？"></textarea>
+</div>
+
+<div class="lens" data-title="工具二 · 驯服 vs 驯化">
+<p>作者区分得很清楚：东南亚的役象是<strong>驯服</strong>的——每一头都要从野外抓来，重新调教；它们不在人的控制下繁殖，所以下一代还是野的。<strong>驯化</strong>则意味着结果能自己复制下去，并且一代代朝着人需要的方向变。</p>
+<p>团队里也有大量"役象"：只有某位老同事会做的发布流程、只存在于某个人脑子里的排障经验、每次新项目都要从头搭一遍的环境。它们能干活，但每一次都要重新"抓一头野象"。把它们变成脚本、文档、模板、新人能复现的流程，才是"驯化"——能繁殖，也能被一代代改进。</p>
+<textarea class="note" data-key="ch09-l2" placeholder="你手上有哪些'驯服了但没驯化'的东西？哪一个最值得先驯化？"></textarea>
+</div>
+
+<h2>读完：回到你的赌注</h2>
+
+<details class="reveal"><summary>打开对照（建议读完原书这一章再打开）</summary><div class="payoff" data-bet="ch09">
+  <div class="mine"></div>
+  <p>作者的答案是最后一项：<strong>非洲的大型动物各有各的毛病</strong>。斑马咬人不松口、套索都套不住；非洲水牛被认为是非洲最危险的大型动物；成群的羚羊在繁殖期互相划地盘，没法挤在围栏里。每一种都"不幸福得各不相同"。</p>
+  <blockquote class="quote">Lack of any single required characteristic dooms efforts at domestication, just as it dooms efforts at building a happy marriage.<cite>— 第 9 章，引出六组原因之前。本站译：只要缺了任何一项必需的特质，驯化就注定失败，正如缺了任何一项，婚姻就注定不幸福。</cite></blockquote>
+  <ul>
+    <li><strong>"猎物太多，没必要养"</strong>：作者点名反驳过。欧亚的牛羊一到非洲，各种非洲人群只要条件允许就采用，班图人、科伊桑人因此迅速取代了周围的狩猎采集者——说明非洲人很清楚家畜的好处。</li>
+    <li><strong>"缺少驯养的传统"</strong>：世界各地的传统社会几乎都养宠物，驯服野生动物是驯化的第一步；塔斯马尼亚人第一次见到狗，十年内就开始大量繁育。</li>
+    <li><strong>"可挑的太少"</strong>：51 个候选不算少，仅次于欧亚的 72 个。候选数量只是解释的一部分，非洲真正的问题是<strong>通过率为 0</strong>。</li>
+    <li><strong>"疾病让畜牧太难"</strong>：有一半道理——作者提到采采蝇传播的锥虫病挡住了马向西非以外扩散。但这解释的是<strong>外来</strong>牲畜为什么难推广，解释不了<strong>本地</strong>动物为什么没被驯化：本地动物本来就抗这些病（作者特意提到大羚羊在这一点上的优势）。</li>
+  </ul>
+  <p>如果你押的是最后一项，也别急着得意：回头看"反方 2"——"脾气"到底有多少是天生的，至今仍有争论。</p>
+</div></details>
+
+<p>最后，用你自己的话，一句话说出这一章：</p>
+<textarea class="note" data-key="ch09-oneline" placeholder="例如：家畜都是六条全过的动物，没被驯化的各栽在一条上……（写你自己的版本）"></textarea>
+
+<div class="hook">
+<p>欧亚大陆手里有了最好的庄稼和家畜。可是一种庄稼在一个地方被驯化之后，能传多远、传多快？<strong>作者认为，大陆是东西走向还是南北走向，会决定庄稼传得快还是慢。</strong></p>
+<p>先猜一猜：新月沃地的小麦向西传到欧洲，和墨西哥的玉米向北传到今天的美国东部，哪一个更快？为什么"东西走向"会是一个优势？第 10 章会给出作者的答案——带着你的猜测去读。</p>
+</div>
+
+</main>
+<script>
+(function () {
+  const { h } = GGS;
+  const R = [
+    { k: "diet", zh: "食性" }, { k: "growth", zh: "生长速度" }, { k: "breed", zh: "圈养繁殖" },
+    { k: "temper", zh: "脾气" }, { k: "panic", zh: "易惊" }, { k: "social", zh: "社会结构" },
+  ];
+  const RZH = Object.fromEntries(R.map((r) => [r.k, r.zh]));
+  const CONT = [
+    { k: "ea", zh: "欧亚大陆", sub: "含北非", total: 72 },
+    { k: "af", zh: "撒哈拉以南非洲", sub: "", total: 51 },
+    { k: "am", zh: "美洲", sub: "数字为推算", total: 24 },
+    { k: "au", zh: "澳大利亚", sub: "数字为推算", total: 1 },
+  ];
+  // 每个有名字的格子。fail：原文明确挂在它身上的失败原因；m：体检单（ok 原文明说满足 / bad 不满足 / part 部分原因），没写的就是"原文没谈"。
+  const D = (zh, en, c, m, note) => ({ zh, en, c, n: 1, dom: true, fail: [], m: m || {}, note });
+  const F = (zh, en, c, n, m, note) => ({ zh, en, c, n, dom: false, fail: Object.keys(m).filter((k) => m[k] === "bad" || m[k] === "part"), m, note });
+  const ITEMS = [
+    D("绵羊", "sheep", "ea", { panic: "ok", social: "ok" }, "原文在「易惊」「社会结构」两条下明说它过关；其余几条原文没有单独谈。"),
+    D("山羊", "goat", "ea", { panic: "ok", social: "ok" }, "原文在「易惊」「社会结构」两条下明说它过关；其余几条原文没有单独谈。"),
+    D("牛", "cattle", "ea", { social: "ok" }, "原文在「社会结构」下明说它过关；其余几条原文没有单独谈。"),
+    D("猪", "pig", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("马", "horse", "ea", { social: "ok" }, "原文在「社会结构」下明说它过关；其余几条原文没有单独谈。"),
+    D("驴", "donkey", "ea", {}, "六条里哪几条过关，原文没有单独谈。祖先在北非，作者把北非算进欧亚，所以放在这一栏。"),
+    D("驯鹿", "reindeer", "ea", { panic: "ok", social: "ok" }, "原文在「易惊」「社会结构」两条下都把它点名为鹿类里的例外；其余几条原文没有单独谈。"),
+    D("单峰驼", "Arabian camel", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("双峰驼", "Bactrian camel", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("水牛", "water buffalo", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("牦牛", "yak", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("巴厘牛", "Bali cattle", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    D("大额牛", "mithan", "ea", {}, "六条里哪几条过关，原文没有单独谈。"),
+    F("亚洲野驴", "onager", "ea", 1, { temper: "bad" }, "栽在「脾气」，原文明说。"),
+    F("瞪羚", "gazelle", "ea", 1, { panic: "bad" }, "栽在「易惊」，原文明说。"),
+    F("亚洲象", "Asian elephant", "ea", 1, { diet: "ok", growth: "bad" }, "栽在「生长速度」，原文明说；原文也明说它的食性没问题。"),
+    F("马鹿", "elk / red deer", "ea", 1, { temper: "part" }, "原文说「脾气」是部分原因；原文对多数鹿类还有「易惊」「社会结构」的概括，但没有单点马鹿。"),
+    F("棕熊", "brown / grizzly bear", "ea", 1, { diet: "ok", growth: "ok", temper: "bad" }, "栽在「脾气」，原文明说；原文也明说它的食性和生长速度没问题。北美的灰熊是同一物种。"),
+    F("驼鹿", "moose", "ea", 1, {}, "原文点名了它，但没说它栽在哪一条。"),
+    F("斑马", "zebra", "af", 4, { temper: "bad" }, "栽在「脾气」，原文明说。四个物种，算 4 个候选。"),
+    F("非洲水牛", "African buffalo", "af", 1, { growth: "ok", social: "ok", temper: "bad" }, "栽在「脾气」，原文明说；原文也明说它的生长速度和社会结构没问题。"),
+    F("河马", "hippo", "af", 1, { diet: "ok", temper: "bad" }, "栽在「脾气」，原文明说；原文也明说它的食性没问题。"),
+    F("犀牛", "rhino", "af", 1, { growth: "bad", temper: "bad", social: "bad" }, "原文一句话里同时挂了三条：「社会结构」「脾气」「生长速度」。（犀牛非洲、亚洲都有，放在非洲只是示意。）"),
+    F("非洲象", "African elephant", "af", 1, { diet: "ok", growth: "bad" }, "栽在「生长速度」，原文明说；原文也明说它的食性没问题。"),
+    F("大猩猩", "gorilla", "af", 1, { diet: "ok", growth: "bad" }, "栽在「生长速度」，原文明说；原文也明说它的食性没问题。"),
+    F("大羚羊", "eland", "af", 1, { temper: "part" }, "原文说「脾气」是部分原因，没有说是唯一原因。"),
+    F("成群的羚羊", "herd antelopes", "af", 1, { panic: "bad", social: "bad" }, "栽在「易惊」和「社会结构」，原文明说（说的是多数羚羊）。一个格子代表一大类。"),
+    F("非洲野猪", "wild pigs", "af", 3, {}, "三个物种。原文点名了，但没说它们栽在哪一条。"),
+    D("大羊驼 / 羊驼", "llama / alpaca", "am", {}, "美洲唯一的一种。六条里哪几条过关，原文没有单独谈。"),
+    F("小羊驼", "vicuña", "am", 1, { breed: "bad" }, "栽在「圈养繁殖」，原文明说。"),
+    F("大角羊", "bighorn sheep", "am", 1, { social: "bad" }, "栽在「社会结构」，原文明说。"),
+    F("美洲野牛", "American bison", "am", 1, {}, "原文点名了它，但没说它栽在哪一条。"),
+    F("麝牛", "musk ox", "am", 1, {}, "原文点名了它，但没说它栽在哪一条。"),
+    F("红袋鼠", "red kangaroo", "au", 1, {}, "原文只说它是澳大利亚剩下的唯一候选，没说它栽在哪一条。"),
+  ];
+  ITEMS.forEach((it) => { it.known = !it.dom && it.fail.length > 0; });
+
+  const on = new Set();
+  let sel = null;
+  const sieve = document.getElementById("sieve");
+  const rb = document.getElementById("rbtns");
+  const btns = R.map((r) => {
+    const b = h("button", { class: "rbtn", "aria-pressed": "false", onclick: () => { on.has(r.k) ? on.delete(r.k) : on.add(r.k); render(); } }, r.zh);
+    rb.append(b); return b;
+  });
+  document.getElementById("all-on").onclick = () => { R.forEach((r) => on.add(r.k)); render(); };
+  document.getElementById("all-off").onclick = () => { on.clear(); render(); };
+
+  // 每块大陆：标题、有名字的格子、没点名的小圆点、页脚
+  const panels = CONT.map((c) => {
+    const items = ITEMS.filter((it) => it.c === c.k);
+    const named = items.reduce((a, it) => a + it.n, 0);
+    const chips = items.map((it) => {
+      const b = h("button", { class: "chip", title: it.en, onclick: () => { sel = it; render(); } }, it.zh + (it.n > 1 ? ` ×${it.n}` : ""));
+      it.el = b; return b;
+    });
+    const dots = Array.from({ length: c.total - named }, () => h("span", { class: "dot" }));
+    const foot = h("div", { class: "foot" });
+    sieve.append(h("div", { class: "cont" },
+      h("h4", {}, c.zh, h("small", {}, `${c.total} 个候选${c.sub ? "（" + c.sub + "）" : ""}`)),
+      h("div", { class: "chips" }, chips), h("div", { class: "dots" }, dots), foot));
+    return { c, items, dots, foot };
+  });
+
+  const stateOf = (it, all) => it.dom ? "pass" : (it.fail.some((k) => on.has(k)) || all) ? "out" : "wait";
+  const names = (arr) => arr.map((it) => it.zh + (it.n > 1 ? `（${it.n} 种）` : "")).join("、");
+  const sum = (arr) => arr.reduce((a, it) => a + it.n, 0);
+
+  function card() {
+    const box = document.getElementById("ak-card");
+    if (!sel) return;
+    const it = sel;
+    const rows = [];
+    for (const r of R) {
+      const v = it.m[r.k];
+      const [sym, cls, txt] = v === "ok" ? ["✓", "ok", "原文明说满足"] : v === "bad" ? ["✗", "bad", "原文明说不满足"] : v === "part" ? ["✗", "bad", "原文说是部分原因"] : ["·", "na", "原文没谈"];
+      rows.push(h("span", {}, r.zh), h("span", { class: cls }, sym), h("span", { class: cls === "na" ? "na" : "" }, txt));
+    }
+    const verdict = it.dom ? "后来被驯化了。按作者的推理，六条它都过了；下表只标出原文具体提到的几条。"
+      : it.known ? `栽在：${it.fail.map((k) => RZH[k]).join("、")}。只要这一条不过，其他条件再好也没用。`
+      : "原文点名了它，但没说它栽在哪一条。作者的断言是：它至少栽在其中一条上。";
+    box.replaceChildren(
+      h("h4", {}, `${it.zh}（${it.en}）`),
+      h("div", { class: "small" }, verdict),
+      h("div", { class: "rows" }, rows),
+      h("p", {}, it.note));
+  }
+
+  function render() {
+    const all = on.size === R.length;
+    btns.forEach((b, i) => b.setAttribute("aria-pressed", on.has(R[i].k) ? "true" : "false"));
+    let left = 0;
+    for (const p of panels) {
+      let pl = 0;
+      for (const it of p.items) {
+        const st = stateOf(it, all);
+        it.el.className = "chip " + st + (!it.dom && !it.known ? " unk" : "") + (sel === it ? " sel" : "");
+        if (st !== "out") pl += it.n;
+      }
+      p.dots.forEach((d) => d.classList.toggle("out", all));
+      if (!all) pl += p.dots.length;
+      left += pl;
+      const dom = p.items.filter((it) => it.dom).length;
+      p.foot.textContent = `还剩 ${pl} / ${p.c.total}` + (all ? ` · 驯化 ${dom} 种（${Math.round(dom / p.c.total * 100)}%）` : "");
+    }
+    const known = ITEMS.filter((it) => it.known);
+    const knownLeft = known.filter((it) => stateOf(it, all) !== "out");
+    const knownOut = known.filter((it) => stateOf(it, all) === "out");
+    const silent = all ? 0 : 148 - 14 - sum(known);
+    document.getElementById("st-left").textContent = left;
+    document.getElementById("st-named").textContent = sum(knownLeft);
+    document.getElementById("st-silent").textContent = silent;
+    let msg;
+    if (on.size === 0) msg = "筛子全关：148 个候选都还在。先按你的直觉选一条打开——你觉得哪一条最能解释斑马为什么没被驯化？";
+    else if (all) msg = "六条全开：148 → 14。欧亚 13/72，撒哈拉以南非洲 0/51，美洲 1/24，澳大利亚 0/1。每个落选者只需要栽在一条上；每个入选者必须六条全过——这就是安娜·卡列尼娜原则。注意：那 116 个没被逐一说明的候选，是作者的断言替我们划掉的。";
+    else if (on.size === 1 && on.has("diet")) msg = "只开「食性」：一个点名的候选都没筛掉。这不是因为食性不重要，而是这道筛子在门口就用过了——候选的定义已经排除了以肉食为主的动物（比如猎豹），作者举的挑食例子考拉又太小，本来就不在候选里。";
+    else {
+      const opened = R.filter((r) => on.has(r.k)).map((r) => r.zh).join("、");
+      msg = `已打开：${opened}。筛掉了原书点名的 ${sum(knownOut)} 个落选者` + (knownOut.length ? `（${names(knownOut)}）` : "") + "。";
+      msg += knownLeft.length ? `还有 ${sum(knownLeft)} 个点名的落选者解释不了：${names(knownLeft)}——它们各栽在别处。` : "原书点名并说明原因的落选者，已经全部被解释了；";
+      msg += `另外 ${silent} 个候选原书没有逐一说明，作者只断言它们至少栽在一条上，所以要六条全开才算数。`;
+    }
+    document.getElementById("sieve-narrate").textContent = msg;
+    card();
+  }
+  render();
+})();
+</script>
+</body></html>

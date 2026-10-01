@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 11 章 · 牲畜的致命礼物</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ggs.js"></script>
+<style>
+  .fuel { min-width: 680px; }
+  .fuel text { font-size: 13px; }
+  .fuel .ttl { font-size: 13.5px; font-weight: 700; }
+  .fuel .small-t { font-size: 11.5px; fill: var(--muted); }
+  .fuel .gate { font-size: 20px; font-weight: 700; fill: var(--accent); }
+  /* 群聚病需要多大的人口 */
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .seg .lbl { font-size: 13px; color: var(--muted); margin-right: 2px; }
+  .seg button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+  .controls output { font-family: var(--mono); color: var(--fg); min-width: 5em; display: inline-block; }
+  .charts svg { width: 100%; height: auto; display: block; }
+  .charts .cap { font-size: 13px; color: var(--muted); margin: 10px 0 2px; }
+  .charts .cap:first-child { margin-top: 0; }
+  .charts text { font-size: 11.5px; }
+  .charts .grid { stroke: var(--border); }
+  .charts .axis { stroke: var(--faint); }
+  .charts .inf { stroke: var(--bad); fill: none; stroke-width: 1.5; }
+  .charts .sus { stroke: var(--c1); fill: none; stroke-width: 1.5; }
+  .charts .thr { stroke: var(--warn); stroke-dasharray: 4 3; }
+  .charts .ext { stroke: var(--fg); stroke-dasharray: 2 3; }
+  .charts .pcurve { stroke: var(--c3); fill: none; stroke-width: 2; }
+  .charts .pdot { fill: var(--c3); }
+  .charts .now { stroke: var(--accent); stroke-width: 2; }
+  .charts .ref { stroke: var(--muted); stroke-dasharray: 3 3; }
+  .charts .band { fill: var(--ok-soft); }
+</style>
+</head>
+<body data-chapter="11">
+<main>
+
+<h2>读之前：先下注</h2>
+
+<div class="crux">为什么病菌几乎只从欧亚大陆流向美洲，而不是反过来？</div>
+
+<p>第二部分（第 4–10 章）回答的是<strong>终极原因</strong>：食物生产在哪里出现、为什么传得有快有慢。从这一章起进入第三部分，作者要说明终极原因怎样变成<strong>直接原因</strong>——病菌、文字、技术、国家，一章一样。
+病菌排在第一个，因为它在征服里的分量最重：第 3 章卡哈马卡的故事里，皮萨罗登陆之前，天花已经杀死了印加皇帝瓦伊纳·卡帕克和指定的继承人，帝国随之陷入内战。</p>
+
+<p>在全书的因果链上，这一章同时接住两条线：一条来自第 4 章的"人多、定居、有余粮"，一条来自第 9 章的"可驯化的大型动物几乎都在欧亚"。
+读的时候带着一个问题：<strong>这两条线各起什么作用，缺了其中一条会怎样？</strong></p>
+
+<div class="bet" data-key="ch11">
+  <div class="q">1492 年的美洲并不缺大城市：阿兹特克的首都特诺奇蒂特兰是当时世界上人口最多的城市之一。那为什么美洲没有一种致命的群聚病去"回敬"欧洲人？你押哪个原因？</div>
+  <div class="opts">
+    <button>美洲的城市卫生条件更好，疾病不容易流行</button>
+    <button>美洲的大人口出现得晚，几个人口中心之间又没有频繁的贸易把它们连成一片</button>
+    <button>美洲几乎没有群居的家畜，病菌没有可以"跳"到人身上的来源</button>
+    <button>欧洲人天生对传染病的抵抗力更强</button>
+    <button>美洲其实也有致命的病（比如梅毒），只是被历史记载忽略了</button>
+  </div>
+  <textarea class="note" data-key="ch11-bet" placeholder="为什么押它？一两句话就够。读完这一章再回来对照。"></textarea>
+</div>
+
+<h2>读这一章</h2>
+
+<p>中译本约三十页，<strong>是全书较长的一章</strong>，但故事密、很好读。它的风险不是读不懂，而是读散：病例、寄生虫、兔子、梅毒，每一段都很有趣，主线却只有一条——<strong>什么样的病需要大量人口，这些病又从哪里来</strong>。下面的读速地图帮你分配力气。</p>
+
+<div class="reading">
+  <ul>
+    <li><strong>从病菌的角度看症状那几段：</strong>作者把咳嗽、腹泻、溃疡重新解释为病菌的"传播策略"。读的时候想一想：这个视角对后面哪一个论点最有用？（提示：章末讲梅毒和兔子病毒的那几段。）</li>
+    <li><strong>流行病的四个共同特征：</strong>这是全章的发动机。一边读一边问：四条里去掉任何一条，这种病还需要大人口吗？下面的玩具模型可以让你亲手试。</li>
+    <li><strong>法罗群岛和"50 万"那段：</strong>作者说麻疹需要的人口要"足够多，而且足够密"。留意作者解释大人口为什么能留住病的那一句——病是怎样在一个大人口内部"挪来挪去"的？</li>
+    <li><strong>讲美洲为什么没有反向流动的那几段：</strong>作者先承认了两个"可能的辅助因素"，又说它们解释不了，然后才提出一个"简单的问题"。在读到答案之前，先停下来自己回答那个问题。</li>
+  </ul>
+</div>
+
+<div class="reading pace" data-title="读速地图：哪里可以快，哪里一定要慢">
+  <ul>
+    <li><span class="sp mid">中速</span><strong>开头的病例故事、"病菌为什么让我们生病"</strong>：故事好读，读快一点不会丢主线。留意作者换成了谁的视角来看症状，章末还会用到。</li>
+    <li><span class="sp fast">扫读</span><strong>我们的几道防线</strong>：大多是常识，可以扫过去；只在讲免疫的那几句放慢一点，后面的"四个特征"会接上它。</li>
+    <li><span class="sp slow">慢读</span><strong>流行病的四个特征、法罗群岛、"50 万"</strong>：全章的发动机，篇幅不长，一定要读原文。</li>
+    <li><span class="sp mid">中速</span><strong>小群体里有哪些病</strong>：和上一段对照着读。作者分了几类？每一类凭什么在小群体里待得住？</li>
+    <li><span class="sp fast">扫读</span><strong>农业、城市、贸易路线那几段</strong>：道理不难、例子多，扫过去即可，不必记年份。</li>
+    <li><span class="sp slow">慢读</span><strong>病菌从哪里来：牛瘟与麻疹、那张"致命礼物"表</strong>：牲畜在这里进入论证。这一段也是二十多年来被改写最多的地方，见"体检"一节。</li>
+    <li><span class="sp fast">扫读</span><strong>从动物病到人类病的几个阶段、澳大利亚的兔子、梅毒</strong>：有趣但是支线，可以扫读；兔子和梅毒两个例子留个印象，"想一想"第 2 题会用到。</li>
+    <li><span class="sp slow">慢读</span><strong>美洲：天花与阿兹特克、印加、密西西比，以及章末"为什么没有反方向"</strong>：回答本章的问题，作者的推理在这里最紧凑。</li>
+  </ul>
+</div>
+
+<div class="key"><strong>如果这一章错了，全书哪里会塌？</strong>如果美洲人口的崩溃主要不是病菌造成的，那么"几百个西班牙人打败几百万人"就要完全靠枪、马和组织来解释，第 3 章卡哈马卡的那张"牌"会少掉最致命的一张；
+如果病菌的单向流动和家畜无关，那么第 9 章"可驯化动物的分布"和这里就接不上，全书从地理到征服的链条会在这一环断开。</div>
+
+<h2>论证骨架：燃料 × 火种</h2>
+
+<p>本站把这一章整理成一个<strong>"与"结构</strong>：群聚病要烧起来，要看<strong>燃料</strong>（人）和<strong>火种</strong>（病菌从哪里来）。图里每一格都是问题，读的时候去原文找答案。这是本站的归纳，你也可以有自己的画法。</p>
+
+<figure class="fig">
+<svg class="fuel" viewBox="0 0 780 376" width="780" role="img" aria-label="本站的归纳：燃料（人）与火种（病菌的来源）经过一道「与」门通向群聚病，再分别看欧亚和美洲；底部是反方向的例外。每一格都是问题">
+  <defs><marker id="ar11" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+  <rect class="accent-soft" x="8" y="16" width="238" height="124" rx="10"/>
+  <text x="22" y="40" class="ttl">燃料：人</text>
+  <text x="22" y="64">农业：人口密了多少倍？</text>
+  <text x="22" y="86">城市：又添了什么？</text>
+  <text x="22" y="108">贸易路线：连起了什么？</text>
+  <text x="22" y="128" class="small-t">接第 4 章</text>
+
+  <rect class="warn-soft" x="8" y="166" width="238" height="124" rx="10"/>
+  <text x="22" y="190" class="ttl">火种：病菌从哪里来</text>
+  <text x="22" y="214">哪种病来自哪种动物？</text>
+  <text x="22" y="236">人和牲畜怎样亲密接触？</text>
+  <text x="22" y="258">动物群本身要满足什么？</text>
+  <text x="22" y="278" class="small-t">接第 9 章</text>
+
+  <path class="arrow" d="M246,78 C276,78 280,140 296,148" marker-end="url(#ar11)"/>
+  <path class="arrow" d="M246,228 C276,228 280,166 296,158" marker-end="url(#ar11)"/>
+  <circle cx="314" cy="153" r="17" fill="var(--surface)" stroke="var(--accent)"/>
+  <text x="314" y="160" text-anchor="middle" class="gate">与</text>
+  <path class="arrow" d="M331,153 L350,153" marker-end="url(#ar11)"/>
+
+  <rect class="box" x="352" y="100" width="196" height="106" rx="10"/>
+  <text x="450" y="124" text-anchor="middle" class="ttl">群聚病</text>
+  <text x="450" y="148" text-anchor="middle">有哪四个特征？</text>
+  <text x="450" y="170" text-anchor="middle">小群体为什么</text>
+  <text x="450" y="192" text-anchor="middle">留不住它？</text>
+
+  <path class="arrow" d="M548,138 C566,138 566,78 584,78" marker-end="url(#ar11)"/>
+  <path class="arrow" d="M548,170 C566,170 566,228 584,228" marker-end="url(#ar11)"/>
+  <rect class="ok-soft" x="586" y="16" width="186" height="124" rx="10"/>
+  <text x="600" y="40" class="ttl">欧亚</text>
+  <text x="600" y="64">燃料？　火种？</text>
+  <text x="600" y="88">长出了哪些病？</text>
+  <text x="600" y="112" class="small-t">人群的抵抗力从哪里来？</text>
+  <rect class="bad-soft" x="586" y="166" width="186" height="124" rx="10"/>
+  <text x="600" y="190" class="ttl">美洲</text>
+  <text x="600" y="214">燃料？　火种？</text>
+  <text x="600" y="238">缺的是哪一样？</text>
+  <text x="600" y="262" class="small-t">驯化了几种动物？</text>
+
+  <rect class="box" x="8" y="314" width="764" height="50" rx="10"/>
+  <text x="22" y="336" class="ttl">反方向的例外</text>
+  <text x="130" y="336">哪些病让欧洲人在热带吃了亏？瓜分非洲和新几内亚，比瓜分美洲晚了多久？</text>
+  <text x="130" y="355" class="small-t">病菌站在谁那一边？</text>
+</svg>
+<figcaption>本站的归纳，每一格都是问题。"与"结构要问的是：两样里缺了一样，结果会怎样？</figcaption>
+</figure>
+
+<h3>边读边填：作者用了哪些数字和例子？</h3>
+<p>下面每一环，原书都给了具体的数字、病名或事件。<strong>边读边找</strong>，写个关键词就行（会自动保存在你的浏览器里）。前三行和后面的玩具模型直接相关。</p>
+
+<div class="table-wrap">
+<table class="findit">
+  <thead><tr><th>环节</th><th>你找到的数字 / 例子</th><th>提示</th></tr></thead>
+  <tbody>
+    <tr><td>燃料：人口门槛</td><td><input type="text" class="note" data-key="ch11-f3"></td><td class="hint">麻疹在多少人以下很可能灭绝？</td></tr>
+    <tr><td>燃料：法罗群岛</td><td><input type="text" class="note" data-key="ch11-f2"></td><td class="hint">两次麻疹各在哪一年？第二次是谁带来的？多少人、多久全得了？</td></tr>
+    <tr><td>群聚病：四个特征</td><td><input type="text" class="note" data-key="ch11-f1"></td><td class="hint">"来一阵、走一阵"的病有哪四个共同点？</td></tr>
+    <tr><td>群聚病：小群体的病</td><td><input type="text" class="note" data-key="ch11-f4"></td><td class="hint">小群体里待得住的病，作者分了哪几类、各举了什么病？哪个盆地的哪种病患病率高达四成？</td></tr>
+    <tr><td>火种：病菌的来源</td><td><input type="text" class="note" data-key="ch11-f5"></td><td class="hint">麻疹最近的亲戚是哪种动物的病？流感呢？</td></tr>
+    <tr><td>美洲：家畜</td><td><input type="text" class="note" data-key="ch11-f7"></td><td class="hint">美洲一共驯化了几种动物？各是什么？</td></tr>
+    <tr><td>美洲：天花与阿兹特克</td><td><input type="text" class="note" data-key="ch11-f6"></td><td class="hint">天花哪一年到了墨西哥？谁带来的？墨西哥人口从多少跌到多少？</td></tr>
+    <tr><td>反方向</td><td><input type="text" class="note" data-key="ch11-f8"></td><td class="hint">哪些病让欧洲人在热带吃尽苦头？一个美国人熟悉的工程例子是什么？</td></tr>
+  </tbody>
+</table>
+</div>
+
+<details class="reveal"><summary>读完了？对照我找到的</summary><div>
+<ul>
+  <li>燃料 · 门槛：<strong>50 万</strong></li>
+  <li>燃料 · 法罗群岛：<strong>1781 年</strong>、<strong>1846 年</strong>；丹麦木匠；<strong>7,782 人</strong>；<strong>三个月</strong></li>
+  <li>群聚病 · 四个特征：<strong>传得快</strong>；<strong>急性</strong>；<strong>痊愈后免疫</strong>；<strong>只感染人</strong></li>
+  <li>群聚病 · 小群体：动物或土壤宿主（黄热病）；慢性（麻风、雅司）；不留免疫（钩虫）；卡里穆伊、麻风 <strong>40%</strong></li>
+  <li>火种 · 来源：麻疹 / <strong>牛瘟</strong>（牛）；流感 / <strong>猪和鸭</strong></li>
+  <li>美洲 · 家畜：<strong>5 种</strong>；火鸡、大羊驼/羊驼、豚鼠、番鸭、狗</li>
+  <li>美洲 · 阿兹特克：<strong>1520 年</strong>；古巴来的奴隶；约 <strong>2000 万</strong> / 1618 年约 <strong>160 万</strong></li>
+  <li>反方向：<strong>疟疾、霍乱、黄热病</strong>；<strong>巴拿马运河</strong></li>
+</ul>
+</div></details>
+
+<div class="pause"><strong>到这里先停下，去读原书第 11 章</strong>（约 30 分钟），边读边填上面的表。<br>读完回来，从下面接着往下看——后半页是读完才有意思的部分。</div>
+
+<h2>玩具模型：群聚病需要多大的人口</h2>
+
+<p>这个模型把法罗群岛的故事拆成可以算的几步：每个病人约两周后康复并终身免疫；没人可传时病毒就消失，直到新生儿攒够、外面又有人带进来。
+这里藏着一个可以算的量：<strong>一种麻疹式的病要活下去，每一轮传播（大约两周）都得找到新的、没得过病的人，而在一个封闭的人群里，新的易感者几乎只能来自新生儿</strong>。所以真正决定它活不活得下去的，不是城有多大，而是<strong>每两周出生多少个婴儿</strong>。下面这个模型就是让你看这件事。</p>
+
+<div class="exercise"><div class="q">先猜再玩：法罗群岛 7,782 人，从没得过麻疹。一个病人上岛后，大约几周内几乎人人都得过？之后，如果没有外人再带进来，岛上的易感者要多少年才能重新攒够、足以支撑下一次流行——那时病毒还在吗？</div>
+<details class="reveal"><summary>看答案</summary><div>
+<p>在模型里（默认参数），大约 <strong>三个月（12–14 周）</strong>就几乎人人得过——和原文"三个月"对得上。病毒随即灭绝。易感者要靠新生儿一点点攒回来，按每年每千人出生 20 个算，大约 <strong>3 年多</strong>才重新越过流行门槛（图里的黄色虚线），可那时病毒早就不在了。真实的法罗群岛等了 65 年，才等来那个木匠。</p>
+<p>再把起点切到"已经扎根"，把人口一路往右拉，看下面那条曲线在哪里从 0 跳到 100%——那就是这组参数下的门槛。</p>
+</div></details>
+</div>
+
+<section class="sim" id="sim-crowd">
+  <div class="sim-head"><span class="tag">玩具模型</span><h3>烧完就灭，还是一波接一波？</h3>
+    <div class="desc">调人口、出生率和疾病类型。上图是这一次随机模拟的 20 年；下图是同样的设定在不同人口规模下各跑 40 次、病还能撑过 20 年的比例。</div></div>
+  <div class="sim-body">
+    <div class="controls">
+      <label>人口 <input type="range" id="pop" min="0" max="1000" step="1"> <output id="pop-o"></output></label>
+      <button data-n="7782">法罗群岛 7,782</button>
+      <button data-n="500000">50 万</button>
+    </div>
+    <div class="controls">
+      <label>出生率（每年每千人） <input type="range" id="birth" min="10" max="50" step="1" value="20"> <output id="birth-o"></output></label>
+      <span class="sep"></span>
+      <span class="seg" id="start-seg"><span class="lbl">起点：</span><button data-v="virgin">外来者带入（人人没得过）</button><button data-v="endemic">已经扎根</button></span>
+    </div>
+    <div class="controls">
+      <span class="seg" id="dis-seg"><span class="lbl">疾病：</span><button data-v="measles">麻疹式：急性、终身免疫</button><button data-v="noimm">反复感染：病好不留免疫</button><button data-v="chronic">慢性：一病好几年</button></span>
+      <button id="rerun">🎲 再跑一次</button>
+    </div>
+    <div class="stage charts">
+      <div class="cap">这一次模拟：正在生病的人数（红）和易感者占全体的比例（蓝），黄色虚线是流行门槛</div>
+      <svg id="run-chart" viewBox="0 0 640 240" role="img" aria-label="一次随机模拟中，20 年里正在生病的人数和易感者比例"></svg>
+      <div class="cap">40 次模拟里，病还能撑过 20 年的比例（一律从"已经扎根"出发）</div>
+      <svg id="pers-chart" viewBox="0 0 640 210" role="img" aria-label="不同人口规模下，疾病能撑过 20 年的比例"></svg>
+    </div>
+    <div class="narrate" id="crowd-narrate"></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="st-babies"></div><div class="l">每两周出生的婴儿（新燃料）</div></div>
+      <div class="stat"><div class="v" id="st-peak"></div><div class="l">这一次：同时生病最多时</div></div>
+      <div class="stat"><div class="v" id="st-out"></div><div class="l">这一次的结局</div></div>
+      <div class="stat"><div class="v" id="st-thr"></div><div class="l">门槛：一半能撑过 20 年的人口</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="tip">这是玩具模型，规则和简化如下。
+<strong>结构：</strong>离散时间的随机 SIR 模型，每一步 = 2 周（约等于麻疹一"代"传播的时间）。每一步里，每个易感者被感染的概率是 1 − e<sup>−βI/N</sup>；病人康复后进入"免疫"（反复感染型则回到"易感"）；新生儿全部是易感者，每个人每年的死亡率等于出生率，所以总人口大致不变。
+<strong>三种病：</strong>麻疹式——基本再生数 R₀ = 15、病程 2 周、终身免疫（R₀ 12–18 是麻疹常用的取值）；反复感染——R₀ = 1.5、病程 2 周、不留免疫；慢性——R₀ = 3、平均病程 5 年、之后免疫。这些数字是为了显出差别而选的示意值，不是对麻风、钩虫等具体疾病的拟合。
+<strong>两种起点：</strong>"外来者带入"是 1 个病人进入从没得过病的人群（法罗群岛 1846 年）；"已经扎根"是从长期流行的平衡状态出发（易感者约占 1/R₀）。下图的门槛曲线一律用后者，因为它问的是"扎根之后留不留得住"。
+<strong>没有模拟的：</strong>年龄结构、季节和学期、城乡之间的分布、外来者反复带入、疾病致死。其中最要紧的是<strong>空间</strong>：模型把所有人放在一口锅里，所以"外来者带入"时，第一波过后的空档期太长，哪怕几百万人也会断——真实的大人口分散在许多城镇，一处熄了另一处还在烧，这正是作者说的病能"从一个地方转到另一个地方"。
+在默认的出生率 20‰ 下，模型算出的麻疹门槛约在 20 万上下，和原文的"50 万"在同一个量级；出生率越高，门槛越低。</div>
+
+<h2>二十多年后：体检与反方</h2>
+
+<p>这一章有两类论断：一类是"群聚病需要大人口"的<strong>机制</strong>，另一类是"哪种病来自哪种动物、何时跳到人身上"的<strong>谱系</strong>。二十多年来，前者几乎没动；后者被古 DNA 和病原体基因组大幅改写——而改写的方向，有的削弱了"牲畜"这个词，有的反而加强了"大人口"这个条件。下面是本站的粗略判断：</p>
+
+<div class="cards">
+  <div class="card"><h4>急性、病愈免疫的病需要大人口<span class="ev ev-strong">依然稳</span></h4><p>"临界社区规模"（critical community size）已是流行病学的标准概念；具体数字随出生率、接种率而变。</p></div>
+  <div class="card"><h4>麻疹来自牛瘟<span class="ev ev-strong">依然稳</span></h4><p>亲缘关系没有变；变的是时间，见下一张卡。</p></div>
+  <div class="card"><h4>人与牛亲密 9000 年，足够牛瘟找上我们<span class="ev ev-revised">被新证据改写</span></h4><p>分子钟估计麻疹与牛瘟最早约在公元前 6 世纪才分开，远晚于驯化牛的年代。</p></div>
+  <div class="card"><h4>结核来自牛<span class="ev ev-revised">被新证据改写</span></h4><p>牛结核杆菌不是人结核的祖先，而是从同一个祖先分出去的一支。</p></div>
+  <div class="card"><h4>恶性疟来自鸟类<span class="ev ev-revised">被新证据改写</span></h4><p>它来自大猩猩。原表本来就打了问号。</p></div>
+  <div class="card"><h4>美洲在接触前没有致命的群聚病<span class="ev ev-mixed">大体成立，边缘有新发现</span></h4><p>秘鲁确有接触前的结核（来自海豹），巴西有约 2000 年前的密螺旋体病；但仍没有一种像天花那样的群聚病。</p></div>
+</div>
+
+<div class="counter" data-title="新证据 1 · 麻疹比我们以为的年轻得多">
+<p>2020 年，迪克斯（Düx）等人在《科学》上测出了一个 1912 年的麻疹病毒基因组，用分子钟估计麻疹病毒和牛瘟病毒的分岔时间：<strong>最早约在公元前 6 世纪</strong>。论文的说法很谨慎——这是麻疹在人类中立足的"最早可能时间"，它<strong>可能和大城市的兴起同时</strong>。</p>
+<p>这对作者是一半修正、一半支持。修正的是"人和牛亲密了 9000 年，牛瘟有的是时间找到我们"这一句：如果分岔只有两千多年，那么"有牛"远远不够。支持的恰恰是本章的另一个前提：麻疹要等到人口大到能养活它，才可能扎根。换成本页的说法——<strong>火种早就在了，燃料要到城市时代才够</strong>。</p>
+</div>
+
+<div class="counter" data-title="新证据 2 · 「致命礼物」表的改写，以及作者自己留的那个括号">
+<p>原书表 11.1 列了六种病和它们"最近亲戚"所在的动物。二十多年后，至少两行需要改：</p>
+<ul>
+  <li><strong>结核。</strong>2002 年布罗施（Brosch）等人在 PNAS 上比较了 100 株结核分枝杆菌复合群的基因组缺失，发现牛结核杆菌那一支是从人结核菌的祖先<strong>分出去</strong>的，与"人结核由牛结核演化而来"的常见说法相矛盾。</li>
+  <li><strong>恶性疟。</strong>2010 年刘（Liu）等人在《自然》上分析了近 3000 份野生猿类粪便样本，发现人类恶性疟原虫嵌在西部大猩猩的疟原虫谱系之中——它<strong>来自大猩猩</strong>，不是鸟，也不是黑猩猩。</li>
+</ul>
+<p>还有一个漂亮的后续。作者在讲美洲的那几段加了一个括号：有人报告在一具约 1000 年前的秘鲁木乃伊里找到了结核 DNA，但当时的方法分不清人结核和野生动物的近亲菌。2014 年博斯（Bos）等人在《自然》上从秘鲁三具约 1000 年前的骨骼里重建了基因组：接触前的美洲<strong>确实有结核</strong>，而它最接近的是<strong>海豹和海狮</strong>身上的菌株。作者的谨慎是对的，答案却出乎所有人意料。</p>
+<p>这些改写削弱的是"<strong>家畜</strong>"这个词，而不是"<strong>动物</strong>"：恶性疟来自野生猿类，人结核也不是从牛那里来的。作者"美洲缺少火种"的推理，主要靠的是麻疹、天花、流感这几种群聚病，在这几种上，牲畜仍是最好的解释。</p>
+</div>
+
+<div class="counter" data-title="新证据 3 · 天花有多古老？">
+<p>原文说天花最早的证据是约公元前 1600 年一具埃及木乃伊上的痘痕。古 DNA 让这件事变得更复杂：2016 年达根（Duggan）等人从一具 17 世纪立陶宛儿童木乃伊里重建了天花病毒基因组，发现现代天花的主要谱系是在 18、19 世纪才分化开的，并指出仅凭描述很难把天花和其他出疹子的病区分开；2020 年米勒曼（Mühlemann）等人又在约公元 600–1050 年（维京时代）的北欧遗骸里找到了多种已经灭绝的天花病毒，把已知天花病毒的共同祖先推到约 1700 年前。</p>
+<p>这并不能证明古埃及没有天花——基因组只能告诉我们<strong>已经测到的</strong>病毒有多老。但它提醒你：书里那串"首次记载的年份"，有一部分是根据症状描述推断的，可信度参差不齐。</p>
+</div>
+
+<div class="counter" data-title="反方 4 · 「处女地」不是全部：社会条件放大了死亡">
+<p>历史学家戴维·琼斯（David S. Jones）2003 年在《威廉与玛丽季刊》上发表《重访处女地》（Virgin Soils Revisited）。文章梳理了 20 世纪 70 年代麦克尼尔、克罗斯比以来的"处女地流行病"说法：美洲人口的崩溃是新旧大陆接触后<strong>不可避免</strong>的结果。琼斯认为，"处女地"这个词常被理解成一种遗传上的易感性，它遮蔽了更复杂的社会、环境和生物因素，正是这些因素放大或削弱了一个人群对疾病的易感性（想想战乱、被迫迁徙、饥荒会对一个人群做什么）。</p>
+<p>这一反方值得认真对待，因为原书在这里的措辞有时很绝对，比如说密西西比河谷的社会被病菌"包办"了毁灭。这一反方并不否认病菌的作用，它针对的是"不可避免"：如果死亡率取决于疾病和社会条件的共同作用，那么征服者的行为就不只是"碰巧带了病菌"。
+关于规模，2019 年科赫（Koch）等人汇总已发表的估计，认为 1492 年美洲原住民约 6000 万，到 17 世纪初约 5500 万人死亡，约占九成——和原文"至多 95%"在同一量级，但具体数字至今仍有很大争议。</p>
+</div>
+
+<h2>想一想</h2>
+
+<p>这几道题没有标准答案。先自己写几句，再展开"一种看法"——它只是一种看法，你完全可以不同意。</p>
+
+<div class="ponder">
+  <div class="q">1. 作者认为美洲没有回敬欧洲人的群聚病，主因是缺少可以提供病菌的群居家畜，而不是缺少人口。你怎么判断两个条件里，到底是哪一个"缺"了？</div>
+  <textarea class="note" data-key="ch11-p1" placeholder="提示：想想有没有'只缺其中一个条件'的例子。"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>当结果需要两个条件<strong>同时</strong>具备（"与"结构）时，最有信息量的案例是<strong>只缺其中一个</strong>的那些。美洲正好是这样的案例：它有特诺奇蒂特兰这样的大城市（燃料够），却只驯化了五种动物、没有一种是挨着人住、挤成大群、被挤奶的（火种缺）。燃料够而结果没出现，就把嫌疑指向了火种。</p>
+    <p>作者自己列的两个"辅助因素"——美洲的大人口出现得晚、几个中心没连成片——都在说燃料<strong>不够充分</strong>。作者的判断是它们"还不够解释"，这是对的推理方式：如果燃料只是略差，你会预期美洲有<strong>少一些</strong>群聚病，而不是<strong>一种都没有</strong>。"全无"这个结果，更像是某个必要条件整个缺席。</p>
+    <p>带走一个问法：<strong>遇到"需要好几个条件同时满足"的结果时，去找只缺一个条件的案例；再看结果是"打了折扣"还是"完全没有"——后者通常指向一个缺席的必要条件。</strong></p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">2. 黏液瘤病毒在澳大利亚几年内就变温和了，梅毒在欧洲几十年内也变温和了。这是不是说明，所有新出现的传染病最后都会变温和？</div>
+  <textarea class="note" data-key="ch11-p2" placeholder="提示：作者讲霍乱时说过一句'病人死了也没关系'。"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>不是。自然选择奖励的是<strong>传播</strong>，不是温和。兔子病毒变温和，是因为病得轻、活得久的兔子能把病毒传给更多兔子——在这里，"杀得太快"妨碍了传播。可作者也举了霍乱的例子：病人即便会死，只要在死前把大量病菌排进别人的饮用水，病菌就赢了——在这里，"病得重"本身就是传播手段。</p>
+    <p>所以要预测一种病会往哪个方向演化，问的不是"它好不好"，而是"<strong>让宿主更难受，会帮它多传几个人，还是少传几个人</strong>"。靠咳嗽、腹泻、蚊子或污水传播、不需要病人能走动的病，未必会变温和。</p>
+    <p>带走一个问法：<strong>想知道一个系统会被"演化"成什么样，先找出它的复制规则，再问每个特征是在帮它复制还是在妨碍它复制。</strong>这个问法对病菌、对内容平台上的帖子、对组织里的流程都一样适用。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">3. 美洲原住民的大量死亡，病菌、战争、奴役、饥荒各占多少？如果答案是"大部分死于病菌"，这能不能减轻征服者的责任？</div>
+  <textarea class="note" data-key="ch11-p3" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>先看一个算术上的陷阱：如果几个原因是<strong>相乘</strong>而不是相加的——比如被迫迁徙、挨饿的人群得了天花，死亡率远高于吃饱、安定的人群——那么"各占几成"就是一个没有确定答案的问题。同一个死者，你可以说死因是天花，也可以说死因是让天花变得致命的饥荒。拆分比例只在原因各自独立起作用时才有意义。</p>
+    <p>再看第二层：<strong>原因的分量</strong>和<strong>责任的分量</strong>是两回事。即使病菌在统计上是头号杀手，带着病菌到来的人怎样对待病倒的人群——是趁虚而入、强迫劳动，还是别的做法——仍然是一个道德问题。全书的立场是"解释胜负，不为胜负辩护"，这一章正是检验这句话的地方。</p>
+    <p>带走一个问法：<strong>听到"X 的主要原因是 Y"时，先问这些原因是相加还是相乘；如果是相乘，就别急着分百分比，去问"去掉哪一个，结果会变多少"。</strong></p>
+  </div></details>
+</div>
+
+<h2>换个镜头看你熟悉的世界</h2>
+
+<p>这一章最值得带走的是两个工具：临界规模，以及"没见过的病最致命"。试着把它们用到你自己的领域。</p>
+
+<div class="lens" data-title="工具一 · 临界规模：活下去靠的是新人的流量，不是总人数">
+<p>一个技术社区、一门小众编程语言、一个公司内部的技术分享会，都有自己的"麻疹式"生命周期：发布时所有感兴趣的人一拥而上（第一波流行），新鲜感过去，能来的都来过了（人人"免疫"），然后就安静下来。它能不能一直活着，不取决于"总共有多少人听说过它"，而取决于<strong>每个周期有多少从没接触过它的新人进来</strong>——也就是模型里的"每两周出生的婴儿"。</p>
+<p>反过来，"反复感染型"的东西不需要新人：日报、周会、待办工具，同一批人每天都会"再得一次"。所以设计一个社区或产品时，先问清楚它是哪一种病。</p>
+<textarea class="note" data-key="ch11-l1" placeholder="你参与过的一个社区或产品，是'麻疹式'还是'反复感染式'？它的'新生儿'从哪里来？"></textarea>
+</div>
+
+<div class="lens" data-title="工具二 · 处女地：从没见过这个环境的系统最脆弱">
+<p>互联网上的大生态（比如公共的包仓库、公网服务）就像欧亚大陆：人多、连得紧，各种攻击手法在里面不断演化，防御工具、安全规范、工程师的"免疫记忆"也跟着积累起来。一套长期隔离运行的老系统——内网里的工控设备、从没上过公网的管理后台——一旦第一次接入这个生态，面对的是它从没见过、也毫无防备的一整套"病菌"。</p>
+<p>对它来说，危险不在于攻击者特别厉害，而在于<strong>它在一个没有这些威胁的环境里长大</strong>。这也提醒你琼斯的反方：老系统被攻破的后果有多严重，还取决于它当时的"社会条件"——有没有人值守、能不能打补丁、出事后有没有退路。</p>
+<textarea class="note" data-key="ch11-l2" placeholder="你维护的系统里，有没有一块'处女地'？它第一次接触外部世界时，最可能先被哪种'病菌'打倒？"></textarea>
+</div>
+
+<h2>读完：回到你的赌注</h2>
+
+<details class="reveal"><summary>打开对照（建议读完原书这一章再打开）</summary><div class="payoff" data-bet="ch11">
+  <div class="mine"></div>
+  <p>作者的主因是第三项：<strong>美洲几乎没有群居家畜</strong>。作者先承认了人口和贸易两个辅助因素，然后提了一个简单的问题：</p>
+  <blockquote class="quote">From what microbes could they conceivably have evolved?<cite>— 第 11 章，讲美洲为什么没有致命群聚病的那几段。本站译：它们还能从哪些微生物演化出来呢？</cite></blockquote>
+  <p>美洲只驯化了火鸡、大羊驼/羊驼、豚鼠、番鸭和狗五种动物；大羊驼又群小、数量少、不挤奶、不进屋。没有火种，燃料再多也烧不起来。</p>
+  <ul>
+    <li><strong>"大人口出现得晚、没连成片"</strong>：作者认为这两条可能起了作用，但"还解释不了"为什么美洲<em>一种</em>致命群聚病也没有。押这一项不算错，只是作者认为它不够。</li>
+    <li><strong>"欧洲人天生抵抗力强"</strong>：要小心"天生"这个词。欧洲人的抵抗力来自几千年里和这些病共处——小时候得过而免疫，以及人群在一次次流行中被自然选择。它是同一段历史的<strong>结果</strong>，不是起点；如果美洲有自己的群聚病，美洲人也会有对应的抵抗力。</li>
+    <li><strong>"卫生条件更好"</strong>：作者没有用这条理由。何况欧亚的群聚病多数靠飞沫和接触传播，城市干净一点挡不住麻疹。</li>
+    <li><strong>"其实也有，比如梅毒"</strong>：作者说梅毒是唯一"可能的例外"，起源仍有争议。2024 年马扬德（Majander）等人在《自然》上报告了巴西约 2000 年前遗骸里的密螺旋体基因组，把各亚种的分化时间确定在哥伦布之前——这为"美洲起源"一类假说提供了新材料，但还没有给出定论。即便算上它，单向流动的大格局也没有变。</li>
+  </ul>
+  <p>全章的分量，可以用作者的一句话来量：</p>
+  <blockquote class="quote">Far more Native Americans died in bed from Eurasian germs than on the battlefield from European guns and swords.<cite>— 第 11 章，讲欧洲人征服美洲的开头。本站译：死于欧亚病菌、倒在病床上的美洲原住民，远比死于欧洲人刀枪、倒在战场上的多。</cite></blockquote>
+</div></details>
+
+<p>最后，用你自己的话，一句话说出这一章：</p>
+<textarea class="note" data-key="ch11-oneline" placeholder="例如：群聚病要燃料也要火种，美洲只有燃料……（写你自己的版本）"></textarea>
+
+<div class="hook">
+<p>病菌是"不用学就会传"的；下一样东西却必须有人一点点学会。文字让少数人能记账、发命令、跨越距离和时间保存知识，是国家和帝国的工具。</p>
+<p>可是在整个人类历史上，<strong>文字只被独立发明过寥寥几次，其余的都是怎么来的？</strong>先猜一猜：你觉得独立发明过几次？在哪里？第 12 章会给出作者的答案。</p>
+</div>
+
+</main>
+<script>
+(function () {
+  const { s } = GGS;
+  // ---------- 模型 ----------
+  function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function normal(r) { let u = 0; while (u === 0) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); }
+  function poisson(r, m) { if (m <= 0) return 0; if (m > 30) return Math.max(0, Math.round(m + Math.sqrt(m) * normal(r))); const L = Math.exp(-m); let k = 0, p = 1; do { k++; p *= r(); } while (p > L); return k - 1; }
+  function binom(r, n, p) {
+    if (n <= 0 || p <= 0) return 0; if (p >= 1) return n;
+    if (n < 40) { let k = 0; for (let i = 0; i < n; i++) if (r() < p) k++; return k; }
+    const m = n * p;
+    if (m < 25) return Math.min(n, poisson(r, m));
+    if (n - m < 25) return n - Math.min(n, poisson(r, n - m));
+    return Math.min(n, Math.max(0, Math.round(m + Math.sqrt(m * (1 - p)) * normal(r))));
+  }
+  const DIS = {
+    measles: { R0: 15, gamma: 1, immune: true, zh: "麻疹式" },
+    noimm: { R0: 1.5, gamma: 1, immune: false, zh: "反复感染" },
+    chronic: { R0: 3, gamma: 1 / 130, immune: true, zh: "慢性" },
+  };
+  const SPY = 26, YEARS = 20, T = YEARS * SPY;
+  function run(N, birth, dk, start, seed, trace) {
+    const r = rng(seed), d = DIS[dk], beta = d.R0 * d.gamma, mu = birth / 1000 / SPY;
+    let S, I;
+    if (start === "virgin") { S = N - 1; I = 1; }
+    else if (d.immune) { S = Math.round(N / d.R0); I = Math.max(1, Math.round(N * mu * (1 - 1 / d.R0) / (d.gamma + mu))); }
+    else { S = Math.round(N / d.R0); I = N - S; }
+    let R = N - S - I, cum = 0, peak = I, ext = null;
+    const tr = trace ? [[I, S / N]] : null;
+    for (let t = 0; t < T; t++) {
+      if (I === 0) { if (ext === null) ext = t; if (!trace) break; }
+      const Nt = Math.max(1, S + I + R);
+      const newI = I ? binom(r, S, 1 - Math.exp(-beta * I / Nt)) : 0;
+      const rec = binom(r, I, d.gamma);
+      const births = poisson(r, Nt * mu);
+      const dS = binom(r, S - newI, mu), dI = binom(r, I - rec, mu), dR = binom(r, R, mu);
+      S = S - newI - dS + births + (d.immune ? 0 : rec);
+      I = I + newI - rec - dI;
+      R = R + (d.immune ? rec : 0) - dR;
+      cum += newI; if (I > peak) peak = I;
+      if (trace) tr.push([I, S / Math.max(1, S + I + R)]);
+    }
+    if (I === 0 && ext === null) ext = T;
+    return { ext, cum, peak, tr };
+  }
+
+  // ---------- 状态与控件 ----------
+  const NMIN = 50, NMAX = 5e6;
+  const st = { N: 7782, birth: 20, dis: "measles", start: "virgin", seed: 1 };
+  const pop = document.getElementById("pop"), birth = document.getElementById("birth");
+  const toN = (v) => { const x = NMIN * Math.pow(NMAX / NMIN, v / 1000); const p = Math.pow(10, Math.floor(Math.log10(x)) - 1); return Math.round(x / p) * p; };
+  const toV = (n) => Math.round(1000 * Math.log(n / NMIN) / Math.log(NMAX / NMIN));
+  const fmt = (n) => Math.round(n).toLocaleString("en");
+  const fmtN = (n) => n >= 10000 ? (n / 10000).toLocaleString("en", { maximumFractionDigits: 1 }) + " 万" : fmt(n);
+  function seg(id, key) {
+    const btns = [...document.querySelectorAll(`#${id} button`)];
+    const paint = () => btns.forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === st[key] ? "true" : "false"));
+    btns.forEach((b) => b.addEventListener("click", () => { st[key] = b.dataset.v; paint(); update(key === "dis"); }));
+    paint();
+  }
+  seg("start-seg", "start"); seg("dis-seg", "dis");
+  pop.value = toV(st.N);
+  pop.addEventListener("input", () => { st.N = toN(+pop.value); update(false); });
+  document.querySelectorAll("#sim-crowd button[data-n]").forEach((b) => b.addEventListener("click", () => { st.N = +b.dataset.n; pop.value = toV(st.N); update(false); }));
+  birth.addEventListener("input", () => { st.birth = +birth.value; update(true); });
+  document.getElementById("rerun").addEventListener("click", () => { st.seed++; update(false); });
+
+  // ---------- 门槛曲线：每种人口跑 40 次 ----------
+  const SIZES = [50, 100, 200, 500, 1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6, 2e6, 5e6];
+  let curve = null, curveKey = "", curveTimer = null;
+  function computeCurve() {
+    const key = st.dis + "|" + st.birth;
+    if (key === curveKey && curve) return;
+    curveKey = key;
+    curve = SIZES.map((N, i) => { let k = 0; for (let j = 1; j <= 40; j++) if (run(N, st.birth, st.dis, "endemic", 1000 * i + j).ext === null) k++; return k / 40; });
+  }
+  function threshold() {
+    if (curve[0] >= 0.5) return { txt: "不到 50 人", n: null };
+    for (let i = 1; i < SIZES.length; i++) if (curve[i] >= 0.5) {
+      const a = Math.log10(SIZES[i - 1]), b = Math.log10(SIZES[i]), f = (0.5 - curve[i - 1]) / (curve[i] - curve[i - 1]);
+      const n = Math.pow(10, a + f * (b - a)), p = Math.pow(10, Math.floor(Math.log10(n)));
+      const r = Math.round(n / p) * p;
+      return { txt: "约 " + fmtN(r), n: r };
+    }
+    return { txt: "超过 500 万", n: null };
+  }
+
+  // ---------- 作图 ----------
+  const X0 = 52, X1 = 628;
+  function drawRun(res) {
+    const svg = document.getElementById("run-chart"); svg.replaceChildren();
+    const d = DIS[st.dis], tr = res.tr;
+    const xs = (t) => X0 + (X1 - X0) * t / T;
+    // 上：病人数
+    const Y0 = 12, Y1 = 128, maxI = Math.max(1, ...tr.map((p) => p[0]));
+    const yI = (v) => Y1 - (Y1 - Y0) * v / maxI;
+    svg.append(s("line", { class: "axis", x1: X0, x2: X1, y1: Y1, y2: Y1 }));
+    svg.append(s("text", { x: X0 - 6, y: Y0 + 8, "text-anchor": "end", class: "t-muted", text: fmt(maxI) }));
+    svg.append(s("text", { x: X0 - 6, y: Y1, "text-anchor": "end", class: "t-muted", text: "0" }));
+    svg.append(s("text", { x: X0 + 6, y: Y0 + 8, class: "t-muted", text: "正在生病的人" }));
+    svg.append(s("polyline", { class: "inf", points: tr.map((p, t) => xs(t).toFixed(1) + "," + yI(p[0]).toFixed(1)).join(" ") }));
+    // 下：易感者比例
+    const Z0 = 150, Z1 = 214, thr = 1 / d.R0;
+    const maxS = Math.min(1, Math.max(thr * 1.6, ...tr.map((p) => p[1])) * 1.08);
+    const yS = (v) => Z1 - (Z1 - Z0) * v / maxS;
+    svg.append(s("line", { class: "axis", x1: X0, x2: X1, y1: Z1, y2: Z1 }));
+    svg.append(s("line", { class: "thr", x1: X0, x2: X1, y1: yS(thr), y2: yS(thr) }));
+    svg.append(s("text", { x: X0 - 6, y: yS(thr) + 4, "text-anchor": "end", class: "t-muted", text: Math.round(thr * 100) + "%" }));
+    svg.append(s("text", { x: X0 - 6, y: Z0 + 4, "text-anchor": "end", class: "t-muted", text: Math.round(maxS * 100) + "%" }));
+    svg.append(s("text", { x: X0 + 6, y: Z0 + 4, class: "t-muted", text: "易感者比例（虚线：门槛 1/R₀）" }));
+    svg.append(s("polyline", { class: "sus", points: tr.map((p, t) => xs(t).toFixed(1) + "," + yS(p[1]).toFixed(1)).join(" ") }));
+    for (let y = 0; y <= YEARS; y += 5) svg.append(s("text", { x: xs(y * SPY), y: 232, "text-anchor": y === YEARS ? "end" : "middle", class: "t-muted", text: y === 0 ? "第 0 年" : y + " 年" }));
+    if (res.ext !== null && res.ext < T) {
+      const x = xs(res.ext);
+      svg.append(s("line", { class: "ext", x1: x, x2: x, y1: Y0, y2: Z1 }));
+      svg.append(s("text", { x: x + 4, y: 60, class: "t-muted", text: "灭绝" }));
+    }
+  }
+  function drawCurve(thrN) {
+    const svg = document.getElementById("pers-chart"); svg.replaceChildren();
+    const L0 = Math.log10(NMIN), L1 = Math.log10(NMAX);
+    const xs = (n) => X0 + (X1 - X0) * (Math.log10(n) - L0) / (L1 - L0);
+    const Y0 = 14, Y1 = 160, ys = (f) => Y1 - (Y1 - Y0) * f;
+    for (const f of [0, 0.5, 1]) {
+      svg.append(s("line", { class: "grid", x1: X0, x2: X1, y1: ys(f), y2: ys(f) }));
+      svg.append(s("text", { x: X0 - 6, y: ys(f) + 4, "text-anchor": "end", class: "t-muted", text: Math.round(f * 100) + "%" }));
+    }
+    for (const n of [100, 1000, 1e4, 1e5, 1e6]) svg.append(s("text", { x: xs(n), y: Y1 + 16, "text-anchor": "middle", class: "t-muted", text: fmtN(n) }));
+    svg.append(s("text", { x: X1, y: Y1 + 34, "text-anchor": "end", class: "t-muted", text: "人口（对数刻度）→" }));
+    svg.append(s("line", { class: "ref", x1: xs(7782), x2: xs(7782), y1: Y0, y2: Y1 }));
+    svg.append(s("text", { x: xs(7782) + 4, y: Y0 + 10, class: "t-muted", text: "法罗群岛" }));
+    if (st.dis === "measles") {
+      svg.append(s("line", { class: "ref", x1: xs(5e5), x2: xs(5e5), y1: Y0, y2: Y1 }));
+      svg.append(s("text", { x: xs(5e5) + 4, y: Y0 + 10, class: "t-muted", text: "原文：约 50 万" }));
+    }
+    svg.append(s("polyline", { class: "pcurve", points: curve.map((f, i) => xs(SIZES[i]).toFixed(1) + "," + ys(f).toFixed(1)).join(" ") }));
+    curve.forEach((f, i) => svg.append(s("circle", { class: "pdot", cx: xs(SIZES[i]), cy: ys(f), r: 3 })));
+    svg.append(s("line", { class: "now", x1: xs(st.N), x2: xs(st.N), y1: Y0, y2: Y1 }));
+    svg.append(s("text", { x: xs(st.N) + (st.N > 1e6 ? -4 : 4), y: Y1 - 6, "text-anchor": st.N > 1e6 ? "end" : "start", class: "t-muted", text: "你选的人口" }));
+  }
+
+  // ---------- 叙述 ----------
+  function when(step) { return step < SPY * 2 ? `第 ${step * 2} 周` : `第 ${(step / SPY).toFixed(1)} 年`; }
+  function narrate(res, thr) {
+    const d = DIS[st.dis], N = st.N, babies = N * st.birth / 1000 / SPY;
+    const alive = res.ext === null;
+    let m = "";
+    if (st.dis === "measles") {
+      if (st.start === "virgin") {
+        const share = Math.min(100, Math.round(100 * (res.cum + 1) / N));
+        if (!alive) {
+          const back = res.tr.findIndex((p, t) => t > res.ext && p[1] > 1 / d.R0);
+          m = `${fmt(N)} 个从没得过的人，一个病人带进来：到${when(res.ext)}病毒灭绝时，约 ${share}% 的人已经得过。之后易感者只能靠新生儿慢慢攒` + (back > 0 ? `，${when(back)}才重新越过门槛（蓝线穿过黄色虚线）——可病毒早就不在了，只能等外面的人再带进来。` : "，20 年里都没攒回门槛。");
+          if (N >= 1e5) m += ` 注意：在这个"一锅煮"的模型里，第一波几乎烧光了所有易感者，空档期太长，哪怕 ${fmtN(N)} 人也留不住。真实的大人口分散在许多城镇，一处熄了一处还在烧——这正是作者说的"从一个地方转到另一个地方"。所以下面的门槛曲线问的是另一个问题：病已经扎根以后，留不留得住？切到"已经扎根"试试。`;
+        } else m = `第一波过后，病居然在 ${fmt(N)} 人里撑过了 20 年——这在"外来者带入"的起点下很少见，再跑几次看看。`;
+      } else {
+        if (!alive) m = `病已经扎根，也留不住：在 ${fmt(N)} 人里，每两周只出生约 ${babies.toFixed(babies < 10 ? 1 : 0)} 个婴儿，所以平衡时同时在生病的也只有约 ${fmt(Math.max(1, babies * (1 - 1 / d.R0)))} 人。一次运气不好的低谷，传播链就断了（${when(res.ext)}）。`;
+        else m = `20 年后病还在。每两周有约 ${fmt(babies)} 个新生儿补进来，流行一波接一波（看红线的起伏）：每波过后易感者跌到门槛以下，病人数下降，但新生儿把易感者推回门槛之前，总还剩下一些病人把链条续上。`;
+        m += ` 下图里，这组参数的门槛是${thr.txt}人；把出生率调高，门槛会往左移——决定生死的是新燃料的流量，不是城有多大。`;
+      }
+    } else if (st.dis === "noimm") {
+      m = alive ? `反复感染型的病不需要新生儿：病好了的人马上又是易感者，燃料永远用不完。哪怕只有 ${fmt(N)} 人，它也能一直待下去——作者说小群体里的钩虫等寄生虫就是这样。` : `只有 ${fmt(N)} 人时，连反复感染型的病也会偶尔被随机性灭掉；人口再多一点，它就稳了。这类病的门槛（${thr.txt}）比麻疹低几个数量级。`;
+    } else {
+      m = alive ? `慢性病一病好几年，病人自己就是一个长期的"仓库"，不必赶在两周内找到下一个人。所以 ${fmt(N)} 人的小群体也养得住它——作者说新几内亚卡里穆伊盆地几千人里，麻风的患病率高达四成。` : `人口太少时，慢性病也可能被随机性灭掉；但它的门槛（${thr.txt}）比麻疹低几个数量级。`;
+    }
+    document.getElementById("crowd-narrate").textContent = m;
+  }
+
+  // ---------- 刷新 ----------
+  function update(curveChanged) {
+    document.getElementById("pop-o").textContent = fmt(st.N) + " 人";
+    document.getElementById("birth-o").textContent = st.birth + "‰";
+    const res = run(st.N, st.birth, st.dis, st.start, st.seed * 7919 + st.N, true);
+    drawRun(res);
+    const babies = st.N * st.birth / 1000 / SPY;
+    document.getElementById("st-babies").textContent = babies < 10 ? babies.toFixed(1) : fmt(babies);
+    document.getElementById("st-peak").textContent = fmt(res.peak);
+    document.getElementById("st-out").textContent = res.ext === null ? "20 年后还在" : when(res.ext) + "灭绝";
+    const finish = () => { computeCurve(); const thr = threshold(); drawCurve(); document.getElementById("st-thr").textContent = thr.txt; narrate(res, thr); };
+    clearTimeout(curveTimer);
+    if (curveChanged || !curve) curveTimer = setTimeout(finish, curve ? 120 : 0);
+    else finish();
+  }
+  update(true);
+})();
+</script>
+</body></html>

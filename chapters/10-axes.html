@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 10 章 · 大陆轴线——历史的伏笔</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ggs.js"></script>
+<style>
+  .traces { min-width: 680px; }
+  .traces text { font-size: 13px; }
+  .traces .ttl { font-size: 13.5px; font-weight: 700; }
+  .traces .small-t { font-size: 11.5px; fill: var(--muted); }
+  /* 轴向与传播 */
+  .axis-wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: flex-start; }
+  .axis-wrap svg { width: 100%; height: auto; display: block; }
+  .axis-wrap .map { flex: 1 1 300px; max-width: 470px; }
+  .axis-wrap .curve { flex: 1 1 260px; max-width: 400px; }
+  #axis-map .lat { stroke: var(--border); stroke-dasharray: 2 3; }
+  #axis-map .c-off { fill: var(--surface-2); stroke: var(--border); stroke-width: .5; }
+  #axis-map .c-on { fill: var(--c3); stroke: var(--surface); stroke-width: .5; }
+  #axis-map .c-new { fill: var(--c5); stroke: var(--surface); stroke-width: .5; }
+  #axis-map .origin { fill: var(--bad); stroke: var(--surface); stroke-width: 1.5; }
+  #axis-map .bar { stroke: var(--warn); stroke-width: 3; stroke-dasharray: 5 3; }
+  #axis-map text, #axis-curve text { font-size: 11.5px; }
+  #axis-curve .grid { stroke: var(--border); }
+  #axis-curve .ew { stroke: var(--c1); fill: none; stroke-width: 2; }
+  #axis-curve .ns { stroke: var(--c2); fill: none; stroke-width: 2; }
+  #axis-curve .now { stroke: var(--fg); stroke-dasharray: 3 3; }
+  .legend-sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin: 0 4px 0 10px; }
+  .controls output { font-family: var(--mono); color: var(--fg); }
+  .presets { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .presets .lbl { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body data-chapter="10">
+<main>
+
+<h2>读之前：先下注</h2>
+
+<div class="crux">大陆是东西走向还是南北走向，为什么能决定庄稼传得快还是慢？</div>
+
+<p>第 5–9 章问的是"<strong>食物生产从哪里开始</strong>"：全世界只有寥寥几个地方独立发明了农业，能不能发明，要看当地有没有合适的野生植物和动物。
+可是按第 5 章的清点，独立的起源地最多九个、也许只有五个；欧洲、埃及、印度、东非、南非、日本……世界上绝大多数农业区的庄稼和牲畜都是<strong>传过去的</strong>。
+所以"传得快不快"和"起步早不早"同样要紧：一块大陆上只要有一个起源地，再加上一条通畅的传播路线，整块大陆都能跟着受益。</p>
+
+<p>这一章就是第二部分的最后一块拼图，也是全书因果链上的第二张"地理底牌"：<strong>大陆的轴向</strong>。欧亚大陆东西长，美洲和非洲南北长。
+作者要论证，这个看地图一眼就能发现的差别，决定了作物、牲畜，乃至轮子和文字的传播速度。章名里的"伏笔"是认真的：第 12、13 章讲文字和技术的传播、第 18 章两个半球的逐项对比，都会回来用这一章的结论。</p>
+
+<div class="bet" data-key="ch10">
+  <div class="q">玉米在墨西哥被驯化之后，过了好几千年才在今天的美国东部成为主要作物；而新月沃地的小麦、大麦，在几千年里就铺满了从西欧到印度河的大片土地。如果只能押一个原因，你押哪个？</div>
+  <div class="opts">
+    <button>美洲的社会更分散、彼此交流少，好东西传不开</button>
+    <button>美洲没有马和牛车，运东西太慢</button>
+    <button>北方的日照、季节和气候都不一样，玉米得先培育出适应北方的新品种才能种</button>
+    <button>中间隔着沙漠和不适合农业的地带，路被挡住了</button>
+    <button>玉米本身比小麦难种、产量低，人们不太想种</button>
+  </div>
+  <textarea class="note" data-key="ch10-bet" placeholder="为什么押它？一两句话就够。读完这一章再回来对照。"></textarea>
+</div>
+
+<h2>读这一章</h2>
+
+<p>中译本二十页左右，<strong>约 20 分钟</strong>。数字和地名多，但篇幅短，一口气读完不难。
+全章最难读、也最值得慢读的是讲"<strong>抢先驯化</strong>"（preemptive domestication）的那两段，它用一件"没有发生的事"来推断传播的快慢。</p>
+
+<div class="reading">
+  <ul>
+    <li><strong>开头那一串速度数字：</strong>作者给出了几条路线的平均传播速度，单位是"英里/年"。把东西向和南北向的数字分别记下来（下面的填空表会用到）。留意这一段最后作者加的一句保留：作者说自己对玉米驯化年代的假设是"保守"的——如果假设错了，差距会变大还是变小？</li>
+    <li><strong>讲"抢先驯化"的两段：</strong>作者拿新月沃地和美洲的作物做比较，比的是"同一种作物被驯化过几次"。先停一下，自己想想：驯化的次数，凭什么能说明一种作物<em>传得快不快</em>？想通了再往下读。</li>
+    <li><strong>把墨西哥玉米种到加拿大的那个思想实验：</strong>作者列了好几重"错配"。数一数有几重，哪一重是换个播种时间也解决不了的。</li>
+    <li><strong>讲完非洲和美洲之后，作者自己补的那几段：</strong>纬度是唯一的因素吗？留意作者举了哪些"同纬度却传得慢"和"跨纬度却传得快"的例子——这几段是作者给自己的论证划的边界，读"想一想"第 2 题时会用到。</li>
+  </ul>
+</div>
+
+<div class="key"><strong>如果这一章错了，全书哪里会塌？</strong>前几章只解释了几个起源地的早晚。欧亚大陆"整体"领先，靠的是新月沃地的作物包在几千年里传遍了从爱尔兰到印度河的温带地区，又和中国的作物互通有无。
+如果作物传播的快慢和大陆形状无关，"欧亚领先"就缩成了"新月沃地一个点领先"，第 18 章两个半球的对比也少了一半论据。所以这一章值得带着两个问题读：<strong>快慢的差距真的有那么大吗？差距真的来自纬度吗？</strong></div>
+
+<h2>论证骨架：三条痕迹，一个机制，两次对照</h2>
+
+<p>本站把这一章整理成一次侦探式的推理：几条<strong>互相独立的痕迹</strong>、一个机制、几次检验。下图每一格都是一个问题，读的时候去原文找答案。这是本站的归纳，不是书里的分法。</p>
+
+<figure class="fig">
+<svg class="traces" viewBox="0 0 780 322" width="780" role="img" aria-label="本站的归纳：三条痕迹指向一个结论，纬度机制解释它；下面四格是带着读的问题：非洲、美洲两次对照，纬度之外的边界，轮子和文字的外溢">
+  <defs><marker id="ar10" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
+  <!-- 三条痕迹 -->
+  <rect class="box" x="8" y="16" width="290" height="156" rx="10"/>
+  <text x="22" y="40" class="ttl">三条痕迹</text>
+  <text x="22" y="70" style="fill:var(--c1)" class="ttl">① 速度</text>
+  <text x="112" y="70">哪个方向快？快多少？</text>
+  <text x="22" y="98" style="fill:var(--c2)" class="ttl">② 完整度</text>
+  <text x="112" y="98">整包传过去，还是只漏几样？</text>
+  <text x="22" y="126" style="fill:var(--c4)" class="ttl">③ 抢先驯化</text>
+  <text x="112" y="126">驯化一次，还是各地重驯？</text>
+  <text x="22" y="156" class="small-t">第 ③ 条用「没发生的事」做证据</text>
+
+  <path class="arrow" d="M298,94 L326,94" marker-end="url(#ar10)"/>
+  <!-- 结论 -->
+  <rect class="ok-soft" x="328" y="40" width="172" height="108" rx="10"/>
+  <text x="414" y="72" text-anchor="middle" class="ttl">结论</text>
+  <text x="414" y="98" text-anchor="middle">三条痕迹</text>
+  <text x="414" y="120" text-anchor="middle">指向什么？</text>
+  <!-- 机制 -->
+  <path class="arrow" d="M530,94 L502,94" marker-end="url(#ar10)"/>
+  <text x="516" y="86" text-anchor="middle" class="small-t">解释</text>
+  <rect class="accent-soft" x="532" y="16" width="240" height="156" rx="10"/>
+  <text x="652" y="44" text-anchor="middle" class="ttl">机制：纬度</text>
+  <text x="652" y="76" text-anchor="middle">同一纬度上，</text>
+  <text x="652" y="98" text-anchor="middle">什么是一样的？</text>
+  <text x="652" y="130" text-anchor="middle" class="small-t">作物往南北走，</text>
+  <text x="652" y="148" text-anchor="middle" class="small-t">要过哪些关？</text>
+
+  <!-- 四个带着读的问题 -->
+  <text x="8" y="202" class="ttl">检验与边界：四格都是问题</text>
+  <rect class="box" x="8" y="214" width="182" height="100" rx="10"/>
+  <text x="22" y="238" class="ttl" style="fill:var(--c3)">对照 · 非洲</text>
+  <text x="22" y="262">作物包停在哪里？</text>
+  <text x="22" y="284">牛羊停了多久？</text>
+  <rect class="box" x="202" y="214" width="182" height="100" rx="10"/>
+  <text x="216" y="238" class="ttl" style="fill:var(--c3)">对照 · 美洲</text>
+  <text x="216" y="262">什么没穿过地峡？</text>
+  <text x="216" y="284">玉米北上花了多久？</text>
+  <rect class="warn-soft" x="396" y="214" width="182" height="100" rx="10"/>
+  <text x="410" y="238" class="ttl">边界 · 纬度之外</text>
+  <text x="410" y="262">同纬度却慢的例子？</text>
+  <text x="410" y="284">跨纬度却快的例子？</text>
+  <rect class="box" x="590" y="214" width="182" height="100" rx="10"/>
+  <text x="604" y="238" class="ttl">外溢 · 轮子、文字</text>
+  <text x="604" y="262">和日长无关，为什么</text>
+  <text x="604" y="284">也受轴向影响？</text>
+  <text x="604" y="304" class="small-t">第 12、13 章会再用</text>
+</svg>
+<figcaption>本站的归纳。上排是痕迹、结论和机制，下排四格是带着读的问题；"边界"那一格对应作者自己补的那几段。</figcaption>
+</figure>
+
+<h3>边读边填：作者用了哪些数字和例子？</h3>
+<p>这一章的说服力几乎全靠具体的速度、年代和"传不过去"的例子。<strong>边读边找</strong>，写个关键词就行（会自动保存在你的浏览器里）。前两行的数字，后面的玩具模型会用到。</p>
+
+<div class="table-wrap">
+<table class="findit">
+  <thead><tr><th>环节</th><th>你找到的数字 / 例子</th><th>提示</th></tr></thead>
+  <tbody>
+    <tr><td>① 速度：东西向</td><td><input type="text" class="note" data-key="ch10-f1"></td><td class="hint">从西南亚向西到欧洲、向东到印度河，平均每年走多远？海上的那条路线呢？</td></tr>
+    <tr><td>① 速度：南北向</td><td><input type="text" class="note" data-key="ch10-f2"></td><td class="hint">墨西哥到美国西南部、玉米到美国东部、大羊驼到厄瓜多尔，各是多少？</td></tr>
+    <tr><td>① 速度：作物包的时间表</td><td><input type="text" class="note" data-key="ch10-f5"></td><td class="hint">新月沃地作物到希腊、埃及、中欧、英国，各在哪一年前后？</td></tr>
+    <tr><td>② 完整度</td><td><input type="text" class="note" data-key="ch10-f3"></td><td class="hint">安第斯的哪两种家畜从没到过中美洲？哪几种南美作物倒是到了？</td></tr>
+    <tr><td>③ 抢先驯化</td><td><input type="text" class="note" data-key="ch10-f4"></td><td class="hint">今天全世界的棉花大多是哪一种？史前南美人种的又是哪一种？</td></tr>
+    <tr><td>对照 · 非洲</td><td><input type="text" class="note" data-key="ch10-f6"></td><td class="hint">作物停在哪片高原？牛羊在哪里停了多少年、哪一年前后才到南非？班图人的作物止步于哪条河？</td></tr>
+    <tr><td>对照 · 美洲</td><td><input type="text" class="note" data-key="ch10-f7"></td><td class="hint">玉米哪一年前后到了美国东部？哪一年前后成了主粮、靠的是哪种品种？成就了哪个社会？</td></tr>
+    <tr><td>外溢</td><td><input type="text" class="note" data-key="ch10-f8"></td><td class="hint">除了作物，作者还举了哪两种发明？它们在美洲传到哪里为止？</td></tr>
+  </tbody>
+</table>
+</div>
+
+<details class="reveal"><summary>读完了？对照我找到的</summary><div>
+<ul>
+  <li>东西向：约 <strong>0.7 英里/年</strong>；菲律宾、波利尼西亚 <strong>3.2 英里/年</strong></li>
+  <li>南北向：<strong>不到 0.5</strong>；<strong>不到 0.3</strong>；<strong>0.2 英里/年</strong>；前 3500 年（玉米驯化的假设）</li>
+  <li>时间表：希腊 <strong>前 6500</strong>；埃及 <strong>前 6000 后不久</strong>；中欧 <strong>前 5400</strong>；英国 <strong>前 3500</strong></li>
+  <li>完整度：<strong>大羊驼/羊驼、豚鼠</strong>；<strong>木薯、甘薯、花生</strong></li>
+  <li>抢先驯化：<strong>陆地棉</strong>（约 95%）；<strong>海岛棉</strong></li>
+  <li>非洲：<strong>埃塞俄比亚高原</strong>；<strong>塞伦盖蒂北缘</strong>、约 2000 年；<strong>公元 1–200 年</strong>；<strong>鱼河</strong></li>
+  <li>美洲：<strong>公元 1–200 年</strong>；约<strong>公元 900 年</strong>、耐寒品种；<strong>密西西比文化</strong></li>
+  <li>外溢：<strong>轮子</strong>、<strong>字母文字</strong>；<strong>安第斯</strong></li>
+</ul>
+</div></details>
+
+<div class="pause"><strong>到这里先停下，去读原书第 10 章</strong>（约 20 分钟），边读边填上面的表。<br>读完回来，从下面接着往下看——后半页是读完才有意思的部分。</div>
+
+<h2>玩具模型：同样的作物，两种形状的大陆</h2>
+
+<p>"东西向传得快"很容易被误读成"东西向的路更好走"。其实作者的机制更精确：<strong>作物在任何大陆上都是沿纬度方向好走、跨纬度方向难走</strong>。差别在于大陆的形状：
+东西长的大陆，正好把土地铺在"好走"的方向上；南北长的大陆，"好走"的方向很快就撞到海岸，剩下的土地只能一格一格地、边适应边往南北推。下面这个模型就只做这一件事。</p>
+
+<div class="exercise"><div class="q">先猜再玩：两块大陆面积完全相同，一块东西长、一块南北长，作物都从正中间出发。如果作物向南北走<strong>不需要任何额外的适应</strong>（下面第二个滑块拉到 0），哪一块先被铺满？再把它调回原文玉米北上的速度（约 0.3 英里/年），铺满九成的时间各是多少？</div>
+<details class="reveal"><summary>看答案</summary><div>
+<p>不需要适应时，<strong>两块一样快</strong>（都约 5,200 年铺满九成）——光是形状不同，什么也不会发生。差别完全来自"形状 × 跨纬度的代价"这个乘积。</p>
+<p>调到约 0.3 英里/年（每向南北走 200 英里多等 380 年）时，东西向大陆约 <strong>5,500 年</strong>铺满九成，南北向大陆约 <strong>11,700 年</strong>，慢了一倍多。东西向大陆几乎不受影响，因为它南北只有 10 格，要"适应"的路本来就不多。</p>
+<p>带走一句话：<strong>一个阻力只作用在一个方向上时，结果取决于你要走的路有多少落在那个方向上。</strong></p>
+</div></details>
+</div>
+
+<section class="sim" id="sim-axes">
+  <div class="sim-head"><span class="tag">玩具模型</span><h3>轴向与传播</h3>
+    <div class="desc">拖动时间，或者按"播放"。绿色是已经种上这种作物的地方，黄色是最近 500 年刚传到的前沿。虚线是纬度带：同一条带里日长相同。</div></div>
+  <div class="sim-body">
+    <div class="controls">
+      <label>起源后 <input type="range" id="yr" min="0" max="12000" step="100" value="3000"> <output id="yr-o"></output></label>
+      <button id="play">▶ 播放</button>
+      <span class="sep"></span>
+      <label>向南北每走 200 英里，要多等几年来适应 <input type="range" id="adapt" min="0" max="1000" step="10" value="380"> <output id="adapt-o"></output></label>
+    </div>
+    <div class="controls">
+      <div class="presets"><span class="lbl">原文的速度：</span>
+        <button data-d="0">不需要适应（0）</button>
+        <button data-d="110">墨西哥 → 美国西南部（约 0.5）</button>
+        <button data-d="380">玉米 → 美国东部（约 0.3）</button>
+        <button data-d="710">大羊驼 → 厄瓜多尔（0.2）</button>
+      </div>
+      <label><input type="checkbox" id="barrier"> 加一道屏障（翻过去要多等 2,000 年）</label>
+    </div>
+    <div class="stage"><div class="axis-wrap">
+      <div class="map"><svg id="axis-map" viewBox="0 0 450 312" role="img" aria-label="两块面积相同的大陆：左边南北长，右边东西长；绿色表示作物已经传到的地方"></svg></div>
+      <div class="curve"><svg id="axis-curve" viewBox="0 0 400 230" role="img" aria-label="两块大陆被作物覆盖的比例随时间变化的曲线"></svg>
+        <div class="small muted"><span class="legend-sw" style="background:var(--c1)"></span>东西向大陆<span class="legend-sw" style="background:var(--c2)"></span>南北向大陆</div></div>
+    </div></div>
+    <div class="narrate" id="axes-narrate"></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="st-ew"></div><div class="l">东西向大陆：已覆盖</div></div>
+      <div class="stat"><div class="v" id="st-ns"></div><div class="l">南北向大陆：已覆盖</div></div>
+      <div class="stat"><div class="v" id="st-ew90"></div><div class="l">东西向：铺满九成要几年</div></div>
+      <div class="stat"><div class="v" id="st-ns90"></div><div class="l">南北向：铺满九成要几年</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="tip">这是玩具模型，规则和简化如下。
+<strong>地图：</strong>两块大陆都是 400 格，每格约 200 英里见方；东西向的 40 × 10 格大致是欧亚大陆从爱尔兰到日本的 8,000 英里，南北向的 10 × 40 格对应美洲南北约 9,000 英里的长度。作物从正中间出发——真实的新月沃地和墨西哥都不在大陆正中，这里为了让两块大陆只差在形状上。
+<strong>速度：</strong>沿纬度方向一律按原文新月沃地作物包的 <strong>0.7 英里/年</strong>（每格约 286 年）；跨纬度方向每格再加上"适应时间"，用来代表培育出适应新日长、新生长季、新病害的品种所需的时间。预设按钮把南北向速度对到原文的三个数字（不到 0.5、不到 0.3、0.2 英里/年；原文前两个是上限，所以真实差距只会更大）。
+<strong>算法：</strong>每一格的到达时间 = 按上面两个速度算出的"椭圆距离"，所以等时线是一个东西长、南北短的椭圆；屏障就是在一条线外统一加 2,000 年（东西向大陆的屏障是一道南北走向的沙漠或高原，像中亚；南北向大陆的是一条东西走向的热带低地或地峡，像中美洲）。
+<strong>没有模拟的：</strong>海岸线、山脉、雨型、人口迁移、文化偏好，以及同一纬度上的气候差异——这些正是作者在"纬度不是唯一因素"那几段里提醒的。模型只说明一件事：<strong>一个只作用在南北方向上的阻力，怎样因为大陆形状不同而被放大或被绕开</strong>。</div>
+
+<h2>二十多年后：体检与反方</h2>
+
+<p>这一章的论断分两类：一类是"作物走了多快、何时到达"的<strong>年代和速度</strong>，另一类是"为什么快慢不同"的<strong>机制</strong>。二十多年来，考古测年和古 DNA 改了不少年代，机制则多了一条原书没有的证据——基因。下面是本站的粗略判断，供你参考和反驳：</p>
+
+<div class="cards">
+  <div class="card"><h4>农业以约 1 公里/年的速度进入欧洲<span class="ev ev-strong">依然稳</span></h4><p>原文的 0.7 英里/年约合 1.1 公里/年，落在后来按 700 多个遗址测算的 0.6–1.3 公里/年之内。古 DNA 还显示，带着作物走的主要是来自爱琴海和安纳托利亚的农民本身。</p></div>
+  <div class="card"><h4>玉米驯化于前 3500 年（作者的保守假设）<span class="ev ev-revised">被新证据改写</span></h4><p>现在的估计是约 9000 年前，早了三千多年。作者当年就说过，如果驯化更早，南北差距只会更大。</p></div>
+  <div class="card"><h4>玉米过了几千年才到美国西南部<span class="ev ev-strong">依然稳，而且更强</span></h4><p>西南部最早的玉米约在前 2100 年；按新的驯化年代算，中间隔了约五千年。</p></div>
+  <div class="card"><h4>日长是作物北上的门槛<span class="ev ev-strong">有了基因证据</span></h4><p>大麦里一个控制"对日长敏感不敏感"的基因，其不敏感型在欧洲越往北越常见。</p></div>
+  <div class="card"><h4>美洲南北之间作物几乎传不过去<span class="ev ev-mixed">部分成立</span></h4><p>大羊驼确实没北上；但玉米约 7500 年前就穿过了中美洲，约 6500 年前进入南美——当时还是"半驯化"的。</p></div>
+  <div class="card"><h4>欧亚的东西向是一条快速通道<span class="ev ev-mixed">有争议</span></h4><p>从新月沃地到欧洲确实快；但小麦、大麦进入中国花了几千年，路线绕行高原与草原，真正成为中原主要作物更晚。</p></div>
+</div>
+
+<div class="counter" data-title="新证据 1 · 玉米：驯化提前三千多年，作者的差距反而更大了">
+<p>作者在开头算速度时特意声明：书中假设玉米在前 3500 年才被驯化，这是<strong>保守</strong>的；如果驯化更早，南北向的速度会更慢。后来的证据正好朝这个方向走：2002 年松冈（Matsuoka）等人在《美国国家科学院院刊》（PNAS）上用遗传标记分析认为，所有玉米都来自约 <strong>9000 年前</strong>墨西哥南部的一次驯化；2009 年皮佩尔诺（Piperno）等人在墨西哥巴尔萨斯河谷的岩棚里找到了约 <strong>8700 年前</strong>的玉米淀粉粒和植硅体。</p>
+<p>同一年，梅里尔（Merrill）等人在 PNAS 上总结，美国西南部的玉米最早约在<strong>前 2100 年</strong>出现。两头一减，玉米北上这 700 英里左右的路，走了约五千年。好的论证会标出自己的假设往哪个方向偏——这里作者押对了方向。</p>
+</div>
+
+<div class="counter" data-title="新证据 2 · 大麦基因里的「日长开关」">
+<p>作者的机制是"同纬度 = 同样的日长"，但 1997 年作者没法直接看到作物体内的那个"开关"。2005 年特纳（Turner）等人在《科学》（Science）上找到了大麦里控制开花对日长反应的基因 <em>Ppd-H1</em>；2008 年琼斯（Huw Jones）等人在《分子生物学与演化》上发现，它的"不敏感"型在欧洲的分布<strong>随纬度变化，越往北越占优势</strong>，而且这个变体来自新月沃地以东的野生大麦。</p>
+<p>2012 年格林尼丝·琼斯（Glynis Jones）等人据此推测：在阿尔卑斯、英国、斯堪的纳维亚这些北缘地区，作物对当地气候的适应<strong>可能</strong>影响了农业到达的时间。这正是本页玩具模型里那个"跨纬度要多等几年"的滑块的真实版本——而且它说明，<strong>就连欧亚大陆内部，作物往北走也得换"品种"</strong>。注意原论文的措辞是"可能"，这是一个有力的旁证，不是定论。</p>
+</div>
+
+<div class="counter" data-title="反方 3 · 欧亚的「东西大道」其实很曲折">
+<p>如果东西向真那么好走，新月沃地的小麦、大麦早该很快走到同纬度的中国。实际上，2018 年龙（Tengwen Long）等人在《自然·植物》（Nature Plants）上的测年显示，小麦约前 2600 年零星出现在黄河下游，前 1900 年前后到甘肃、新疆，前 1600 年才到中原和西藏；也有学者认为最早那批年代可疑，小麦在中原成为重要作物要到前 1000 年以后。2017 年刘歆益等人在《公共科学图书馆·综合》（PLoS ONE）上称之为"东去之旅"：小麦和大麦是<strong>沿不同路线、在不同时间</strong>东传的，到前二千纪，大麦已经种在纬度相差 40 多度、环境迥异的各个地方。</p>
+<p>这并不推翻作者——作者自己就写了中亚沙漠、青藏高原和喜马拉雅把中国隔开，使中国独立发展出了一套作物。但它提醒你：<strong>"东西长"只是给了一条可能的走廊，走廊里有没有屏障，要一段一段地看</strong>。这和"想一想"第 2 题是同一个问题。</p>
+</div>
+
+<div class="counter" data-title="检验与批评 4 · 有人拿轴向假说做了统计，也有人批评它是地理决定论">
+<p>轴向假说能不能用别的数据检验？2006 年图尔钦（Turchin）等人统计了历史上 62 个最大的帝国，发现它们有统计上显著的<strong>东西向扩张</strong>倾向（现代国家也有这个趋势，但不显著）；2012 年莱廷（Laitin）等人在 PNAS 上检验了一个推论：一个地区越是南北走向，语言多样性越能保留下来，越是东西走向，越容易被同化——结果支持这个推论。这些都是<strong>间接</strong>检验：它们支持"东西向更容易交流和整合"，但不直接测量作物。</p>
+<p>另一边，地理学家布劳特（J. M. Blaut）1999 年在《地理评论》（Geographical Review）上发表《环境主义与欧洲中心主义》，批评本书和兰德斯的《国富国穷》复活了环境决定论，认为这类论证在几个世纪里一直被用来为以欧洲为中心的世界史背书。作者在全书结尾会正面回应"地理决定论"的指控；读到那里时，可以回头想想，这一章的论证哪些部分是"地理决定了结果"，哪些只是"地理改变了概率"。</p>
+</div>
+
+<h2>想一想</h2>
+
+<p>这几道题没有标准答案。先自己写几句，再展开"一种看法"——它只是一种看法，你完全可以不同意。</p>
+
+<div class="ponder">
+  <div class="q">1. 作者用"抢先驯化"做证据：新月沃地的作物大多只被驯化过一次，说明它们传得快，快到别处的人还没来得及自己驯化就已经拿到了现成的。用"没有发生的事"来推断一个过程，这种推理什么时候靠得住？</div>
+  <textarea class="note" data-key="ch10-p1" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>这是一种很漂亮的推理：<strong>重复发明是传播阻力的指纹</strong>。如果一样东西容易传，第一个版本会抢先占满市场，后来者没必要再造一个；如果到处都是各自独立的版本，就说明当初传不过去。它的好处是不需要直接观察传播过程——几千年前的传播谁也看不见，可今天作物的基因里还留着"是一次还是多次驯化"的记录。</p>
+    <p>但它靠得住，需要排除两种替代解释：一是<strong>起点不同</strong>——美洲的野生近亲种类本来就多、分布本来就分散，多次驯化可能只是因为可驯化的野生种群更多；二是<strong>需求不同</strong>——各地都重新驯化，也可能是各地都偏好自己的口味或用途。作者的论证之所以有力，是因为它和"速度""完整度"两条痕迹彼此独立、却指向同一个方向。</p>
+    <p>带走一个问法：<strong>看到"到处都有自己的一套"时，先问是"传不过去"，还是"本来就各有所需"？</strong>再找一条独立的证据去验证。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">2. 纬度在地图上一眼就能看出来，可真正卡住作物的是日长、生长季、雨型、病害。作者自己也说，墨西哥和安第斯之间，热带低地和狭窄的地峡"至少同样重要"。那么，"大陆轴向"是原因，还是一个方便的代理变量？</div>
+  <textarea class="note" data-key="ch10-p2" placeholder="提示：作者在'纬度不是唯一因素'那几段里，举了同纬度却传得慢、跨纬度却传得快的例子。"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>更准确的说法是：真正的变量是<strong>"沿途环境与起点有多像"</strong>，纬度是它最好用的代理，因为同纬度的地方<strong>必定</strong>日长相同，往往也气候相近。轴向则是代理的代理：东西长的大陆，碰巧给"相像的环境"留出了最长的连续地带。</p>
+    <p>检验代理变量的最好办法，是去看<strong>代理和机制分道扬镳的地方</strong>。作者自己就做了这件事：美国东南部和西南部同纬度，中间却隔着得州的旱地，所以传得慢；新月沃地的作物向南跨了近 2000 英里纬度到埃塞俄比亚，班图人的农业从大湖区一路南下到纳塔尔，因为沿途雨型相近，所以传得快。这几个例子说明，作者的机制是"环境相似度"，而不是"东西"这个方向本身。</p>
+    <p>带走一个问法：<strong>遇到一个好用的指标时，问一句"它在哪些情况下会和我真正关心的东西不一致"？</strong>那些不一致的案例，往往比一致的案例更能告诉你机制是什么。</p>
+  </div></details>
+</div>
+
+<div class="ponder">
+  <div class="q">3. 轮子和字母文字和日长毫无关系，作者却说它们也沿东西向传得快、在美洲传不过去。这个"外溢"的论证，你觉得有多可信？</div>
+  <textarea class="note" data-key="ch10-p3" placeholder="你的想法……"></textarea>
+  <details class="reveal"><summary>一种看法</summary><div>
+    <p>作者给的是一条<strong>间接的链</strong>：最早的轮子装在运农产品的牛车上，早期文字为靠农民供养的精英服务；经常交换作物和牲畜的社会，也更可能交换别的东西。这条链每一环单独看都说得通，但链越长，每一环的不确定性就越会累积。</p>
+    <p>还要提防一个<strong>混杂因素</strong>：欧亚大陆不只是东西长，它还更大、人口更多、起源地更多、彼此相连的社会更多。轮子和文字在欧亚传得快，可能部分是因为这些，而不完全是轴向。作者的美洲对照（墨西哥的轮子和文字都没到安第斯）很有意思，但中间隔着的恰恰是"地峡和热带低地"这样的屏障，又回到了第 2 题的问题。</p>
+    <p>带走一个问法：<strong>一个机制被推广到它的"本职"之外时，先分清是"同一个机制在起作用"，还是"同样的结果有别的原因"。</strong>前者要找出新的传导路径，后者要找出那个共同的上游原因。</p>
+  </div></details>
+</div>
+
+<h2>换个镜头看你熟悉的世界</h2>
+
+<p>这一章最值得带走的是两个工具：用"重复发明"测量传播的阻力；以及"沿着相同环境传播最快"。试着把它们用到你自己的领域。</p>
+
+<div class="lens" data-title="工具一 · 抢先驯化：重复造轮子是传播慢的指纹">
+<p>一家公司里如果有五个团队各自写了一套配置中心、各自封装了一套 RPC 客户端，这不只是浪费，它还是一条<strong>诊断信息</strong>：组织内部的"传播轴线"是南北向的——团队之间技术栈不同、互相看不见、拿来用的成本比自己写还高。
+反过来，一个库被全公司用、没人想重写，往往说明它出现得早、传得快，"抢先驯化"了所有潜在的替代品——这也意味着后来更好的方案很难再进来。</p>
+<textarea class="note" data-key="ch10-l1" placeholder="你所在的组织或技术生态里，有哪些东西被'各地重复驯化'了？卡住传播的是哪一道'纬度差'或'屏障'？"></textarea>
+</div>
+
+<div class="lens" data-title="工具二 · 同纬度就是同一套运行环境">
+<p>软件也是沿着"日长相同"的方向传得最快：同一个操作系统、同一套运行时、同一种部署方式、同一套法规环境。一个在 x86 服务器上流行的工具，搬到 ARM 嵌入式设备上，要先"培育新品种"；一款在一个国家成功的产品，进入另一个国家，支付、合规、内容审核都要重做一遍——这就是本地化，本质上是跨纬度时的重新适应。</p>
+<p>所以评估一项技术能扩散多远，与其问"它有多好"，不如先问：<strong>它要去的地方，和它的出生地在哪几个维度上"不同纬度"？</strong></p>
+<textarea class="note" data-key="ch10-l2" placeholder="你做过的一个项目要推广到新环境时，最大的'纬度差'是什么？是像日长一样绕不开的，还是像屏障一样可以修路翻过去的？"></textarea>
+</div>
+
+<h2>读完：回到你的赌注</h2>
+
+<details class="reveal"><summary>打开对照（建议读完原书这一章再打开）</summary><div class="payoff" data-bet="ch10">
+  <div class="mine"></div>
+  <p>对玉米北上这条路线，作者的答案是第三项：<strong>北方的生长季更短、气候更冷</strong>，玉米在公元 1–200 年就到了美国东部，却只是很次要的作物；直到约公元 900 年培育出适应北方的耐寒品种，以玉米为主的农业才撑起了密西西比文化。作者用把墨西哥玉米种到加拿大的思想实验说明这种错配：</p>
+  <blockquote class="quote">Woe betide the plant whose genetic program is mismatched to the latitude of the field in which it is planted!<cite>— 第 10 章，讲纬度与作物的那一段。本站译：要是一株植物的基因程序和它所在田地的纬度对不上，那它就要遭殃了！</cite></blockquote>
+  <ul>
+    <li><strong>"中间隔着沙漠"</strong>：对一半。作者确实说，从墨西哥到美国西南部和东南部，沿途的沙漠让传播又慢又挑剔；墨西哥和安第斯之间，地峡和热带低地"至少和纬度一样重要"。但玉米到美国东部这条路，作者给的主因是气候和生长季。如果你押了这一项，说明你已经读到了作者自己划的边界。</li>
+    <li><strong>"社会分散、交流少"</strong>：作者在章末明确反对这类解释：作物分布得广，并不说明早期欧亚农民更聪明，只反映了大陆轴向的不同。何况美洲也有木薯、甘薯、花生、玉米在南北之间传开的例子——人们是愿意交换的。</li>
+    <li><strong>"没有马和牛车"</strong>：作者没有用这条理由。史前作物的传播主要靠农民一代代地迁移和邻里之间的交换，欧亚早期的扩散也不靠马车；从菲律宾到波利尼西亚靠的是独木舟，速度反而是全书最快的 3.2 英里/年。</li>
+    <li><strong>"玉米本身难种"</strong>：第 8 章确实讨论过玉米的野生祖先大刍草很难驯化，但那解释的是美洲农业<em>起步慢</em>，不是驯化成功以后<em>传播慢</em>。把这两件事分开，是读第 5–10 章的关键。</li>
+  </ul>
+  <p>全章的最后一句，把整个第二部分收在了地理上：</p>
+  <blockquote class="quote">Around those axes turned the fortunes of history.<cite>— 第 10 章，章末最后一句。本站译：历史的命运，就围绕着这些轴线转动。</cite></blockquote>
+</div></details>
+
+<p>最后，用你自己的话，一句话说出这一章：</p>
+<textarea class="note" data-key="ch10-oneline" placeholder="例如：作物只爱同纬度，欧亚大陆恰好最宽……（写你自己的版本）"></textarea>
+
+<div class="hook">
+<p>第二部分到这里结束了：食物生产在哪里出现、为什么传得有快有慢。第三部分要从"终极原因"走到"直接原因"，第一站是病菌。</p>
+<p>欧洲人带去美洲的天花、麻疹杀死了绝大多数原住民，可美洲也有特诺奇蒂特兰这样当时世界上数一数二的大城市。<strong>为什么病菌几乎只从欧亚大陆流向美洲，而不是反过来？</strong>先猜一猜，再去读第 11 章。</p>
+</div>
+
+</main>
+<script>
+(function () {
+  const { s } = GGS;
+  const L = 40, W = 10, CELL = 7, MILES = 200, TX = MILES / 0.7; // 沿纬度每格约 286 年
+  const BAR_DIST = 8, BAR_YEARS = 2000, NEW_WIN = 500, TMAX = 12000;
+  const NSX = 20, NSY = 12, EWX = 156, EWY = NSY + (L - W) / 2 * CELL;
+  const shapes = {
+    ns: { cols: W, rows: L, x0: NSX, y0: NSY },
+    ew: { cols: L, rows: W, x0: EWX, y0: EWY },
+  };
+  const map = document.getElementById("axis-map"), curve = document.getElementById("axis-curve");
+  const yr = document.getElementById("yr"), adapt = document.getElementById("adapt"), bar = document.getElementById("barrier"), play = document.getElementById("play");
+
+  // ---- 地图骨架：纬度带、格子、起点、屏障 ----
+  for (let r = 0; r <= L; r += 5) map.append(s("line", { class: "lat", x1: 4, x2: 446, y1: NSY + r * CELL, y2: NSY + r * CELL }));
+  map.append(s("text", { x: NSX + W * CELL + 10, y: NSY + 12, class: "t-muted", text: "南北向大陆：跨 40 个纬度格" }));
+  map.append(s("text", { x: EWX, y: EWY - 8, class: "t-muted", text: "东西向大陆：只跨 10 个纬度格" }));
+  map.append(s("text", { x: 446, y: NSY + L * CELL - 4, "text-anchor": "end", class: "t-muted", text: "两块大陆面积相同（各 400 格）" }));
+  for (const k of ["ns", "ew"]) {
+    const sh = shapes[k];
+    sh.cells = [];
+    for (let r = 0; r < sh.rows; r++) for (let c = 0; c < sh.cols; c++) {
+      const el = s("rect", { class: "c-off", x: sh.x0 + c * CELL, y: sh.y0 + r * CELL, width: CELL, height: CELL });
+      map.append(el);
+      sh.cells.push({ el, dx: c + 0.5 - sh.cols / 2, dy: r + 0.5 - sh.rows / 2 });
+    }
+    map.append(s("circle", { class: "origin", cx: sh.x0 + sh.cols / 2 * CELL, cy: sh.y0 + sh.rows / 2 * CELL, r: 4 }));
+  }
+  const barEW = s("line", { class: "bar", x1: EWX + (L / 2 + BAR_DIST) * CELL, x2: EWX + (L / 2 + BAR_DIST) * CELL, y1: EWY - 3, y2: EWY + W * CELL + 3 });
+  const barNS = s("line", { class: "bar", x1: NSX - 3, x2: NSX + W * CELL + 3, y1: NSY + (L / 2 + BAR_DIST) * CELL, y2: NSY + (L / 2 + BAR_DIST) * CELL });
+  const barT1 = s("text", { x: EWX + (L / 2 + BAR_DIST) * CELL + 4, y: EWY + W * CELL + 14, class: "t-muted", text: "沙漠与高原" });
+  const barT2 = s("text", { x: NSX + W * CELL + 6, y: NSY + (L / 2 + BAR_DIST) * CELL + 4, class: "t-muted", text: "热带低地 / 地峡" });
+  const barEls = [barEW, barNS, barT1, barT2];
+  barEls.forEach((e) => map.append(e));
+
+  // ---- 计算：到达时间 = 椭圆距离（+ 屏障） ----
+  function compute() {
+    const D = +adapt.value, TY = TX + D, useBar = bar.checked;
+    for (const k of ["ns", "ew"]) {
+      const sh = shapes[k];
+      sh.t = sh.cells.map((cl) => {
+        let t = Math.hypot(cl.dx * TX, cl.dy * TY);
+        const beyond = k === "ew" ? cl.dx > BAR_DIST : cl.dy > BAR_DIST;
+        if (useBar && beyond) t += BAR_YEARS;
+        return t;
+      });
+      sh.sorted = [...sh.t].sort((a, b) => a - b);
+    }
+  }
+  const frac = (sh, t) => { let n = 0; for (const x of sh.t) if (x <= t) n++; return n / sh.t.length; };
+  const tq = (sh, q) => sh.sorted[Math.ceil(q * sh.sorted.length) - 1];
+  const yrs = (n) => Math.round(n / 100) * 100;
+  const fmt = (n) => yrs(n).toLocaleString("en");
+
+  // ---- 覆盖率曲线 ----
+  const CX0 = 40, CX1 = 388, CY0 = 14, CY1 = 196;
+  const cx = (t) => CX0 + (CX1 - CX0) * t / TMAX, cy = (f) => CY1 - (CY1 - CY0) * f;
+  function drawCurve(t) {
+    curve.replaceChildren();
+    for (const f of [0, 0.5, 0.9, 1]) {
+      curve.append(s("line", { class: "grid", x1: CX0, x2: CX1, y1: cy(f), y2: cy(f) }));
+      curve.append(s("text", { x: CX0 - 4, y: cy(f) + 4, "text-anchor": "end", class: "t-muted", text: Math.round(f * 100) + "%" }));
+    }
+    for (let k = 0; k <= TMAX; k += 3000) curve.append(s("text", { x: cx(k), y: CY1 + 16, "text-anchor": k === TMAX ? "end" : "middle", class: "t-muted", text: k.toLocaleString("en") }));
+    curve.append(s("text", { x: (CX0 + CX1) / 2, y: CY1 + 32, "text-anchor": "middle", class: "t-muted", text: "起源后的年数 →" }));
+    for (const k of ["ew", "ns"]) {
+      const sh = shapes[k], pts = [];
+      for (let x = 0; x <= TMAX; x += 100) pts.push(cx(x).toFixed(1) + "," + cy(frac(sh, x)).toFixed(1));
+      curve.append(s("polyline", { class: k, points: pts.join(" ") }));
+    }
+    curve.append(s("line", { class: "now", x1: cx(t), x2: cx(t), y1: CY0, y2: CY1 }));
+  }
+
+  function render() {
+    const t = +yr.value, D = +adapt.value;
+    const nsSpeed = MILES / (TX + D);
+    document.getElementById("yr-o").textContent = t.toLocaleString("en") + " 年";
+    document.getElementById("adapt-o").textContent = `${D} 年 · 南北向约 ${nsSpeed.toFixed(2)} 英里/年`;
+    barEls.forEach((e) => e.style.display = bar.checked ? "" : "none");
+    for (const k of ["ns", "ew"]) {
+      const sh = shapes[k];
+      sh.cells.forEach((cl, i) => { const a = sh.t[i]; cl.el.setAttribute("class", a > t ? "c-off" : a > t - NEW_WIN ? "c-new" : "c-on"); });
+    }
+    const fe = frac(shapes.ew, t), fn = frac(shapes.ns, t);
+    const e90 = tq(shapes.ew, 0.9), n90 = tq(shapes.ns, 0.9);
+    document.getElementById("st-ew").textContent = Math.round(fe * 100) + "%";
+    document.getElementById("st-ns").textContent = Math.round(fn * 100) + "%";
+    document.getElementById("st-ew90").textContent = fmt(e90);
+    document.getElementById("st-ns90").textContent = fmt(n90);
+    drawCurve(t);
+    // 原文的对照：1,200 英里 = 6 格
+    const ew1200 = 6 * TX, ns1200 = 6 * (TX + D);
+    let msg;
+    if (D === 0 && !bar.checked) msg = `跨纬度不需要额外适应时，两块大陆一模一样快：起源后 ${t.toLocaleString("en")} 年都覆盖了 ${Math.round(fe * 100)}%。形状本身不造成任何差别——差别要等你把第二个滑块往右拉才出现。`;
+    else if (D === 0) msg = `跨纬度不需要适应，两道屏障又一样宽、挡住的面积一样大，所以两块大陆仍然一样快。屏障拖慢的是"翻过去之后"的那一片，和大陆朝哪个方向长无关。`;
+    else {
+      msg = `起源后 ${t.toLocaleString("en")} 年：东西向大陆覆盖 ${Math.round(fe * 100)}%，南北向大陆 ${Math.round(fn * 100)}%。铺满九成，东西向要约 ${fmt(e90)} 年，南北向要约 ${fmt(n90)} 年（${(n90 / e90).toFixed(1)} 倍）。`;
+      msg += `两块大陆上的绿色区域其实是同一个形状的椭圆——只是南北向大陆东西只有 10 格宽，椭圆"跑得快"的那个方向很快就撞到了海边。`;
+      msg += ` 拿原文的对照来算：1,200 英里（巴尔干到美索不达米亚，或墨西哥高原到厄瓜多尔高原），沿纬度走约 ${fmt(ew1200)} 年，跨纬度走约 ${fmt(ns1200)} 年。`;
+      if (bar.checked) msg += ` 屏障让两块大陆都慢了下来——作者也说，地形和生态屏障在有些地方和纬度同样重要。`;
+    }
+    document.getElementById("axes-narrate").textContent = msg;
+  }
+
+  let timer = null;
+  function stop() { clearInterval(timer); timer = null; play.textContent = "▶ 播放"; }
+  play.addEventListener("click", () => {
+    if (timer) return stop();
+    if (+yr.value >= TMAX) yr.value = 0;
+    play.textContent = "❚❚ 暂停";
+    timer = setInterval(() => { const v = Math.min(TMAX, +yr.value + 100); yr.value = v; render(); if (v >= TMAX) stop(); }, 60);
+  });
+  yr.addEventListener("input", () => { stop(); render(); });
+  adapt.addEventListener("input", () => { compute(); render(); });
+  bar.addEventListener("change", () => { compute(); render(); });
+  document.querySelectorAll("#sim-axes .presets button").forEach((b) => b.addEventListener("click", () => { adapt.value = b.dataset.d; compute(); render(); }));
+  compute();
+  render();
+})();
+</script>
+</body></html>
