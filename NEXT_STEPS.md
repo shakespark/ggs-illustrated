@@ -10,4 +10,4 @@
 
 ## 待定
 - 收场白：[已处理 2026-10-02] 收场白交锋 2 已加入许田波（Victoria Tin-bor Hui）2005 一书（站主同意）。
-- 部署：未 git init、未建仓库、未上线。步骤见 ~/tutorials-deploy/README.md（目录名拟为 ggs，首页卡片 data-progress="ggs-done-:23"）。
+- 部署：2026-10-02 已上线 https://t.miaowuao.cn/ggs/ （仓库 shakespark/ggs-illustrated，推送 main 即部署；首页卡片已加）。线上检查：`~/tutorials-deploy/scripts/check-site.sh ggs index.html chapters/04-farmer-power.html`。
